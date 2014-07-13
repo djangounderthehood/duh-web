@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome!</h1>
+<section id="what">
+    <h2>What?</h2>
+    {% include '_what.html' %}
+</section>
+<hr>
+
+<section id="when">
+    <h2>When?</h2>
+    {% include '_when.html' %}
+</section>
+<hr>
+
+<section id="where">
+    <h2>Where?</h2>
+    {% include '_where.html' %}
+</section>
+<hr>
+
+<section id="who">
+    <h2>Who?</h2>
+    {% include '_who.html' %}
+</section>
+<hr>
+
+<section id="interest">
+    <h2>I wish to subscribe to your newsletter</h2>
+    <form action="{% url 'register-interest' %}#interest" method="post">
+        {{ interest_form.as_p }}
+        <p>
+            <button type="submit">Register</button>
+            {% csrf_token %}
+        </p>
+    </form>
+</section>
+<hr>
+
+<section id="questions">
+    <h2>More questions?</h2>
+    <p>Check out our <a href="{% url 'FAQ' %}">list of frequently asked questions</a>.</p>
+</section>
+{% endblock %}

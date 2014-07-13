@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Django Under the Hood{% endblock %}</title>
+    </head>
+    <body>
+        <header>
+            <h1><a href="/">Django Under the Hood (DUH!)</a></h1>
+        </header>
+        <main>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">
+                        {{ message }}
+                    </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            <p><small>Every website needs a footer, right?</small></p>
+        </footer>
+    </body>
+</html>
