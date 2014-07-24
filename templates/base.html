@@ -1,12 +1,15 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>{% block title %}Django: Under the Hood{% endblock %}</title>
+
+        <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
         <script type="text/javascript" src="//use.typekit.net/fwr5dcz.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         <link href='http://fonts.googleapis.com/css?family=Cabin+Sketch' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen">
     </head>
     <body>
         <div class="container">
