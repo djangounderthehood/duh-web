@@ -1,9 +1,8 @@
 from django.shortcuts import render
 
-from interests.forms import RegisterInterestForm
-
 
 def home(request):
-    return render(request, 'home.html', {
-        'interest_form': RegisterInterestForm(),
-    })
+    return render(request, 'home.html', {})
+
+def coc(request):
+    return render(request, 'coc.html', {})
