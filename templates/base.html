@@ -2,25 +2,26 @@
 <html>
     <head>
         <title>{% block title %}Django: Under the Hood{% endblock %}</title>
+        <script type="text/javascript" src="//use.typekit.net/fwr5dcz.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <link href='http://fonts.googleapis.com/css?family=Cabin+Sketch' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" media="screen">
     </head>
     <body>
-        <header>
-            <h1><a href="/">Django: Under the Hood</a></h1>
-        </header>
-        <main>
-            {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                    <li class="{{ message.tags }}">
-                        {{ message }}
-                    </li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-            {% block content %}{% endblock %}
-        </main>
-        <footer>
-            <p><small>Every website needs a footer, right?</small></p>
-        </footer>
+        <div class="container">
+            <main>
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}">
+                            {{ message }}
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% block content %}{% endblock %}
+            </main>
+        </div>
     </body>
 </html>

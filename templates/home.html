@@ -1,50 +1,34 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
-<h1>Welcome!</h1>
-<section id="what">
-    <h2>What?</h2>
-    {% include '_what.html' %}
-</section>
-<hr>
 
-<section id="when">
-    <h2>When?</h2>
-    {% include '_when.html' %}
+<section id="about">
+    {% include '_about.html' %}
 </section>
-<hr>
 
-<section id="where">
-    <h2>Where?</h2>
-    {% include '_where.html' %}
+<section id="dates">
+    {% include '_dates.html' %}
 </section>
-<hr>
 
-<section id="who">
-    <h2>Who?</h2>
-    {% include '_who.html' %}
+<section id="speakers">
+    {% include '_speakers.html' %}
 </section>
-<hr>
 
 <section id="interest">
-    <h2>Tell me when tickets are available</h2>
-    <form action="{% url 'register-interest' %}#interest" method="post">
-        {{ interest_form.as_p }}
-        <p>
-            <button type="submit">Register</button>
-            {% csrf_token %}
-        </p>
-    </form>
+    {% include '_interest.html' %}
 </section>
-<hr>
 
 <section id="sponsors">
-    <h2>Sponsorship</h2>
-    <p>We are seeking companies who wish to support the event financially. We hope to bring as many of the Django core team to the event as possible to share knowledge and improve the development process. If you are interested in helping, please get in touch.</p>
+    <h2>
+        <img src="{% static 'img/icons/sponsors.png' %}" alt="Sponsorship" />
+        Sponsorship
+    </h2>
+    <p>We are seeking companies who wish to support the event financially. We hope to bring as many of the Django core team to the event as possible to share knowledge and improve the development process. If you are interested in helping, please <a href="mailto:hello@djangounderthehood.com">get in touch</a>.</p>
 </section>
 
-<section id="questions">
-    <h2>More questions?</h2>
-    <p>Check out our <a href="{% url 'FAQ' %}">list of frequently asked questions</a>.</p>
+<section id="social">
+    {% include '_social.html' %}
 </section>
+
 {% endblock %}
