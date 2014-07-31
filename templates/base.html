@@ -18,6 +18,29 @@
         <link href='http://fonts.googleapis.com/css?family=Cabin+Sketch' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen">
+        <script type="text/javascript">
+function easter() {
+    var speakers = document.getElementsByClassName('speaker');
+    var borg = speakers[1];
+    for (i=0; i<speakers.length; i++) {
+        speakers[i].src = borg.src;
+    }
+}
+if (window.addEventListener) {
+  var state = 0, keyseq = [38,38,40,40,37,39,37,39,66,65];
+  window.addEventListener("keydown", function(e) {
+    if (e.keyCode == keyseq[state]){
+        state++;
+    }
+    else {
+        state = 0;
+    }
+    if (state == keyseq.length) {
+        easter();
+    }
+    }, true);
+}
+</script>
     </head>
     <body>
         <div class="container">
