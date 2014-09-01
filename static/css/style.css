@@ -12,7 +12,7 @@ body {
 a,
 a:hover {
   color: #ffffff;
-  text-decoration: underline !important;
+  text-decoration: underline;
 }
 a:hover {
   text-decoration: none !important;
@@ -22,6 +22,22 @@ a:hover {
 }
 section {
   margin-top: 60px;
+}
+nav ul {
+  list-style-type: none;
+  float: right;
+}
+nav ul li {
+  float: left;
+  margin-left: 40px;
+}
+nav ul li a {
+  text-decoration: none !important;
+}
+nav ul li.highlighted a {
+  background: rgba(255, 255, 255, 0.9);
+  color: #3a5b9e;
+  padding: 7px 10px 5px 10px;
 }
 #about .logo {
   text-align: center;
@@ -96,4 +112,7 @@ footer ul {
   font-family: 'Cabin Sketch';
   font-size: 32px;
   margin-top: 30px;
+}
+.cls {
+  clear: both;
 }
