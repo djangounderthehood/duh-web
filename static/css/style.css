@@ -85,18 +85,18 @@ h2 img {
 #schedule .timetable .break {
   background: rgba(255, 255, 255, 0.3);
 }
-#interest form {
+#tickets form {
   width: 50%;
   margin: 30px auto;
 }
-#interest form input[type="email"] {
+#tickets form input[type="email"] {
   width: 70%;
   font-size: 20px;
   font-family: 'proxima-nova';
   padding: 6px 15px;
   height: auto;
 }
-#interest form input[type="submit"] {
+#tickets form input[type="submit"] {
   background: #1c2c4c;
   color: white;
   font-family: 'proxima-nova';
