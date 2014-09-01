@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles credits %}
 <img src="{% static 'img/line.png' %}" class="hr" />
 
 <div class="row">
@@ -22,4 +22,4 @@
     </div>
 </div>
 
-<p class="credits">Django: Under The Hood conference is organized by Marc Tamlyn, Baptiste Mispelon, Erik Romjin and Ola Sitarska with help from the Dutch Django Association.</p>
+<p class="credits">Django: Under The Hood conference is organized by {% organizers %} with help from the Dutch Django Association.</p>
