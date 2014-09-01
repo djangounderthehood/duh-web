@@ -121,6 +121,11 @@ footer a {
 footer ul {
   list-style-type: none;
 }
+footer .credits {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 30px;
+}
 #coc h3 {
   font-family: 'Cabin Sketch';
   font-size: 32px;
