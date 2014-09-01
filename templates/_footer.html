@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<img src="{% static 'img/line.png' %}" class="hr" />
+
+<div class="row">
+    <div class="col-md-8">
+       	<ul>
+       		<li><a href="http://tickets.djangounderthehood.com/">Tickets!</a></li>
+       		<li><a href="http://blog.djangounderthehood.com">Blog</a></li>
+       		<li><a href="http://twitter.com/DjangoUnderHood">Twitter</a></li>
+       		<li><a href="{% url 'coc' %}">Code of Conduct</a></li>
+       	</ul>
+    </div>
+    <div class="col-md-4 twitter">
+        <p>
+        	Got a question? Drop us a line: <a href="mailto:hello@djangounderthehood.com">hello@djangounderthehood.com</a>
+        <p>
+            <img src="{% static 'img/icons/twitter.png' %}" alt="Twitter icon" />
+           	<a href="http://twitter.com/DjangoUnderHood">
+                @DjangoUnderHood
+            </a>
+        </p>
+    </div>
+</div>

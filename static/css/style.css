@@ -80,11 +80,17 @@ h2 img {
   height: auto;
   padding: 9px 20px 8px;
 }
-#social .twitter a {
+footer .hr {
+  margin: 50px 0 50px 0;
+}
+footer .twitter img {
+  margin-right: 15px;
+}
+footer a {
   text-decoration: none !important;
 }
-#social .twitter a img {
-  margin-right: 15px;
+footer ul {
+  list-style-type: none;
 }
 #coc h3 {
   font-family: 'Cabin Sketch';
