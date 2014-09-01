@@ -75,6 +75,16 @@ h2 img {
 #speakers .row {
   margin-bottom: 30px;
 }
+#schedule .timetable {
+  padding: 0 60px 0 15px;
+  margin-bottom: 30px;
+}
+#schedule .timetable .row {
+  padding: 5px 0;
+}
+#schedule .timetable .break {
+  background: rgba(255, 255, 255, 0.3);
+}
 #interest form {
   width: 50%;
   margin: 30px auto;
