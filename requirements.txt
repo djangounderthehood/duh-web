@@ -1,2 +1,2 @@
-https://www.djangoproject.com/download/1.7c3/tarball/
+Django==1.7
 django-toolbelt==0.0.1

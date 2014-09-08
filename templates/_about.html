@@ -5,6 +5,7 @@
         <a href="/"><img src="{% static 'img/logo.png' %}" alt="Django Under The Hood" /></a>
     </div>
     <div class="col-md-8">
+        {% block text %}
         <h1>Django: Under The Hood</h1>
         <p>
             <em>Django: Under the Hood</em> is an exciting new Django conference for
@@ -15,5 +16,6 @@
             The conference is being organised by members of the core team in association with the <a href="http://djangovereniging.nl">Dutch Django Association</a>.
             All attendees must follow the <a href="{% url 'coc' %}">Code of Conduct</a>.
         </p>
+        {% endblock %}
     </div>
 </div>
