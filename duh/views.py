@@ -6,3 +6,6 @@ def home(request):
 
 def coc(request):
     return render(request, 'coc.html', {})
+
+def accessibility(request):
+    return render(request, 'accessibility.html', {})
