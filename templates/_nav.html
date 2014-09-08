@@ -1,8 +1,13 @@
+{% load staticfiles %}
+
+{% if not request.path == '/' %}
+	<a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt="Django: Under The Hood" class="logo" /></a>
+{% endif %}
 <ul>
-	<li class="highlighted"><a href="#tickets">Tickets!</a></li>
-	<li><a href="#speakers">Speakers</a></li>
-	<li><a href="#schedule">Schedule</a></li>
-	<li><a href="#sponsors">Sponsors</a></li>
+	<li class="highlighted"><a href="/#tickets">Tickets!</a></li>
+	<li><a href="/#speakers">Speakers</a></li>
+	<li><a href="/#schedule">Schedule</a></li>
+	<li><a href="/#sponsors">Sponsors</a></li>
 	<li><a href="{% url 'accessibility' %}">Accessibility</a></li>
 	<li><a href="http://blog.djangounderthehood.com">Blog</a></li>
 	<li><a href="mailto:hello@djangounderthehood.com">Contact</a></li>
