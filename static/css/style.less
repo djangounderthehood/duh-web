@@ -153,9 +153,29 @@ h4 {
     }
 }
 
+.white-background {
+    background: white;
+    color: @blue;
+    padding-bottom: 30px;
+
+    a, a:hover {
+        color: @blue;
+    }
+}
+
 #sponsors {
     .row {
         margin: 50px 0;
+
+        .col-md-4 {
+            text-align: center;
+            line-height: 70px;
+
+            img {
+                max-width: 100%;
+                max-height: 70px;
+            }
+        }
     }
 }
 

@@ -123,8 +123,25 @@ h4 {
   height: auto;
   padding: 9px 20px 8px;
 }
+.white-background {
+  background: white;
+  color: #3a5b9e;
+  padding-bottom: 30px;
+}
+.white-background a,
+.white-background a:hover {
+  color: #3a5b9e;
+}
 #sponsors .row {
   margin: 50px 0;
+}
+#sponsors .row .col-md-4 {
+  text-align: center;
+  line-height: 70px;
+}
+#sponsors .row .col-md-4 img {
+  max-width: 100%;
+  max-height: 70px;
 }
 footer .hr {
   margin: 50px 0 50px 0;
