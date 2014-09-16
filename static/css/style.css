@@ -123,6 +123,23 @@ h4 {
   height: auto;
   padding: 9px 20px 8px;
 }
+#tickets .centered {
+  text-align: center;
+}
+#tickets .btn {
+  background: white;
+  color: #3a5b9e;
+  text-decoration: none;
+  font-size: 20px;
+}
+#tickets .btn-large {
+  font-size: 26px;
+  padding: 10px 30px;
+  margin: 10px 0 20px;
+}
+#tickets .small {
+  font-size: 14px;
+}
 .white-background {
   background: white;
   color: #3a5b9e;
