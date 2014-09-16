@@ -9,3 +9,6 @@ def coc(request):
 
 def accessibility(request):
     return render(request, 'accessibility.html', {})
+
+def travel(request):
+    return render(request, 'travel.html', {})
