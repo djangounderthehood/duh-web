@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<section id="coc" class="row">
+    <h1>
+        <img src="{% static 'img/icons/travel.png' %}" alt="Travel" />
+        Travel info
+    </h1>
+    <p>
+        <em>Django: Under The Hood</em> will take place in the center of
+        Amsterdam, The Netherlands.
+    </p>
+
+    <h3>Getting to Amsterdam</h3>
+    <p>
+        Amsterdam Schiphol Airport (AMS) is very close to Amsterdam itself, and many direct flights
+        are available. From the airport, you can take a train to Amsterdam Centraal which departs at least
+        three times per hour and should take about 15 minutes. A single use ticket costs € 5.
+        Note that Amsterdam Centraal is often not
+        the first stop of the train, so make sure you get out at the right station. Always buy a ticket
+        before boarding the train.
+    </p>
+    <p>
+        Amsterdam also has good international rail connections to Belgium, France and Germany. Some
+        sleeper trains are available to other destinations.
+    </p>
+
+    <h3>Getting around</h3>
+    <p>
+        Walking is always an option in Amsterdam, but the conference venue is about 25 minutes walking from
+        the train station and your hotel is probably even a bit further away.
+        You might prefer to take a tram. You can also rent a bike: bike rental is available
+        from many different shops in the city center.
+    </p>
+    <p>
+        Amsterdam has an extensive public transit network, mostly consisting of trams. There are also buses and
+        a small metro network. Most are run by GVB, see their
+        <a href="http://www.gvb.nl/ovinmamsterdam/tourist/Pages/Tourist-guide-English.aspx">tourist guide</a> for more
+        information.
+    </p>
+    <p>
+        All public transit in the Netherlands uses the <em>OV-chipkaart</em>. For both GVB and trains you
+        can buy single use paper tickets (with the chip inside, don't fold), but it may be cheaper to buy
+        a normal prepaid OV-chipcard. These cost € 7,50, and you will have to top it up: you'll need at
+        least € 4 credit to travel with GVB. All this is a lot more hassle, but will make your trips cheaper
+        than buying a single use card every time. Whether the € 7,50 is worth it, depends on how much you
+        intend to travel.
+    </p>
+    <p>
+        A few other notes:
+    </p>
+    <ul>
+        <li>
+            If you buy a ticket on a bus or tram, you can only pay cash in not too large change - definitely no
+            larger than € 20.
+        </li>
+        <li>
+            Ensure you always check in and out: at the door in a tram or bus, when you exit the station
+            for a metro or train. Not checking out may invalidate a single use ticket, and will cost extra
+            on normal chipcards.
+        </li>
+        <li>
+            In trams, the doors do not open when you check out. There is a green button on either side of
+            the door to open it.
+        </li>
+        <li>
+            The paper single use cards are only valid for one transport company: a GVB 24-hour card will not
+            work on trains or on a Connexxion bus, though you're unlikely to encounter the latter.
+        </li>
+        <li>
+            Most transit stops somewhere between 0:00 and 1:30, but there are night buses. They have separate pricing:
+            no other cards are valid. The easiest way to travel is to buy a card on the bus for € 4,50.
+            The ticket will allow you to transfer into another bus. Some night buses only run once an hour.
+        </li>
+    </ul>
+
+    <h3>Hotel info</h3>
+    <p>
+        We're currently working on assembling some recommendations.
+    </p>
+
+    <h3>Visa requirements</h3>
+    <p>
+        Depending on your nationality, you may need to request a Schengen visa in advance.
+        See the <a href="http://www.government.nl/issues/visa-for-the-netherlands-and-the-caribbean-parts-of-the-kingdom/short-stay-visas-for-the-netherlands">Dutch government visa website</a> for more information.
+        We can provide invitation letters if needed.
+        If you do need a visa, make sure you request one as soon as possible.
+    </p>
+</section>
+
+{% endblock %}

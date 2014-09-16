@@ -8,5 +8,6 @@ urlpatterns = patterns('',
     url(r'^$', views.home, name='home'),
     url(r'^coc/$', views.coc, name='coc'),
     url(r'^accessibility/$', views.accessibility, name='accessibility'),
+    url(r'^travel/$', views.travel, name='travel'),
     url(r'^admin/', include(admin.site.urls)),
 )
