@@ -6,6 +6,6 @@ class BasicTestCase(TestCase):
         """
         Make sure all the pages are accessible.
         """
-        for url in ['/', '/coc/']:
+        for url in ['/', '/coc/', '/accessibility/', '/travel/']:
             response = self.client.get(url)
             self.assertEqual(response.status_code, 200)
