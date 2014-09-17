@@ -1,8 +1,10 @@
 from django.shortcuts import render
 
+from sponsors.models import Sponsor
+
 
 def home(request):
-    return render(request, 'home.html', {})
+    return render(request, 'home.html', {'sponsors': Sponsor.objects})
 
 def coc(request):
     return render(request, 'coc.html', {})
