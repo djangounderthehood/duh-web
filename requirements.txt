@@ -1,2 +1,5 @@
 Django==1.7
 django-toolbelt==0.0.1
+boto==2.32.1
+# We can't use plain django-storages because it's not python3-compatible
+git+git://github.com/AliLozano/django-storages-py3.git@py3
