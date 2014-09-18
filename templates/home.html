@@ -26,12 +26,7 @@
 </div>
 <section id="sponsors" class="white-background">
     <div class="container">
-        {# XXX Temporary hack so we can test the new sponsor app live #}
-        {% if '__test__' in request.GET %}
-            {% include '_sponsors_new.html' %}
-        {% else %}
-            {% include '_sponsors.html' %}
-        {% endif %}
+        {% include '_sponsors.html' %}
     </div>
 </section>
 <div class="container">

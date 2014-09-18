@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles sponsors %}
 
 <h2>
     <img src="{% static 'img/icons/sponsors-negative.png' %}" alt="Supporters" />
@@ -6,46 +6,43 @@
 </h2>
 
 <h3>Gold sponsors</h3>
+{% for sponsor in sponsors.gold %}
 <div class="row">
     <div class="col-md-5">
-        <a href="http://dreamsolution.nl/" target="_blank"><img src="{% static 'img/sponsors/dreamsolution.png' %}" /></a>
+        <a href="{{ sponsor.url }}" target="_blank">
+            <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
+        </a>
     </div>
     <div class="col-md-7">
-        <p><a href="http://dreamsolution.nl/" target="_blank">Dreamsolution</a> is a Dutch design and software development company working for the Dutch corporate market. Our design process is aimed at developing bespoke software that is effective and doesn't require upfront knowledge of its specific users. We integrate software engineering, interaction design and functionality.</p>
-        <p>Our engineers work with Open Source tools such as Python, Django, Linux, Redis and MySQL for backends and SASS for front-end development. We believe that these tools help us achieve the best possible result for our clients.</p>
+        {{ sponsor.linkified_description|linebreaks }}
     </div>
 </div>
-<div class="row">
-    <div class="col-md-5">
-        <a href="http://www.leukeleu.nl/" target="_blank"><img src="{% static 'img/sponsors/leukeleu.png' %}" width="90%" /></a>
-    </div>
-    <div class="col-md-7">
-        <p>In a team of 10 web developers, we create sophisticated, beautiful, well functioning web apps and (mobile) websites. We like to work with Open Source software, because we believe in sharing knowledge and we never want to stop innovating. We love Django because we think it’s the best thing yet. We’re excited about new techniques and the fast pace that Django gives us while developing the next big thing. We’re quit the perfectionists, so we don’t design, we don’t sell and we don’t play bullshit-bingo. It’s al about the code, period :)</p>
-        <p>Oh, and we always welcome talent, so if you can relate, <a href="http://www.leukeleu.nl/" target="_blank">let us know</a>!<p>
-    </div>
-</div>
+{% endfor %}
 
 <h3>Silver sponsors</h3>
-<div class="row">
-    <div class="col-md-4">
-        <a href="http://sherpany.com/" target="_blank"><img src="{% static 'img/sponsors/sherpany.png' %}" /></a>
+{% for chunk in sponsors.silver|chunkify:3 %}
+    <div class="row">
+    {% for sponsor in chunk %}
+        <div class="col-md-4">
+            <a href="{{ sponsor.url }}" target="_blank">
+                <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
+            </a>
+        </div>
+    {% endfor %}
     </div>
-    <div class="col-md-4">
-        <a href="https://www.legalsense.nl/" target="_blank"><img src="{% static 'img/sponsors/legalsense.png' %}" width="90%" /></a>
-    </div>
-    <div class="col-md-4">
-        <a href="http://www.nelen-schuurmans.nl/EN/home/" target="_blank"><img src="{% static 'img/sponsors/nelenschuurmans.png' %}" style="max-height: 300px" /></a>
-    </div>
-</div>
+{% endfor %}
 
 <h3>Partners</h3>
-<div class="row">
-	<div class="col-md-4">
-		<a href="http://travelbird.nl/" target="_blank"><img src="{% static 'img/sponsors/travelbird.png' %}" /></a>
-	</div>
-    <div class="col-md-4">
-        <a href="http://startupworks.co/" target="_blank"><img src="{% static 'img/sponsors/startupworks.png' %}" width="80%" /></a>
+{% for chunk in sponsors.partner|chunkify:3 %}
+    <div class="row">
+    {% for sponsor in chunk %}
+        <div class="col-md-4">
+            <a href="{{ sponsor.url }}" target="_blank">
+                <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
+            </a>
+        </div>
+    {% endfor %}
     </div>
-</div>
+{% endfor %}
 
 <p>We are seeking companies who wish to support the event financially. We hope to bring as many of the Django core team to the event as possible to share knowledge and improve the development process. If you are interested in helping, please <a href="mailto:hello@djangounderthehood.com">get in touch</a>.</p>
