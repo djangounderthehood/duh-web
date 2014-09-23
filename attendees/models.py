@@ -9,12 +9,12 @@ class Attendee(models.Model):
     email = models.EmailField()
     twitter = models.CharField(max_length=100, null=True, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def avatar(self):
         default = 'http://api.adorable.io/avatar/100/%s.png' % (self.email)
-        gravatar_url = "http://www.gravatar.com/avatar/" + hashlib.md5(self.email.lower()).hexdigest() + "?"
-        gravatar_url += urllib.urlencode({'d':default, 's':'100'})
+        gravatar_url = "http://www.gravatar.com/avatar/" + hashlib.md5(self.email.lower().encode('utf-8')).hexdigest() + "?"
+        gravatar_url += urllib.parse.urlencode({'d':default, 's':'100'})
 
         return gravatar_url
