@@ -92,6 +92,26 @@ h4 {
 #speakers .row {
   margin-bottom: 30px;
 }
+#attendees {
+  margin-top: 30px;
+}
+#attendees img.attendee {
+  max-width: 100px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 30px;
+}
+#attendees h4 {
+  font-weight: bold;
+  font-size: 22px;
+  margin: 20px 0 0 0;
+}
+#attendees .col-md-4 {
+  margin-bottom: 30px;
+}
+#attendees p {
+  font-size: 16px;
+}
 #schedule .timetable {
   padding: 0 60px 0 15px;
   margin-bottom: 30px;

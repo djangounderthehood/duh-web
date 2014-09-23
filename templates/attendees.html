@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<section id="coc" class="row">
+    <div class="col-md-12">
+        <h2>
+            <img src="{% static 'img/icons/people.png' %}" alt="People" />
+            See who is coming
+        </h2>
+    </div>
+    <div class="cls"></div>
+
+    <div id="attendees">
+        <div class="row">
+            {% for attendee in attendees %}
+            <div class="col-md-4">
+                <img src="{{ attendee.avatar }}" class="attendee" alt="{{ attendee.name }}" />
+                <h4>
+                    {{ attendee.name }}
+                </h4>
+                {% if attendee.twitter %}
+                <p>
+                    <a href="http://twitter.com/{{ attendee.twitter }}">@{{ attendee.twitter }}</a>
+                </p>
+                {% endif %}
+            </div>
+            {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
