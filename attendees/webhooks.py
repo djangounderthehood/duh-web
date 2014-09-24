@@ -6,6 +6,7 @@ from django.core.exceptions import PermissionDenied
 from django.core.mail import mail_admins
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
 
@@ -71,6 +72,7 @@ def dictify_answers(answers):
 
 
 @require_POST
+@csrf_exempt
 @tito_auth_required
 def ticket(request):
     raw_data = json.loads(request.body)
