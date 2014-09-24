@@ -26,7 +26,7 @@ def tito_auth_required(view):
     """
     @wraps(view)
     def wrapped(request, *args, **kwargs):
-        raw_data = json.loads(request.body)
+        raw_data = json.loads(request.body.decode('utf-8'))
         if raw_data['custom'] != settings.TITO_AUTH_TOKEN:
             mail_admins('Webhook fail', request.body)
             raise PermissionDenied
@@ -75,7 +75,7 @@ def dictify_answers(answers):
 @csrf_exempt
 @tito_auth_required
 def ticket(request):
-    raw_data = json.loads(request.body)
+    raw_data = json.loads(request.body.decode('utf-8'))
     reference = raw_data['reference']
     attendee = get_object_or_404(Attendee, reference=reference)
     if raw_data['state_name'] == 'void':  # ticket canceled
