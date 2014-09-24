@@ -24,4 +24,4 @@ class Attendee(models.Model):
     @property
     def avatar(self):
         default = 'http://api.adorable.io/avatar/100/%s.png' % (self.hashed_email)
-        return get_gravatar_url(self.email.lower(), default=default)
+        return get_gravatar_url(self.email.lower(), default=default, size=100)
