@@ -4,4 +4,5 @@ from .models import Attendee
 
 @admin.register(Attendee)
 class AttendeeAdmin(admin.ModelAdmin):
-    list_display = ('name', 'reference', 'email', 'twitter')
+    list_display = ('name', 'reference', 'email', 'twitter', 'visible', 'category')
+    list_filter = ('visible', 'category')
