@@ -105,10 +105,19 @@ if DEBUG:
     # Use `python -m http.server 8888` from the uploads/ directory to serve
     MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
     MEDIA_URL = 'http://localhost:8888/'
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+    EMAIL_HOST = 'smtp.mandrillapp.com'
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 
 TITO_AUTH_TOKEN = os.getenv('TITO_AUTH_TOKEN', None)
+ADMINS = (('DUtH Team', 'technical@djangounderthehood.com'),)
+SERVER_EMAIL = 'hello@djangounderthehood.com'
+EMAIL_SUBJECT_PREFIX = '[duth.com]'
