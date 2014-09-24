@@ -79,7 +79,12 @@ def dictify_answers(answers):
 def ticket(request):
     raw_data = json.loads(request.body.decode('utf-8'))
     reference = raw_data['reference']
-    attendee = get_object_or_404(Attendee, reference=reference)
+    try:
+        attendee = Attendee.objects.get(reference=reference)
+    except Attendee.DoesNotExist:
+        category = Attendee.CATEGORY.guess(raw_data['release'])
+        attendee = Attendee(reference=reference, category=category)  # will be saved by update_with_data
+
     if raw_data['state_name'] == 'void':  # ticket canceled
         attendee.delete()
         return HttpResponse('Attendee deleted.')

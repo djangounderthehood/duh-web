@@ -23,3 +23,10 @@ class AttendeeTestCase(TestCase):
         """
         a = Attendee.objects.create(reference='asdf', name='Batistek', email='batistek@gmail.pl', twitter='-')
         self.assertIs(a.twitter, None)
+
+    def test_category_guessing(self):
+        guess = Attendee.CATEGORY.guess
+        self.assertEqual(guess('Sponsor ticket (Google)'), 'sponsor')
+        self.assertEqual(guess('Regular ticket'), 'regular')
+        self.assertEqual(guess('Test ticket'), 'test')
+        self.assertEqual(guess('Speaker / Core ticket'), 'speaker')

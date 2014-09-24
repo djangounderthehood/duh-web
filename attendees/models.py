@@ -23,6 +23,20 @@ class ATTENDEE_CATEGORY:
         (SPONSOR, SPONSOR),
     ]
 
+    @classmethod
+    def guess(cls, ticket_name):
+        """
+        Try and guess the category based on the name of the ticket (
+        "Sponsor Ticket (foobar)", "Regular ticket", ...)
+        """
+        if not ticket_name:
+            return cls.REGULAR
+        s = ticket_name.split()[0]
+        try:
+            return getattr(cls, s.upper())
+        except AttributeError:
+            return cls.REGULAR
+
 
 class Attendee(models.Model):
     CATEGORY = ATTENDEE_CATEGORY

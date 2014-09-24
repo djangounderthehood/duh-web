@@ -53,11 +53,7 @@ class AttendeeTuple(BaseAttendeeTuple):
         Try and guess the category (regular, sponsor, ...) by looking at the
         ticket type.
         """
-        category = self.ticket_type.split()[0]
-        try:
-            return getattr(Attendee.CATEGORY, category.upper())
-        except AttributeError:
-            return Attendee.CATEGORY.REGULAR
+        return Attendee.CATEGORY.guess(self.ticket_type)
 
     def get_model_data(self):
         return {
