@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.crypto import salted_hmac
 
 from django_gravatar.helpers import get_gravatar_url
 
@@ -13,6 +14,14 @@ class Attendee(models.Model):
         return self.name
 
     @property
+    def hashed_email(self):
+        """
+        Return a hash (hex string) of the attendee's email.
+        """
+        key_salt = self.__class__.__name__
+        return salted_hmac(key_salt, self.email).hexdigest()
+
+    @property
     def avatar(self):
-        default = 'http://api.adorable.io/avatar/100/%s.png' % (self.email)
+        default = 'http://api.adorable.io/avatar/100/%s.png' % (self.hashed_email)
         return get_gravatar_url(self.email.lower(), default=default)
