@@ -1,7 +1,7 @@
-# -*- coding: utf-8 -*-
-import hashlib, urllib
-
 from django.db import models
+
+from django_gravatar.helpers import get_gravatar_url
+
 
 class Attendee(models.Model):
     reference = models.CharField(max_length=6, null=False, blank=False)
@@ -12,9 +12,7 @@ class Attendee(models.Model):
     def __str__(self):
         return self.name
 
+    @property
     def avatar(self):
         default = 'http://api.adorable.io/avatar/100/%s.png' % (self.email)
-        gravatar_url = "http://www.gravatar.com/avatar/" + hashlib.md5(self.email.lower().encode('utf-8')).hexdigest() + "?"
-        gravatar_url += urllib.parse.urlencode({'d':default, 's':'100'})
-
-        return gravatar_url
+        return get_gravatar_url(self.email.lower(), default=default)
