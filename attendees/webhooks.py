@@ -77,6 +77,11 @@ def dictify_answers(answers):
 @csrf_exempt
 @tito_auth_required
 def ticket(request):
+    if request.META.get('X-Webhook-Name') == 'ticket.created':
+        # We don't handle initial creation because there's not enough
+        # information in the given data to create a meaningful entry.
+        return HttpResponse('Skipped')  # TODO: is there a more appropriate response here?
+
     raw_data = json.loads(request.body.decode('utf-8'))
     reference = raw_data['reference']
     try:
