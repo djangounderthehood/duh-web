@@ -45,7 +45,7 @@ class Attendee(models.Model):
             self.twitter = self.twitter.replace('@', '').replace('twitter.com/', '')
         return super(Attendee, self).save(*args, **kwargs)
 
-    def update_with_data(data):
+    def update_with_data(self, data):
         for attr, value in data.items():
             setattr(self, attr, value)
         self.save()
