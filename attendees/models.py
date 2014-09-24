@@ -21,6 +21,7 @@ class ATTENDEE_CATEGORY:
         (SPEAKER, SPEAKER),
         (CORE, CORE),
         (SPONSOR, SPONSOR),
+        (TEST, TEST),
     ]
 
     @classmethod
