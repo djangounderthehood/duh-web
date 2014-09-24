@@ -120,4 +120,4 @@ else:
 TITO_AUTH_TOKEN = os.getenv('TITO_AUTH_TOKEN', None)
 ADMINS = (('DUtH Team', 'technical@djangounderthehood.com'),)
 SERVER_EMAIL = 'hello@djangounderthehood.com'
-EMAIL_SUBJECT_PREFIX = '[duth.com]'
+EMAIL_SUBJECT_PREFIX = '[duth.com] '

@@ -3,6 +3,7 @@ import json
 
 from django.conf import settings
 from django.core.exceptions import PermissionDenied
+from django.core.mail import mail_admins
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_POST
@@ -26,6 +27,7 @@ def tito_auth_required(view):
     def wrapped(request, *args, **kwargs):
         raw_data = json.loads(request.body)
         if raw_data['custom'] != settings.TITO_AUTH_TOKEN:
+            mail_admins('Webhook fail', request.body)
             raise PermissionDenied
         return view(request, *args, **kwargs)
 
