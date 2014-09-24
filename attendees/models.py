@@ -6,7 +6,7 @@ from django_gravatar.helpers import get_gravatar_url
 
 class AttendeeQuerySet(models.QuerySet):
     def visible(self):
-        return self.filter(visible=True)
+        return self.filter(visible=True).exclude(category=Attendee.CATEGORY.TEST)
 
 
 class ATTENDEE_CATEGORY:
@@ -14,6 +14,7 @@ class ATTENDEE_CATEGORY:
     SPEAKER = 'speaker'
     CORE = 'core'
     SPONSOR = 'sponsor'
+    TEST = 'test'
 
     choices = [
         (REGULAR, REGULAR),
