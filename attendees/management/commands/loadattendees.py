@@ -34,7 +34,7 @@ BaseAttendeeTuple = namedtuple('BaseAttendeeTuple', [
     'food_preference',
     'coc',
     'visible_',
-    'twitter_',
+    'twitter',
 ])
 
 
@@ -42,12 +42,6 @@ class AttendeeTuple(BaseAttendeeTuple):
     @property
     def visible(self):
         return self.visible_.lower() == 'yes'
-
-    @property
-    def twitter(self):
-        if self.twitter_ == '-':
-            return None
-        return self.twitter_.replace('@', '').replace('twitter.com/', '')
 
     @property
     def reference(self):
@@ -109,9 +103,7 @@ class Command(BaseCommand):
             if created:
                 self.stdout.write('Created attendee with reference %s.' % attendee.reference)
             elif any(getattr(attendee, attr) != value for attr, value in defaults.items()):
-                for attr, value in defaults.items():
-                    setattr(attendee, attr, value)
-                attendee.save()
+                attendee.update_with_data(defaults)
                 self.stdout.write('Updated attendee with reference %s.' % attendee.reference)
 
         return

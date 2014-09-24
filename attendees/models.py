@@ -38,6 +38,18 @@ class Attendee(models.Model):
     def __str__(self):
         return self.name
 
+    def save(self, *args, **kwargs):
+        if self.twitter == '-':
+            self.twitter = None
+        elif self.twitter:
+            self.twitter = self.twitter.replace('@', '').replace('twitter.com/', '')
+        return super(Attendee, self).save(*args, **kwargs)
+
+    def update_with_data(data):
+        for attr, value in data.items():
+            setattr(self, attr, value)
+        self.save()
+
     @property
     def hashed_email(self):
         """
