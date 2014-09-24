@@ -4,11 +4,35 @@ from django.utils.crypto import salted_hmac
 from django_gravatar.helpers import get_gravatar_url
 
 
+class AttendeeQuerySet(models.QuerySet):
+    def visible(self):
+        return self.filter(visible=True)
+
+
+class ATTENDEE_CATEGORY:
+    REGULAR = 'regular'
+    SPEAKER = 'speaker'
+    CORE = 'core'
+    SPONSOR = 'sponsor'
+
+    choices = [
+        (REGULAR, REGULAR),
+        (SPEAKER, SPEAKER),
+        (CORE, CORE),
+        (SPONSOR, SPONSOR),
+    ]
+
+
 class Attendee(models.Model):
+    CATEGORY = ATTENDEE_CATEGORY
     reference = models.CharField(max_length=6, null=False, blank=False)
     name = models.CharField(max_length=200)
     email = models.EmailField()
     twitter = models.CharField(max_length=100, null=True, blank=True)
+    visible = models.BooleanField(default=False)
+    category = models.CharField(max_length=10, choices=CATEGORY.choices, default=CATEGORY.REGULAR)
+
+    objects = AttendeeQuerySet.as_manager()
 
     def __str__(self):
         return self.name

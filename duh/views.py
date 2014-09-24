@@ -17,4 +17,4 @@ def travel(request):
     return render(request, 'travel.html', {})
 
 def attendees(request):
-    return render(request, 'attendees.html', {'attendees': Attendee.objects.all().order_by('?') })
+    return render(request, 'attendees.html', {'attendees': Attendee.objects.visible().order_by('?') })
