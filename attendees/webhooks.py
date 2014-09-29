@@ -90,6 +90,11 @@ def ticket(request):
         category = Attendee.CATEGORY.guess(raw_data['release'])
         attendee = Attendee(reference=reference, category=category)  # will be saved by update_with_data
 
+    if not attendee.email:
+        # Not sure why but tito sends webhooks for incomplete tickets (ie no email).
+        # There isn't much we can do with that data so we skip it.
+        return HttpResponse('Skipped')  # TODO: is there a more appropriate response here?
+
     if raw_data['state_name'] == 'void':  # ticket canceled
         attendee.delete()
         return HttpResponse('Attendee deleted.')
