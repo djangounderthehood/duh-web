@@ -78,7 +78,9 @@ class Command(BaseCommand):
 
     def handle(self, tito_csv_url, **options):
         encoding = options.get('encoding', 'utf-16')  # It seems tito uses utf-16 by default
+        self.stdout.write("Fetching the CSV file...")
         response = io.TextIOWrapper(urlopen(tito_csv_url), encoding=encoding, newline='')
+        self.stdout.write("CSV fetched.")
         data = csv.reader(response)
         next(data)  # skip header row
 
