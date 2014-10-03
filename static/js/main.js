@@ -4,6 +4,12 @@ function easter() {
     for (i=0; i<speakers.length; i++) {
         speakers[i].src = borg.src;
     }
+
+    var attendees = document.getElementsByClassName('attendee');
+    borg = document.querySelector("img[alt='Jannis Leidel']");
+    for (i=0; i<attendees.length; i++) {
+        attendees[i].src = borg.src;
+    }
 }
 if (window.addEventListener) {
   var state = 0, keyseq = [38,38,40,40,37,39,37,39,66,65];
