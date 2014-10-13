@@ -53,7 +53,11 @@ class Sponsor(models.Model):
         """
         links = []
         def linkify(matchobj, links=links):
-            link = format_html('<a href="{0}" target="_blank">{1}</a>', self.url, matchobj.group(1))
+            if '|' in matchobj.group(1):
+                url = matchobj.group(1).split('|')
+                link = format_html('<a href="{0}" target="_blank">{1}</a>', url[0], url[1])
+            else:
+                link = format_html('<a href="{0}" target="_blank">{1}</a>', self.url, matchobj.group(1))
             links.append(link)
             return '{%d}' % (len(links) - 1)
 
