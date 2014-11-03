@@ -28,7 +28,7 @@ class SponsorQueryset(models.QuerySet):
         return self._by_level(SPONSOR_LEVELS.PARTNER)
 
     def _by_level(self, level):
-        return self.filter(level=level).order_by('?')
+        return self.filter(level=level, is_live=True).order_by('?')
 
 
 class Sponsor(models.Model):
@@ -40,6 +40,7 @@ class Sponsor(models.Model):
     logo = models.ImageField(blank=True)
     url = models.URLField(blank=True)
     created_on = models.DateTimeField(default=timezone.now, editable=False)
+    is_live = models.BooleanField(default=True)
 
     objects = SponsorQueryset.as_manager()
 
