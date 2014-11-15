@@ -12,5 +12,6 @@ urlpatterns = patterns('',
     url(r'^travel/$', views.travel, name='travel'),
     url(r'^attendees/$', views.attendees, name='attendees'),
     url(r'^_webhooks/tito/$', webhooks.ticket, name='webhook-tito'),
+    url(r'^talks/$', views.talks, name='talks'),
     url(r'^admin/', include(admin.site.urls)),
 )

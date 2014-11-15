@@ -186,6 +186,22 @@ h4 {
   font-size: 16px;
   line-height: 160%;
 }
+#talks .row {
+  margin-bottom: 30px;
+}
+#talks .row .speaker {
+  max-width: 100px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 50px;
+}
+#talks .row h3 {
+  margin: 10px 0;
+}
+#talks .row h4 {
+  margin: 0;
+}
 footer .hr {
   margin: 50px 0 50px 0;
 }

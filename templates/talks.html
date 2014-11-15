@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<section id="coc" class="row">
+    <div class="col-md-12">
+        <h2>
+            <img src="{% static 'img/icons/speakers.png' %}" alt="Talks" />
+            Talks at Django: Under The Hood 2014
+        </h2>
+    </div>
+    <div class="cls"></div>
+
+    <div id="talks">
+        <div class="row">
+            <div class="col-md-12">
+                Videos from all the talks will be available soon. Below you can find the slides.
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'img/speakers/andrew.jpg' %}" class="speaker" alt="Andrew Godwin" />
+                <h3>Andrew Godwin</h3>
+                <h4>Migrations Under The Hood</h4>
+                <script async class="speakerdeck-embed" data-id="f85a98204e1f01327dcc46daf8584bb8" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'img/speakers/armin.jpg' %}" class="speaker" alt="Armin Ronacher" />
+                <h3>Armin Ronacher</h3>
+                <h4>Let's Talk About Templates</h4>
+                <script async class="speakerdeck-embed" data-id="352fc9404edd0132348e6661b83ad9a0" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'img/speakers/jannis.jpg' %}" class="speaker" alt="Jannis Leidel" />
+                <h3>Jannis Leidel</h3>
+                <h4>Django internationalisation</h4>
+                <iframe src="//www.slideshare.net/slideshow/embed_code/41562113" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'img/speakers/tom.jpg' %}" class="speaker" alt="Tom Christie" />
+                <h3>Tom Christie</h3>
+                <h4>REST framework: Under The Hood</h4>
+                <script async class="speakerdeck-embed" data-id="16c5b6704edd01320da372c75fc688f9" data-ratio="1.2994923857868" src="//speakerdeck.com/assets/embed.js"></script>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'img/speakers/daniel.jpg' %}" class="speaker" alt="Daniel Pyrathon" />
+                <h3>Daniel Pyrathon</h3>
+                <h4>The Meta API</h4>
+                <script async class="speakerdeck-embed" data-id="808675604ee001320da372c75fc688f9" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'img/speakers/anssi.jpg' %}" class="speaker" alt="Anssi Kääriäinen" />
+                <h3>Anssi Kääriäinen</h3>
+                <h4>QuerySet.filter() demystified</h4>
+                <script async class="speakerdeck-embed" data-id="7e3275104ef301320da372c75fc688f9" data-ratio="1.29456384323641" src="//speakerdeck.com/assets/embed.js"></script>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

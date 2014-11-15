@@ -18,3 +18,6 @@ def travel(request):
 
 def attendees(request):
     return render(request, 'attendees.html', {'attendees': Attendee.objects.visible().order_by('?') })
+
+def talks(request):
+    return render(request, 'talks.html', {})
