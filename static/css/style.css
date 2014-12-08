@@ -202,6 +202,9 @@ h4 {
 #talks .row h4 {
   margin: 0;
 }
+#talks .row .col-md-7 {
+  min-height: 500px;
+}
 footer .hr {
   margin: 50px 0 50px 0;
 }
