@@ -1,39 +1,51 @@
 @pink: white;
 @blue: #3A5B9E;
-@proxima: 'proxima-nova';
-@sketch: 'Cabin Sketch';
+@yellow: #f9bf3b;
+@gray: #393939;
+@body_font: 'Lato';
+@header_font: 'Amaranth';
 
 body {
-    background: url(../img/background.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
+    background: white;
 
-    color: white;
+    color: @gray;
     line-height: 1.6em;
-    font-family: @proxima;
+    font-family: @body_font;
     font-size: 20px;
 
     margin-bottom: 60px;
 }
 
 a, a:hover {
-    color: @pink;
+    color: @yellow;
     text-decoration: underline;
 }
 a:hover {
     text-decoration: none !important;
 }
 
-.container {
-    margin-top: 30px;
-}
-
 section {
     margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.container {
+    margin-top: 10px;
+}
+
+header {
+    text-align: center;
+    float: left;
+
+    img {
+        max-width: 100%;
+    }
 }
 
 nav {
+    position: absolute;
+    width: 1070px;
+
     ul {
         list-style-type: none;
         float: right;
@@ -56,18 +68,14 @@ nav {
             }
         }
     }
-    .logo {
-        max-width: 80px;
-        float: left;
-    }
 }
 
 #about {
-    .logo {
-        text-align: center;
-    }
+    float: left; 
+    margin-top: -30px;
+
     h1 {
-        font-family: @sketch, cursive;
+        font-family: @header_font, cursive;
         font-size: 50px;
         margin-bottom: 0.5em;
         margin-top: 0.5em;
@@ -75,13 +83,20 @@ nav {
     }
     p {
         font-size: 20px;
-        font-family: @proxima;
+        font-family: @body_font;
+    }
+    .dates {
+        padding-left: 30px;
+        h2 {
+            margin-top: 34px;
+            margin-bottom: 26px;
+        }
     }
 }
 
-h2, h3, h4 {
+h1, h2, h3, h4 {
     vertical-align: bottom;
-    font-family: @sketch;
+    font-family: @header_font;
     font-size: 40px;
     margin-bottom: 20px;
 
@@ -89,13 +104,15 @@ h2, h3, h4 {
         margin-right: 15px;
     }
 }
-
+h1 {
+    font-size: 50px;
+}
 h3 {
     font-size: 30px;
     margin: 40px 0 15px 0;
 }
 h4 {
-    font-size: 20px;
+    font-size: 26px;
     margin: 30px 0 10px 0;
 }
 
@@ -153,19 +170,19 @@ h4 {
 
 #tickets {
     form {
-        width: 50%;
+        width: 55%;
         margin: 30px auto;
         input[type="email"] {
             width: 70%;
             font-size: 20px;
-            font-family: @proxima;
+            font-family: @body_font;
             padding: 6px 15px;
             height: auto;
         }
         input[type="submit"] {
-            background: #1c2c4c;
+            background: @blue;
             color: white;
-            font-family: @proxima;
+            font-family: @body_font;
             text-transform: uppercase;
             border: 0px;
             font-size: 18px;
@@ -192,16 +209,6 @@ h4 {
     }
 }
 
-.white-background {
-    background: white;
-    color: @blue;
-    padding-bottom: 30px;
-
-    a, a:hover {
-        color: @blue;
-    }
-}
-
 #sponsors {
     .row {
         margin: 50px 0;
@@ -223,6 +230,9 @@ h4 {
             font-size: 16px;
             line-height: 160%;
         }
+    }
+    .description {
+        margin-top: 50px;
     }
 
 }
@@ -252,9 +262,8 @@ h4 {
 }
 
 footer {
-
-    .hr {
-        margin: 50px 0 50px 0;
+    h2 {
+        margin-bottom: 50px;
     }
     .twitter {
         img {
@@ -266,18 +275,21 @@ footer {
     }
     ul {
         list-style-type: none;
+        padding: 0 0 0 15px;
     }
 
     .credits {
-        font-size: 14px;
+        font-size: 18px;
         text-align: center;
         margin-top: 30px;
     }
 }
 
 #coc {
+    float: left; 
+    margin-top: -30px;
     h3 {
-        font-family: @sketch;
+        font-family: @header_font;
         font-size: 32px;
         margin-top: 30px;
     }

@@ -1,15 +1,12 @@
 {% load staticfiles %}
 
-<div class="row">
-    <div class="col-md-4 logo">
-        <a href="/"><img src="{% static 'img/logo.png' %}" alt="Django Under The Hood" /></a>
-    </div>
-    <div class="col-md-8">
+
+<div class="row" id="about">
+    <div class="col-md-7">
         {% block text %}
         <h1>Django: Under The Hood</h1>
         <p>
-            <em>Django: Under the Hood</em> is an exciting new Django conference for
-            experienced Django developers. Come and learn about the internals of
+            Django: Under the Hood is back for its second edition! Join us for this exciting Django conference for experienced Django developers. Come and learn about the internals of
             Django, and help to shape its future.
         </p>
         <p>
@@ -17,5 +14,12 @@
             All attendees must follow the <a href="{% url 'coc' %}">Code of Conduct</a>.
         </p>
         {% endblock %}
+    </div>
+
+    <div class="col-md-5 dates">
+        <h2>When & where?</h2>
+        <p>
+            It's going to start at 1pm on the 5th of November (Thursday) and end very late on the 7th of November. The conference takes place in Amsterdam, the Netherlands at the Pakhuis de Zwijger.
+        </p>
     </div>
 </div>

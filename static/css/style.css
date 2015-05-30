@@ -1,27 +1,36 @@
 body {
-  background: url(../img/background.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center center;
-  color: white;
+  background: white;
+  color: #393939;
   line-height: 1.6em;
-  font-family: 'proxima-nova';
+  font-family: 'Lato';
   font-size: 20px;
   margin-bottom: 60px;
 }
 a,
 a:hover {
-  color: #ffffff;
+  color: #f9bf3b;
   text-decoration: underline;
 }
 a:hover {
   text-decoration: none !important;
 }
-.container {
-  margin-top: 30px;
-}
 section {
   margin-top: 60px;
+  margin-bottom: 40px;
+}
+.container {
+  margin-top: 10px;
+}
+header {
+  text-align: center;
+  float: left;
+}
+header img {
+  max-width: 100%;
+}
+nav {
+  position: absolute;
+  width: 1070px;
 }
 nav ul {
   list-style-type: none;
@@ -40,15 +49,12 @@ nav ul li.highlighted a {
   color: #3a5b9e;
   padding: 7px 10px 5px 10px;
 }
-nav .logo {
-  max-width: 80px;
+#about {
   float: left;
-}
-#about .logo {
-  text-align: center;
+  margin-top: -30px;
 }
 #about h1 {
-  font-family: 'Cabin Sketch', cursive;
+  font-family: 'Amaranth', cursive;
   font-size: 50px;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
@@ -56,27 +62,39 @@ nav .logo {
 }
 #about p {
   font-size: 20px;
-  font-family: 'proxima-nova';
+  font-family: 'Lato';
 }
+#about .dates {
+  padding-left: 30px;
+}
+#about .dates h2 {
+  margin-top: 34px;
+  margin-bottom: 26px;
+}
+h1,
 h2,
 h3,
 h4 {
   vertical-align: bottom;
-  font-family: 'Cabin Sketch';
+  font-family: 'Amaranth';
   font-size: 40px;
   margin-bottom: 20px;
 }
+h1 img,
 h2 img,
 h3 img,
 h4 img {
   margin-right: 15px;
+}
+h1 {
+  font-size: 50px;
 }
 h3 {
   font-size: 30px;
   margin: 40px 0 15px 0;
 }
 h4 {
-  font-size: 20px;
+  font-size: 26px;
   margin: 30px 0 10px 0;
 }
 #speakers img.speaker {
@@ -123,20 +141,20 @@ h4 {
   background: rgba(255, 255, 255, 0.3);
 }
 #tickets form {
-  width: 50%;
+  width: 55%;
   margin: 30px auto;
 }
 #tickets form input[type="email"] {
   width: 70%;
   font-size: 20px;
-  font-family: 'proxima-nova';
+  font-family: 'Lato';
   padding: 6px 15px;
   height: auto;
 }
 #tickets form input[type="submit"] {
-  background: #1c2c4c;
+  background: #3a5b9e;
   color: white;
-  font-family: 'proxima-nova';
+  font-family: 'Lato';
   text-transform: uppercase;
   border: 0px;
   font-size: 18px;
@@ -160,15 +178,6 @@ h4 {
 #tickets .small {
   font-size: 14px;
 }
-.white-background {
-  background: white;
-  color: #3a5b9e;
-  padding-bottom: 30px;
-}
-.white-background a,
-.white-background a:hover {
-  color: #3a5b9e;
-}
 #sponsors .row {
   margin: 50px 0;
 }
@@ -185,6 +194,9 @@ h4 {
 #sponsors .row .col-md-7 {
   font-size: 16px;
   line-height: 160%;
+}
+#sponsors .description {
+  margin-top: 50px;
 }
 #talks .row {
   margin-bottom: 30px;
@@ -205,8 +217,8 @@ h4 {
 #talks .row .col-md-7 {
   min-height: 500px;
 }
-footer .hr {
-  margin: 50px 0 50px 0;
+footer h2 {
+  margin-bottom: 50px;
 }
 footer .twitter img {
   margin-right: 15px;
@@ -216,14 +228,19 @@ footer a {
 }
 footer ul {
   list-style-type: none;
+  padding: 0 0 0 15px;
 }
 footer .credits {
-  font-size: 14px;
+  font-size: 18px;
   text-align: center;
   margin-top: 30px;
 }
+#coc {
+  float: left;
+  margin-top: -30px;
+}
 #coc h3 {
-  font-family: 'Cabin Sketch';
+  font-family: 'Amaranth';
   font-size: 32px;
   margin-top: 30px;
 }

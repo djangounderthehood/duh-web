@@ -1,48 +1,18 @@
 {% load staticfiles sponsors %}
 
-<h2>
-    <img src="{% static 'img/icons/sponsors-negative.png' %}" alt="Supporters" />
-    Supporters
-</h2>
-
-<h3>Gold sponsors</h3>
-{% for sponsor in sponsors.gold %}
 <div class="row">
-    <div class="col-md-5">
-        <a href="{{ sponsor.url }}" target="_blank">
-            <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
-        </a>
-    </div>
-    <div class="col-md-7">
-        {{ sponsor.linkified_description|linebreaks }}
+    <div class="col-md-12">
+        <h2>
+            <img src="{% static 'img/sponsors-header.png' %}" />
+        </h2>
     </div>
 </div>
-{% endfor %}
-
-<h3>Silver sponsors</h3>
-{% for chunk in sponsors.silver|chunkify:3 %}
-    <div class="row">
-    {% for sponsor in chunk %}
-        <div class="col-md-4">
-            <a href="{{ sponsor.url }}" target="_blank">
-                <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
-            </a>
-        </div>
-    {% endfor %}
+<div class="row">
+    <div class="col-md-3"> 
+        <img src="{% static 'img/heart.png' %}" width="250" />
     </div>
-{% endfor %}
 
-<h3>Partners</h3>
-{% for chunk in sponsors.partner|chunkify:3 %}
-    <div class="row">
-    {% for sponsor in chunk %}
-        <div class="col-md-4">
-            <a href="{{ sponsor.url }}" target="_blank">
-                <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
-            </a>
-        </div>
-    {% endfor %}
+    <div class="col-md-9 description">
+        <p>We are seeking companies who wish to support the event financially. Your help will contribute to making the event as affordable as possible for everyone, as well as letting us bring many of the Django team members to the event to share knowledge and improve the Django development process. If you are interested in helping, please <a href="mailto:hello@djangounderthehood.com">get in touch</a>.</p>
     </div>
-{% endfor %}
-
-<p>We are seeking companies who wish to support the event financially. We hope to bring as many of the Django core team to the event as possible to share knowledge and improve the development process. If you are interested in helping, please <a href="mailto:hello@djangounderthehood.com">get in touch</a>.</p>
+</div>

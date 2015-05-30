@@ -3,12 +3,12 @@
 <html>
     <head>
         <title>{% block title %}Django: Under the Hood{% endblock %}</title>
-        <meta name="description" content="Django: Under the Hood is an exciting new conference for experienced Django developers. Come and learn about the internals of Django, and help to shape its future.">
+        <meta name="description" content="Django: Under the Hood is an exciting conference for experienced Django developers. Come and learn about the internals of Django, and help to shape its future.">
         <meta name="keywords" content="programming, python, django, conference, under the hood">
 
         <meta property="og:title" content="Django: Under the Hood" />
         <meta property="og:type" content="website" />
-        <meta property="og:description" content="Django: Under the Hood is an exciting new conference for experienced Django developers. Come and learn about the internals of Django, and help to shape its future." />
+        <meta property="og:description" content="Django: Under the Hood is an exciting conference for experienced Django developers. Come and learn about the internals of Django, and help to shape its future." />
         <meta property="og:url" content="http://www.djangounderthehood.com/" />
         <meta property="og:image" content="http://www.djangounderthehood.com/static/img/avatar.png" />
 
@@ -17,8 +17,8 @@
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-        <link href='http://fonts.googleapis.com/css?family=Cabin+Sketch' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic|Amaranth:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen">
     </head>
     <body>
@@ -28,6 +28,10 @@
                 <div class="cls"></div>
             </nav>
             <main>
+                <header>
+                    <img src="{% static 'img/header.png' %}" />
+                </header>
+
                 {% if messages %}
                 <ul class="messages">
                     {% for message in messages %}
