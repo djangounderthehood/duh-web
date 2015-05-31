@@ -15,11 +15,14 @@ a:hover {
   text-decoration: none !important;
 }
 section {
-  margin-top: 60px;
+  margin-top: 30px;
   margin-bottom: 40px;
 }
 .container {
   margin-top: 10px;
+}
+main {
+  position: relative;
 }
 header {
   text-align: center;
@@ -30,16 +33,26 @@ header img {
 }
 nav {
   position: absolute;
-  width: 1070px;
+  right: 0;
+}
+@media screen and (max-width: 1000px) {
+  nav {
+    position: relative;
+    float: right;
+  }
 }
 nav ul {
   list-style-type: none;
   float: right;
   margin-top: 20px;
+  padding-left: 0;
 }
 nav ul li {
   float: left;
   margin-left: 40px;
+}
+nav ul li:first-child {
+  margin-left: 0;
 }
 nav ul li a {
   text-decoration: none !important;
@@ -107,7 +120,7 @@ h4 {
   font-weight: bold;
   font-size: 40px;
 }
-#speakers .row {
+#speakers .speaker {
   margin-bottom: 30px;
 }
 #attendees {
@@ -141,11 +154,10 @@ h4 {
   background: rgba(255, 255, 255, 0.3);
 }
 #tickets form {
-  width: 55%;
   margin: 30px auto;
 }
 #tickets form input[type="email"] {
-  width: 70%;
+  width: 65%;
   font-size: 20px;
   font-family: 'Lato';
   padding: 6px 15px;
@@ -178,22 +190,22 @@ h4 {
 #tickets .small {
   font-size: 14px;
 }
+@media screen and (max-width: 768px) {
+  #tickets form input[type="email"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
 #sponsors .row {
-  margin: 50px 0;
+  margin: 30px 0;
 }
-#sponsors .row .col-md-4 {
+#sponsors .heart .wrapper {
   text-align: center;
-  line-height: 70px;
 }
-#sponsors .row .col-md-4 img {
-  max-width: 90%;
-}
-#sponsors .row .col-md-5 img {
-  max-width: 90%;
-}
-#sponsors .row .col-md-7 {
-  font-size: 16px;
-  line-height: 160%;
+#sponsors .heart img {
+  width: 100%;
+  max-width: 250px;
 }
 #sponsors .description {
   margin-top: 50px;

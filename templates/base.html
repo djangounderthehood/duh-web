@@ -23,13 +23,14 @@
     </head>
     <body>
         <div class="container">
-            <nav class="cls">
-                {% include '_nav.html' %}
-                <div class="cls"></div>
-            </nav>
             <main>
+                <nav>
+                    {% include '_nav.html' %}
+                </nav>
                 <header>
-                    <img src="{% static 'img/header.png' %}" />
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'img/header.png' %}" />
+                    </a>
                 </header>
 
                 {% if messages %}
