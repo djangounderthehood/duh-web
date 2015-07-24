@@ -7,7 +7,49 @@
         </h2>
     </div>
 </div>
+
+{% if sponsors.gold.count > 0 %}<h3>Gold sponsors</h3>{% endif %}
+{% for sponsor in sponsors.gold %}
 <div class="row">
+    <div class="col-md-5">
+        <a href="{{ sponsor.url }}" target="_blank">
+            <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
+        </a>
+    </div>
+    <div class="col-md-7">
+        {{ sponsor.linkified_description|linebreaks }}
+    </div>
+</div>
+{% endfor %}
+
+{% if sponsors.silver.count > 0 %}<h3>Silver sponsors</h3>{% endif %}
+{% for chunk in sponsors.silver|chunkify:3 %}
+    <div class="row">
+    {% for sponsor in chunk %}
+        <div class="col-md-4">
+            <a href="{{ sponsor.url }}" target="_blank">
+                <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+{% endfor %}
+
+{% if sponsors.partner.count > 0 %}<h3>Partners</h3>{% endif %}
+{% for chunk in sponsors.partner|chunkify:3 %}
+    <div class="row">
+    {% for sponsor in chunk %}
+        <div class="col-md-4">
+            <a href="{{ sponsor.url }}" target="_blank">
+                <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+{% endfor %}
+
+<div class="row">
+    <h3>Support us!</h3>
     <div class="col-md-3 heart"> 
         <div class="wrapper">
             <img src="{% static 'img/heart.png' %}" />
