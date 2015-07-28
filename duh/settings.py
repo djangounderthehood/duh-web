@@ -33,6 +33,8 @@ DATABASES['default']['CONN_MAX_AGE'] = None
 # Application definition
 
 INSTALLED_APPS = (
+    'flat',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
