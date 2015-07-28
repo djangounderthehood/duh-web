@@ -123,8 +123,8 @@ else:
     'opbeat.contrib.django',
     )
     OPBEAT = {
-        'ORGANIZATION_ID': '0d084279d6844a2a82ec28d2092d309a',
-        'APP_ID': '050a6af896',
+        'ORGANIZATION_ID': '8ce60e8b722d49ef8b1a67df13377f13',
+        'APP_ID': 'f9af431c29',
         'SECRET_TOKEN': os.getenv('OPBEAT_SECRET_TOKEN'),
     }
     MIDDLEWARE_CLASSES = (
