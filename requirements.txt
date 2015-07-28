@@ -6,3 +6,4 @@ git+git://github.com/AliLozano/django-storages-py3.git@py3
 Pillow==2.5.3
 django-gravatar2==1.1.4
 django-flat-theme==0.9.5
+opbeat==3.0.2

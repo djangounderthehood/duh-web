@@ -119,6 +119,18 @@ else:
     EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 
+    INSTALLED_APPS += (
+    'opbeat.contrib.django',
+    )
+    OPBEAT = {
+        'ORGANIZATION_ID': '0d084279d6844a2a82ec28d2092d309a',
+        'APP_ID': '050a6af896',
+        'SECRET_TOKEN': os.getenv('OPBEAT_SECRET_TOKEN'),
+    }
+    MIDDLEWARE_CLASSES = (
+        'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
+    ) + MIDDLEWARE_CLASSES
+
 TITO_AUTH_TOKEN = os.getenv('TITO_AUTH_TOKEN', None)
 ADMINS = (('DUtH Team', 'technical@djangounderthehood.com'),)
 SERVER_EMAIL = 'hello@djangounderthehood.com'
