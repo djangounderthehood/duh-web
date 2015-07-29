@@ -220,12 +220,15 @@ h4 {
 #sponsors .sponsor .toolbox {
   display: none;
   position: absolute;
-  top: 5px;
+  top: 0;
   right: 5px;
   z-index: 9000;
 }
 #sponsors .sponsor:hover .toolbox {
   display: inline;
+}
+#sponsors .sponsor .logo {
+  max-width: 100%;
 }
 #talks .row {
   margin-bottom: 30px;
