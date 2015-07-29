@@ -13,7 +13,7 @@
 <div class="row {% if not sponsor.is_live %}preview{% endif %}">
     <div class="col-md-5">
         <a href="{{ sponsor.url }}" target="_blank">
-            <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
+            {{ sponsor.logo_html }}
         </a>
     </div>
     <div class="col-md-7">
@@ -28,7 +28,7 @@
     {% for sponsor in chunk %}
         <div class="col-md-4 {% if not sponsor.is_live %}preview{% endif %}">
             <a href="{{ sponsor.url }}" target="_blank">
-                <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
+                {{ sponsor.logo_html }}
             </a>
         </div>
     {% endfor %}
@@ -41,7 +41,7 @@
     {% for sponsor in chunk %}
         <div class="col-md-4 {% if not sponsor.is_live %}preview{% endif %}">
             <a href="{{ sponsor.url }}" target="_blank">
-                <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
+                {{ sponsor.logo_html }}
             </a>
         </div>
     {% endfor %}

@@ -67,3 +67,9 @@ class Sponsor(models.Model):
 
         fmt = re.sub(r'\[\[([^\]]+)\]\]', linkify, self.description)
         return format_html(fmt, *links)
+
+    @property
+    def logo_html(self):
+        if self.logo:
+            return format_html('<img src="{0}" alt="{1}" title="{1}"/>', self.logo.url, self.name)
+        return format_html('<span class="nologo">{0}</span>', self.name)
