@@ -5,7 +5,11 @@ from attendees.models import Attendee
 
 
 def home(request):
-    return render(request, 'home.html', {'sponsors': Sponsor.objects})
+    if request.user.is_staff:
+        sponsors = Sponsor.objects.all()
+    else:
+        sponsors = Sponsor.objects.live()
+    return render(request, 'home.html', {'sponsors': sponsors})
 
 def coc(request):
     return render(request, 'coc.html', {})

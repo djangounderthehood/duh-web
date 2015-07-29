@@ -28,7 +28,10 @@ class SponsorQueryset(models.QuerySet):
         return self._by_level(SPONSOR_LEVELS.PARTNER)
 
     def _by_level(self, level):
-        return self.filter(level=level, is_live=True).order_by('?')
+        return self.filter(level=level).order_by('?')
+
+    def live(self):
+        return self.filter(is_live=True)
 
 
 class Sponsor(models.Model):

@@ -10,7 +10,7 @@
 
 {% if sponsors.gold.count > 0 %}<h3>Gold sponsors</h3>{% endif %}
 {% for sponsor in sponsors.gold %}
-<div class="row">
+<div class="row {% if not sponsor.is_live %}preview{% endif %}">
     <div class="col-md-5">
         <a href="{{ sponsor.url }}" target="_blank">
             <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
@@ -26,7 +26,7 @@
 {% for chunk in sponsors.silver|chunkify:3 %}
     <div class="row">
     {% for sponsor in chunk %}
-        <div class="col-md-4">
+        <div class="col-md-4 {% if not sponsor.is_live %}preview{% endif %}">
             <a href="{{ sponsor.url }}" target="_blank">
                 <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
             </a>
@@ -39,7 +39,7 @@
 {% for chunk in sponsors.partner|chunkify:3 %}
     <div class="row">
     {% for sponsor in chunk %}
-        <div class="col-md-4">
+        <div class="col-md-4 {% if not sponsor.is_live %}preview{% endif %}">
             <a href="{{ sponsor.url }}" target="_blank">
                 <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}"/>
             </a>

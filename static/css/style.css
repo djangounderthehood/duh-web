@@ -210,6 +210,10 @@ h4 {
 #sponsors .description {
   margin-top: 50px;
 }
+#sponsors .preview {
+  outline: 1px dashed #ccc;
+  background-image: url(../img/preview-background.png);
+}
 #talks .row {
   margin-bottom: 30px;
 }
