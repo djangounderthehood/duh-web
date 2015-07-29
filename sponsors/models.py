@@ -54,6 +54,8 @@ class Sponsor(models.Model):
     def linkified_description(self):
         """
         Replaces [[foo]] with <a href="{{ self.url }}">foo</a>.
+        Also supports the [[http://example.com|foo]] syntax to generate
+        <a href="http://example.com">foo</a>
         """
         links = []
         def linkify(matchobj, links=links):
