@@ -249,6 +249,21 @@ h4 {
         outline: 1px dashed #ccc;
         background-image: url(../img/preview-background.png);
     }
+    .sponsor {
+        position: relative;
+        .toolbox {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 5px;
+            z-index: 9000;
+        }
+        &:hover {
+            .toolbox {
+                display: inline;
+            }
+        }
+    }
 
 }
 

@@ -214,6 +214,19 @@ h4 {
   outline: 1px dashed #ccc;
   background-image: url(../img/preview-background.png);
 }
+#sponsors .sponsor {
+  position: relative;
+}
+#sponsors .sponsor .toolbox {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 9000;
+}
+#sponsors .sponsor:hover .toolbox {
+  display: inline;
+}
 #talks .row {
   margin-bottom: 30px;
 }
