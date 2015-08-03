@@ -204,6 +204,9 @@ h4 {
   font-size: 16px;
   line-height: 160%;
 }
+#sponsors .row .col-md-5 {
+  text-align: center;
+}
 #sponsors .heart .wrapper {
   text-align: center;
 }
@@ -220,7 +223,6 @@ h4 {
 }
 #sponsors .sponsor {
   position: relative;
-  text-align: center;
 }
 #sponsors .sponsor .toolbox {
   display: none;
