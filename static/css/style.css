@@ -237,6 +237,9 @@ h4 {
 #sponsors .sponsor .logo {
   max-width: 100%;
 }
+#sponsors .sponsor.silver {
+  text-align: center;
+}
 #talks .row {
   margin-bottom: 30px;
 }
