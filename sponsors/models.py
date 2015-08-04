@@ -44,6 +44,7 @@ class Sponsor(models.Model):
     url = models.URLField(blank=True)
     created_on = models.DateTimeField(default=timezone.now, editable=False)
     is_live = models.BooleanField(default=False)
+    paid = models.BooleanField(default=False)
 
     objects = SponsorQueryset.as_manager()
 

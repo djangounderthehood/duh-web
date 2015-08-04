@@ -16,8 +16,8 @@ undo_live.short_description = "Hide selected sponsor(s) on homepage"
 
 
 class SponsorAdmin(admin.ModelAdmin):
-    list_display = ('level', 'name', 'is_live')
-    list_filter = ('level', 'is_live')
+    list_display = ('level', 'name', 'is_live', 'paid')
+    list_filter = ('level', 'is_live', 'paid')
 
     actions = [make_live, undo_live]
 
