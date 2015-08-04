@@ -43,7 +43,7 @@ class Sponsor(models.Model):
     logo = models.ImageField(blank=True, upload_to='sponsors/%Y/')
     url = models.URLField(blank=True)
     created_on = models.DateTimeField(default=timezone.now, editable=False)
-    is_live = models.BooleanField(default=True)
+    is_live = models.BooleanField(default=False)
 
     objects = SponsorQueryset.as_manager()
 
