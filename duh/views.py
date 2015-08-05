@@ -25,3 +25,6 @@ def attendees(request):
 
 def talks(request):
     return render(request, 'talks.html', {})
+
+def scholarship(request):
+    return render(request, 'scholarship.html', {})

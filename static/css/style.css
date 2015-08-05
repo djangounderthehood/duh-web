@@ -289,3 +289,14 @@ footer .credits {
 .cls {
   clear: both;
 }
+.btn,
+.btn:hover {
+  background: #3a5b9e;
+  color: white;
+  font-family: 'Lato';
+  border: 0px;
+  font-size: 24px;
+  height: auto;
+  padding: 9px 20px 8px;
+  text-decoration: none;
+}
