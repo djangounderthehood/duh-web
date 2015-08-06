@@ -28,3 +28,4 @@ def talks(request):
 
 def scholarship(request):
     return render(request, 'scholarship.html', {})
+
