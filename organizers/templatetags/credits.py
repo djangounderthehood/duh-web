@@ -14,6 +14,7 @@ def organizers():
         'Marc Tamlyn',
         'Ola Sendecka',
         'Tomek Paczkowski',
+        'Kasia Kaminska',
     ]
     shuffle(authors)
     return '%s, and %s' % (
