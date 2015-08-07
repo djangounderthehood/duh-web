@@ -240,6 +240,10 @@ h4 {
 #sponsors .sponsor.silver {
   text-align: center;
 }
+#sponsors .sponsor.gold {
+  display: flex;
+  align-items: center;
+}
 #talks .row {
   margin-bottom: 30px;
 }
