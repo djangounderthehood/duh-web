@@ -44,3 +44,15 @@ $(document).ready(function() {
         }
     });
 });
+
+// countdown timers
+$(function() {
+    $('.countdown').each(function() {
+        var countdownWrapper = $(this);
+        var finalDate = countdownWrapper.data('target');
+        countdownWrapper.countdown(finalDate, function(event) {
+            var countDownText = event.strftime('%-D days %-H h %M min %S sec');
+            countdownWrapper.text(countDownText);
+        });
+    });
+});

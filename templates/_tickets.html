@@ -8,6 +8,15 @@
 
 		<p>The tickets for this event are not on sale yet, but if you would like to get one, you can register your interest below. Last year we sold out in 4 minutes. This year we've got three times as many tickets, and you will have an opportunity to buy one for just 150€.  </p>
 
+        <p>
+            Tickets will go on sale in:
+            <strong>
+                <span class="countdown" data-target="{{ ticket_sale_start|date:'Y/m/d H:i' }}" title="{{ ticket_sale_start.isoformat }}">
+                    {{ ticket_sale_start|timeuntil }}
+                </span>
+            </strong>
+        </p>
+
 		<p>If you want to have tickets for your team reserved, please scroll down to learn about the sponsorship opportunities.</p>
 
 		<h4>Get notified when tickets go on sale:</h4>
