@@ -48,11 +48,18 @@ $(document).ready(function() {
 // countdown timers
 $(function() {
     $('.countdown').each(function() {
-        var countdownWrapper = $(this);
-        var finalDate = countdownWrapper.data('target');
-        countdownWrapper.countdown(finalDate, function(event) {
+        var countdownContainer = $('.countdown-container', this);
+        var countdownPast = $('.countdown-past', this);
+        var countdownFuture = $('.countdown-future', this);
+        // XXX the countdown lib we're using doesn't handle timezones
+        var finalDate = moment($(this).data('target')).toDate();
+
+        countdownContainer.countdown(finalDate, function(event) {
             var countDownText = event.strftime('%-D days %-H h %M min %S sec');
-            countdownWrapper.text(countDownText);
+            countdownContainer.text(countDownText);
+        }).on('finish.countdown', function() {
+            countdownPast.addClass('hidden');
+            countdownFuture.removeClass('hidden');
         });
     });
 });

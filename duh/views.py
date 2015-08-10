@@ -13,7 +13,11 @@ def home(request):
         sponsors = Sponsor.objects.all()
     else:
         sponsors = Sponsor.objects.live()
-    return render(request, 'home.html', {'sponsors': sponsors, 'ticket_sale_start': ticket_sale_start})
+    return render(request, 'home.html', {
+        'sponsors': sponsors,
+        'ticket_sale_start': ticket_sale_start,
+        'now': timezone.now(),
+    })
 
 def coc(request):
     return render(request, 'coc.html', {})
