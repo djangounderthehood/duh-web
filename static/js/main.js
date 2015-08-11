@@ -63,3 +63,9 @@ $(function() {
         });
     });
 });
+
+function emojiMode() {
+    $('[data-emoji-alt]').each(function() {
+        $(this).attr('title', $(this).text()).text($(this).data('emoji-alt')).addClass('emoji-alt');
+    });
+}

@@ -295,3 +295,8 @@ footer .credits {
   display: flex;
   align-items: center;
 }
+.emoji-alt:hover,
+.emoji-alt:focus {
+  outline: 1px dotted #f9bf3b;
+  cursor: help;
+}
