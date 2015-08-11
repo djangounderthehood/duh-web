@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-12">
 		<h2>
-		   <img src="{% static 'img/tickets-header.png' %}" />
+		   <img src="{% static 'img/tickets-header.png' %}" alt="TICKETS" />
 		</h2>
 		<div class="countdown" data-target="{{ ticket_sale_start.isoformat }}">
 		    <div class="countdown-past{% if now >= ticket_sale_start %} hidden{% endif %}">
