@@ -143,16 +143,6 @@ h4 {
 #attendees p {
   font-size: 16px;
 }
-#schedule .timetable {
-  padding: 0 60px 0 15px;
-  margin-bottom: 30px;
-}
-#schedule .timetable .row {
-  padding: 5px 0;
-}
-#schedule .timetable .break {
-  background: rgba(255, 255, 255, 0.3);
-}
 #tickets form {
   margin: 30px auto;
 }
