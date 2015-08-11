@@ -1,8 +1,9 @@
 {% load staticfiles %}
 
 <ul>
-	<li><a href="/#speakers">Speakers</a></li>
-	<li><a href="/#sponsors">Sponsors</a></li>
+	<li><a href="{% url 'home' %}#speakers">Speakers</a></li>
+	<li><a href="{% url 'home' %}#sponsors">Sponsors</a></li>
+	<li><a href="{% url 'home' %}#tickets">Tickets</a></li>
 	<li><a href="{% url 'coc' %}">Code of Conduct</a></li>
 	<li><a href="http://blog.djangounderthehood.com">Blog</a></li>
 </ul>
