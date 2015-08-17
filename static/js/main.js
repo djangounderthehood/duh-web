@@ -69,3 +69,10 @@ function emojiMode() {
         $(this).attr('title', $(this).text()).text($(this).data('emoji-alt')).addClass('emoji-alt');
     });
 }
+
+$(function() {
+    var currentDate = new Date();
+    if((currentDate.getMinutes() == 42) && (currentDate.getSeconds() % 10 == 0)) {
+        emojiMode();
+    }
+})
