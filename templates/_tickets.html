@@ -5,42 +5,21 @@
 		<h2>
 		   <img src="{% static 'img/tickets-header.png' %}" alt="TICKETS" />
 		</h2>
-		<div class="countdown" data-target="{{ ticket_sale_start.isoformat }}">
-		    <div class="countdown-past{% if now >= ticket_sale_start %} hidden{% endif %}">
-		        <p>The <span data-emoji-alt="🎫">tickets</span> for this event are not on sale yet, but if you would like to get one, you can register your interest below. Last year we sold out in 4 minutes. This year we've got three times as many <span data-emoji-alt="🎫🎫🎫">tickets</span>, and you will have an opportunity to buy one for just 150€.  </p>
+		<p>The first batch of 100 <span data-emoji-alt="🎫">tickets</span> is now <strong>sold out</strong>.</p>
+		<p>If you didn't manage to buy your <span data-emoji-alt="🎫">ticket</span> yet, there's still hope: we will be releasing a second bacth of <span data-emoji-alt="🎫">tickets</span> for sale soon.</p>
+		<p>Follow us on Twitter (<a href="https://twitter.com/DjangoUnderHood">@DjangoUnderHood</a>) to be notified or sign up to our newsletter:</p>
+		
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <form action="//djangounderthehood.us8.list-manage.com/subscribe/post?u=7e08f3e7ba2446210dc2f72fb&amp;id=73dca2200d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
+                    <input type="email" value="" name="EMAIL" class="required email form-control" placeholder="Your e-mail" id="mce-EMAIL">
 
-                <p>
-                    <span data-emoji-alt="🎫">Tickets</span> will go on sale in:
-                    <strong>
-                        <span class="countdown-container"  title="{{ ticket_sale_start.isoformat }}">
-                            {{ ticket_sale_start|timeuntil }}
-                        </span>
-                    </strong>
-                </p>
-
-		        <p>If you want to have <span data-emoji-alt="🎫">tickets</span> for your team reserved, please scroll down to learn about the <span data-emoji-alt="💞">sponsorship</span> opportunities.</p>
-
-		        <h4>Get notified when <span data-emoji-alt="🎫">tickets</span> go on sale:</h4>
-
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <form action="//djangounderthehood.us8.list-manage.com/subscribe/post?u=7e08f3e7ba2446210dc2f72fb&amp;id=73dca2200d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
-                            <input type="email" value="" name="EMAIL" class="required email form-control" placeholder="Your e-mail" id="mce-EMAIL">
-
-                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_7e08f3e7ba2446210dc2f72fb_ec773db38a" tabindex="-1" value=""></div>
-                            <input type="submit" value="Let me know!" class="form-control" />
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="countdown-future{% if now < ticket_sale_start %} hidden{% endif %}">
-                <p><span data-emoji-alt="🎫">Tickets</span> are now available.</p>
-
-                <p class="centered"><a href="http://tickets.djangounderthehood.com/" class="btn btn-large btn-primary">Get your ticket now!</a></p>
-
-                <p class="small"><b>Refund policy:</b> We can accept <span data-emoji-alt="🎫">ticket</span> cancellations up to two weeks before the event. If you want to cancel after that, we will refund only if we find a new buyer for your <span data-emoji-alt="🎫">ticket</span>. </p>
-
+                    <div style="position: absolute; left: -5000px;"><input type="text" name="b_7e08f3e7ba2446210dc2f72fb_ec773db38a" tabindex="-1" value=""></div>
+                    <input type="submit" value="Let me know!" class="form-control" />
+                </form>
             </div>
         </div>
+
+        <p>If you want to have <span data-emoji-alt="🎫">tickets</span> for your team reserved, please scroll down to learn about our <a href="#support-us"><span data-emoji-alt="💞">sponsorship</span> opportunities</a>.</p>
 	</div>
 </div>
