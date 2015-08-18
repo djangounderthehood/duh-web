@@ -303,3 +303,6 @@ footer .credits {
   outline: 1px dotted #f9bf3b;
   cursor: help;
 }
+.emojimode-toggler {
+  cursor: pointer;
+}
