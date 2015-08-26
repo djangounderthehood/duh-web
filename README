@@ -1,0 +1,22 @@
+Django: Onder de Motorkap
+=========================
+
+This is the project for the http://djangoonderdemotorkap.nl/ website.
+
+
+Deploying the old website
+-------------------------
+
+Say you need to deploy a new commit to the old website 2014.djangounderthehood.com.
+
+Assuming:
+
+* You have push access to the app on Heroku
+* Your heroku git remote for the app is called `heroku-2014`
+
+Here's what you do:
+
+* Do your commit in the branch `oldsites/2014`
+* `git push heroku-2014 oldsites/2014:master`
+* ???
+* Profit.
