@@ -2,14 +2,13 @@
 
 <div class="row">
     <div class="col-md-12">
-		<h2>
-		   <img src="{% static 'img/tickets-header.png' %}" alt="TICKETS" />
-		</h2>
+        <h2>
+           <img src="{% static 'img/tickets-header.png' %}" alt="TICKETS" />
+        </h2>
 
-		<div class="countdown" data-target="{{ ticket_sale_start.isoformat }}">
-		    <div class="countdown-past{% if now >= ticket_sale_start %} hidden{% endif %}">
-		        <p>The <span data-emoji-alt="🎫">tickets</span> for this event are not on sale yet, but if you would like to get one, you can register your interest below. Last year we sold out in 4 minutes. This year we've got three times as many <span data-emoji-alt="🎫🎫🎫">tickets</span>, and you will have an opportunity to buy one for just 150€.  </p>
-
+        <div class="countdown" data-target="{{ ticket_sale_start.isoformat }}">
+            <div class="countdown-past{% if now >= ticket_sale_start %} hidden{% endif %}">
+                <p>The first batch of <span data-emoji-alt="🎫">tickets</span> has been sold out. Second batch is not on sale yet, but if you would like to get a ticket, you can register your interest below. You will have an opportunity to buy one for just 150€.  </p>
                 <p>
                     <span data-emoji-alt="🎫">Tickets</span> will go on sale in:
                     <strong>
@@ -19,9 +18,9 @@
                     </strong>
                 </p>
 
-		        <p>If you want to have <span data-emoji-alt="🎫">tickets</span> for your team reserved, please scroll down to learn about the <span data-emoji-alt="💞">sponsorship</span> opportunities.</p>
+                <p>If you want to have <span data-emoji-alt="🎫">tickets</span> for your team reserved, please scroll down to learn about the <span data-emoji-alt="💞">sponsorship</span> opportunities.</p>
 
-		        <h4>Get notified when <span data-emoji-alt="🎫">tickets</span> go on sale:</h4>
+                <h4>Get notified when <span data-emoji-alt="🎫">tickets</span> go on sale:</h4>
 
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
@@ -43,5 +42,5 @@
 
             </div>
         </div>
-	</div>
+    </div>
 </div>
