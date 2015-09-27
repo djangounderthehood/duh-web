@@ -37,3 +37,5 @@ def talks(request):
 def scholarship(request):
     return render(request, 'scholarship.html', {})
 
+def schedule(request):
+    return render(request, 'schedule.html', {})

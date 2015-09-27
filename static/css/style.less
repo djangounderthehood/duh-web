@@ -84,7 +84,7 @@ nav {
 }
 
 #about {
-    float: left; 
+    float: left;
     margin-top: -30px;
 
     h1 {
@@ -314,7 +314,7 @@ footer {
 }
 
 #coc {
-    float: left; 
+    float: left;
     margin-top: -30px;
     h3 {
         font-family: @header_font;
@@ -329,7 +329,7 @@ footer {
 
 
 .centered-margin {
-    text-align: center; 
+    text-align: center;
     margin: 30px 0;
 }
 
@@ -358,4 +358,85 @@ footer {
 }
 .emojimode-toggler {
     cursor: pointer;
+}
+
+#schedule {
+    .day {
+        margin-top: 30px;
+        border-top: 5px solid @blue;
+        padding: 0;
+
+        .header {
+            border-bottom: 10px solid @blue;
+            padding: 20px 0 5px;
+
+            h3 {
+                margin: 0 0 5px 0;
+            }
+        }
+
+        .sessions {
+            .session {
+                padding: 10px 0;
+                border-bottom: 1px solid @yellow;
+                border-left: 1px solid @yellow;
+                height: 85px;
+
+                .datetime {
+                    width: 30%;
+                    float: left;
+                    height: 100%;
+                    padding-left: 15px;
+                }
+                .session-details {
+                    width: 70%;
+                    height: 100%;
+                    float: left;
+
+                    p {
+                        margin: 0;
+                    }
+
+                    .speaker {
+                        font-size: 16px;
+                    }
+                }
+            }
+            .break {
+                background: @yellow;
+                color: white;
+                border-left: 1px solid white;
+            }
+            .spacer-150min {
+                height: 276px;
+            }
+            .session-90min {
+                height: 128px;
+            }
+            .session-45min {
+                height: 64px;
+            }
+            .session-15min {
+                height: 43px;
+                padding: 5px 0;
+            }
+            .sprint-1 {
+                height: 298px;
+            }
+            .sprint-2 {
+                height: 425px;
+            }
+        }
+    }
+
+    .day:last-child {
+        .session {
+            border-right: 1px solid @yellow;
+        }
+    }
+    .day:first-child {
+        .break {
+            border-left: 0px;
+        }
+    }
 }

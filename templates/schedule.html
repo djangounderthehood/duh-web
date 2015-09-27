@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<section id="schedule" class="row">
+    <div class="col-md-4 day">
+        <div class="header">
+          <h3>Day 1, Thursday</h3>
+          <p>Venue: <a href="https://goo.gl/maps/mPzHznrZ6nk" target="_blank">Pakhuis De Zwijger</a></p>
+        </div>
+        <div class="sessions">
+          <div class="spacer-150min"></div>
+          <div class="session break session-90min">
+            <div class="datetime">12:00</div>
+            <div class="session-details">
+              <p><b>Registration</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session session-15min">
+            <div class="datetime">13:30</div>
+            <div class="session-details">
+              <p><b>Hallo & Welcome!</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session">
+            <div class="datetime">13:45</div>
+            <div class="session-details">
+              <p><b>HTTP in Django</b></p>
+              <p class="speaker">Jacob Kaplan-Moss</p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session">
+            <div class="datetime">14:45</div>
+            <div class="session-details">
+              <p><b>Django Admin</b></p>
+              <p class="speaker">Ola Sitarska</p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session break">
+            <div class="datetime">15:45</div>
+            <div class="session-details">
+              <p><b>Break</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session">
+            <div class="datetime">16:15</div>
+            <div class="session-details">
+              <p><b>Django CMS & ORM</b></p>
+              <p class="speaker">Iacopo Spalletti</p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session break session-15min">
+            <div class="datetime">17:15</div>
+            <div class="session-details">
+              <p><b>End of first day</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4 day">
+        <div class="header">
+          <h3>Day 2, Friday</h3>
+          <p>Venue: <a href="https://goo.gl/maps/mPzHznrZ6nk" target="_blank">Pakhuis De Zwijger</a></p>
+        </div>
+        <div class="sessions">
+          <div class="session break session-45min">
+            <div class="datetime">9:30</div>
+            <div class="session-details">
+              <p><b>Doors open</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session session-15min">
+            <div class="datetime">10:15</div>
+            <div class="session-details">
+              <p><b>Goedemorgen!</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session">
+            <div class="datetime">10:30</div>
+            <div class="session-details">
+              <p><b>Keynote</b></p>
+              <p class="speaker">Russell Keith-Magee</p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session">
+            <div class="datetime">11:00</div>
+            <div class="session-details">
+              <p><b>Expressions</b></p>
+              <p class="speaker">Josh Smeaton</p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session break">
+            <div class="datetime">12:00</div>
+            <div class="session-details">
+              <p><b>Yummy lunch break!</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session">
+            <div class="datetime">13:00</div>
+            <div class="session-details">
+              <p><b>Twisted & Django</b></p>
+              <p class="speaker">Amber Brown</p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session">
+            <div class="datetime">14:00</div>
+            <div class="session-details">
+              <p><b>Static files in Django</b></p>
+              <p class="speaker">James Aylett</p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session break">
+            <div class="datetime">15:00</div>
+            <div class="session-details">
+              <p><b>Coffee break</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session">
+            <div class="datetime">15:30</div>
+            <div class="session-details">
+              <p><b>Django security</b></p>
+              <p class="speaker">Florian Apolloner</p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session">
+            <div class="datetime">16:30</div>
+            <div class="session-details">
+              <p><b>Documentation systems</b></p>
+              <p class="speaker">Eric Holscher</p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session">
+            <div class="datetime">17:30</div>
+            <div class="session-details">
+              <p><b>Intro to sprints</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session break session-15min">
+            <div class="datetime">18:00</div>
+            <div class="session-details">
+              <p><b>End of second day</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4 day">
+        <div class="header">
+          <h3>Day 3, Saturday</h3>
+          <p>Venue: <a href="https://goo.gl/maps/AvtxM88cg4U2">Travel Bird office</a></p>
+        </div>
+        <div class="sessions">
+          <div class="session break session-45min">
+            <div class="datetime">9:30</div>
+            <div class="session-details">
+              <p><b>Doors open</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session sprint-1">
+            <div class="datetime">10:00</div>
+            <div class="session-details">
+              <p><b>Sprinting!</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session break">
+            <div class="datetime">13:00</div>
+            <div class="session-details">
+              <p><b>Yummy lunch break!</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session sprint-2">
+            <div class="datetime">14:00</div>
+            <div class="session-details">
+              <p><b>Sprinting!</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session break session-15min">
+            <div class="datetime">18:00</div>
+            <div class="session-details">
+              <p><b>End of last day</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

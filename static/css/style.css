@@ -306,3 +306,68 @@ footer .credits {
 .emojimode-toggler {
   cursor: pointer;
 }
+#schedule .day {
+  margin-top: 30px;
+  border-top: 5px solid #3a5b9e;
+  padding: 0;
+}
+#schedule .day .header {
+  border-bottom: 10px solid #3a5b9e;
+  padding: 20px 0 5px;
+}
+#schedule .day .header h3 {
+  margin: 0 0 5px 0;
+}
+#schedule .day .sessions .session {
+  padding: 10px 0;
+  border-bottom: 1px solid #f9bf3b;
+  border-left: 1px solid #f9bf3b;
+  height: 85px;
+}
+#schedule .day .sessions .session .datetime {
+  width: 30%;
+  float: left;
+  height: 100%;
+  padding-left: 15px;
+}
+#schedule .day .sessions .session .session-details {
+  width: 70%;
+  height: 100%;
+  float: left;
+}
+#schedule .day .sessions .session .session-details p {
+  margin: 0;
+}
+#schedule .day .sessions .session .session-details .speaker {
+  font-size: 16px;
+}
+#schedule .day .sessions .break {
+  background: #f9bf3b;
+  color: white;
+  border-left: 1px solid white;
+}
+#schedule .day .sessions .spacer-150min {
+  height: 276px;
+}
+#schedule .day .sessions .session-90min {
+  height: 128px;
+}
+#schedule .day .sessions .session-45min {
+  height: 64px;
+}
+#schedule .day .sessions .session-15min {
+  height: 43px;
+  padding: 5px 0;
+}
+#schedule .day .sessions .sprint-1 {
+  height: 298px;
+}
+#schedule .day .sessions .sprint-2 {
+  height: 425px;
+}
+#schedule .day:last-child .session {
+  border-right: 1px solid #f9bf3b;
+}
+#schedule .day:first-child .break {
+  border-left: 0px;
+}

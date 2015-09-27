@@ -12,5 +12,6 @@ urlpatterns = patterns('',
     url(r'^attendees/$', views.attendees, name='attendees'),
     url(r'^talks/$', views.talks, name='talks'),
     url(r'^scholarship/$', views.scholarship, name='scholarship'),
+    url(r'^schedule/$', views.schedule, name='schedule'),
     url(r'^admin/', include(admin.site.urls)),
 )
