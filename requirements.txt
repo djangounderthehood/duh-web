@@ -2,7 +2,7 @@ Django==1.7
 django-toolbelt==0.0.1
 boto==2.32.1
 # We can't use plain django-storages because it's not python3-compatible
-git+git://github.com/AliLozano/django-storages-py3.git@py3
+git+https://github.com/AliLozano/django-storages-py3.git@py3
 Pillow==2.5.3
 django-gravatar2==1.1.4
 django-flat-theme==0.9.5
