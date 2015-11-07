@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <section id="sprints" class="row">
+        <h1>
+            Sprints
+        </h1>
+
+        <h2>For the first time Sprinters</h2>
+
+        <p>
+            Sprints are concentrated effort to make <em>Django</em> project itself and it's
+            ecosystem`
+            better. In other words, it means that we're going to work on Django codebase to make it
+            better. Can you do it? <strong>Yes!</strong> It's not hard and we're here to
+            help you if you get lost. <em>Django</em> has
+            <a href="https://docs.djangoproject.com/en/1.8/internals/contributing/">good writeup on
+                how to contribute</a>, but we've prepared some tips to you get going.
+        </p>
+
+        <h4>Preparations</h4>
+
+        <p>
+            Start by making sure that you have <em>Django</em> code and that you can run test suite
+            with all tests passing. In short, you need to:
+        </p>
+
+        <ol>
+            <li>
+                Fork <a href="https://github.com/django/django#fork-destination-box"> Django on
+                GitHub</a>,
+            </li>
+            <li>
+                Clone your fork locally with
+                <code>git clone git@github.com:YourGitHubName/django.git</code>,
+            </li>
+            <li>
+                Go into tests directory: <code>cd django/tests</code>,
+            </li>
+            <li>
+                If you have <em>Python 3</em>, you can run tests right away with
+                <code>PYTHONPATH=..:$PYTHONPATH python3 ./runtests.py</code>,
+            </li>
+            <li>
+                On <em>Python 2</em> you will need to install some dependencies with
+                <code>pip install -r requirements/py2.txt</code>. You might do that in a separate
+                <a href="https://virtualenv.readthedocs.org/en/latest/">virtualenv</a>. Then
+                run the tests with <code>PYTHONPATH=..:$PYTHONPATH python ./runtests.py</code>
+            </li>
+
+        </ol>
+
+        <p>
+            You should be good to go! Remember, if you have problems with this you can ask sprint
+            organizers or other people for help.
+
+            If you want to know more, <em>Django</em> documentation goes into more details about
+            <a href="https://docs.djangoproject.com/en/1.8/internals/contributing/writing-code/unit-tests/">
+                running unit test</a> and <a
+                href="https://docs.djangoproject.com/en/1.8/internals/contributing/writing-code/working-with-git/">
+            working with GitHub</a>.
+        </p>
+
+        <h4>Doing stuff</h4>
+
+        <p>
+            <em>Django</em> is a big project and there's lot's of things you can do. Check out
+            <a href="https://docs.djangoproject.com/en/1.8/internals/contributing/new-contributors/"
+                    >Advice for new contributors</a> in <em>Django</em> documentation, it lists
+            things do, but in short those are:
+        </p>
+        <ul>
+            <li>
+                <a href="https://docs.djangoproject.com/en/1.8/internals/contributing/triaging-tickets/#how-can-i-help-with-triaging">
+                    reproducing bug reports</a>,
+            </li>
+            <li>
+                <a href="https://docs.djangoproject.com/en/1.8/internals/contributing/writing-code/submitting-patches/#patch-review-checklist">reviewing
+                    patches</a>,
+            </li>
+            <li>
+                <a href="https://docs.djangoproject.com/en/1.8/internals/contributing/writing-code/submitting-patches/">writing
+                    new patches and updating old ones</a>,
+            </li>
+            <li>
+                <a href="https://docs.djangoproject.com/en/1.8/internals/contributing/writing-documentation/">
+                    writing and improving documentation</a>.
+            </li>
+        </ul>
+
+        <p>
+            During the sprints you have opportunity to talk to fellow Django programmers, including
+            members of the core team, so take advantage of it. Talk to people about what's your
+            pain in Django. Pair with someone on a ticket, two pairs of eyes are better than one.
+            Don't be afraid to ask questions and don't give up.
+        </p>
+
+    </section>
+
+{% endblock %}
