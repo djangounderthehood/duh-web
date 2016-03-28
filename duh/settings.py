@@ -135,3 +135,6 @@ TITO_AUTH_TOKEN = os.getenv('TITO_AUTH_TOKEN', None)
 ADMINS = (('DUtH Team', 'technical@djangounderthehood.com'),)
 SERVER_EMAIL = 'hello@djangounderthehood.com'
 EMAIL_SUBJECT_PREFIX = '[duth.com] '
+
+# Tinyblog stuff
+TINYBLOG_ROOT_DIR = os.path.join(BASE_DIR, 'tinyblog', 'articles')

@@ -56,16 +56,21 @@ section {
     }
 }
 
-aside {
-    position: fixed;
-    width: 15%;
-    text-align: center;
+.uppercase-style {
     font-family: @sans_font;
     text-transform: uppercase;
     font-size: 16px;
     letter-spacing: 2px;
-    line-height: 35px;
     font-weight: bold;
+}
+
+aside {
+    position: fixed;
+    width: 15%;
+    text-align: center;
+    line-height: 35px;
+    &:extend(.uppercase-style);
+
     p {
         color: @green;
     }
@@ -131,12 +136,8 @@ nav {
 
 h6 {
     color: @green;
-    font-family: @sans_font;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: bold;
+    &:extend(.uppercase-style);
     margin-top: 25px;
-    letter-spacing: 2px;
 }
 
 #about {
@@ -358,6 +359,7 @@ footer {
     background: url(../img/cloud-footer.png) no-repeat;
     background-position: right 100px;
     height: 100%;
+    margin-top: 120px;
 
     h2 {
         margin-bottom: 50px;
@@ -511,5 +513,28 @@ footer {
         .break {
             border-left: 0px;
         }
+    }
+}
+
+
+.tinyblog-article {
+    margin-bottom: 60px;
+
+    hr, blockquote {
+        border-color: @green;
+    }
+
+    blockquote {
+        &:extend(.uppercase-style);
+        color: @green;
+    }
+
+    hr:first-of-type { // that's an intro / content divider
+        display: none;
+    }
+
+    blockquote:first-of-type { // that's a published date and author
+        border: 0;
+        padding: 0;
     }
 }

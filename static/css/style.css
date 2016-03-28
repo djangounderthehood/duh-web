@@ -67,16 +67,21 @@ section {
     height: 0;
   }
 }
-aside {
-  position: fixed;
-  width: 15%;
-  text-align: center;
+.uppercase-style,
+aside,
+h6,
+.tinyblog-article blockquote {
   font-family: 'Museo Sans';
   text-transform: uppercase;
   font-size: 16px;
   letter-spacing: 2px;
-  line-height: 35px;
   font-weight: bold;
+}
+aside {
+  position: fixed;
+  width: 15%;
+  text-align: center;
+  line-height: 35px;
 }
 aside p {
   color: #1ba39c;
@@ -135,12 +140,7 @@ nav ul li a {
 }
 h6 {
   color: #1ba39c;
-  font-family: 'Museo Sans';
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: bold;
   margin-top: 25px;
-  letter-spacing: 2px;
 }
 #about {
   float: left;
@@ -339,6 +339,7 @@ footer {
   background: url(../img/cloud-footer.png) no-repeat;
   background-position: right 100px;
   height: 100%;
+  margin-top: 120px;
 }
 footer h2 {
   margin-bottom: 50px;
@@ -470,4 +471,21 @@ footer .credits {
 }
 #schedule .day:first-child .break {
   border-left: 0px;
+}
+.tinyblog-article {
+  margin-bottom: 60px;
+}
+.tinyblog-article hr,
+.tinyblog-article blockquote {
+  border-color: #1ba39c;
+}
+.tinyblog-article blockquote {
+  color: #1ba39c;
+}
+.tinyblog-article hr:first-of-type {
+  display: none;
+}
+.tinyblog-article blockquote:first-of-type {
+  border: 0;
+  padding: 0;
 }

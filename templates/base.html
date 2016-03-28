@@ -23,7 +23,7 @@
     </head>
     <body>
         <div id="left-fixed-cloud"></div>
-        <div id="right-absolute-cloud"></div>
+        {% block right_cloud %}<div id="right-absolute-cloud"></div>{% endblock %}
         <div class="container">
             <aside>
               <a href="{% url 'home' %}">
