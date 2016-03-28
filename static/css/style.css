@@ -46,6 +46,12 @@ section {
   position: fixed;
   bottom: 10px;
 }
+@media screen and (max-width: 768px) {
+  #left-fixed-cloud {
+    width: 0;
+    height: 0;
+  }
+}
 aside {
   position: fixed;
   width: 15%;
@@ -64,9 +70,23 @@ aside .logo {
   max-width: 90%;
   margin: 30px 0 30px 0;
 }
+@media screen and (max-width: 768px) {
+  aside {
+    position: relative;
+    width: 100%;
+  }
+  aside .logo {
+    max-width: 200px;
+  }
+}
 main {
   position: relative;
   margin-left: 25%;
+}
+@media screen and (max-width: 768px) {
+  main {
+    margin-left: 0;
+  }
 }
 header {
   text-align: left;
@@ -75,6 +95,16 @@ header {
   width: 100%;
   margin-bottom: 60px;
   height: 300px;
+}
+@media screen and (max-width: 768px) {
+  header {
+    height: 0px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header-image {
+    max-width: 500px;
+  }
 }
 nav {
   margin-top: 15px;
@@ -120,6 +150,11 @@ h6 {
   margin-top: 40px;
   font-size: 34px;
   margin-bottom: 35px;
+}
+@media screen and (max-width: 768px) {
+  #about .dates {
+    padding-left: 15px;
+  }
 }
 h1,
 h2,
