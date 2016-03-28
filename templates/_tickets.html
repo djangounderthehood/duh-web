@@ -3,12 +3,13 @@
 <div class="row">
     <div class="col-md-12">
         <h2>
-           <img src="{% static 'img/tickets-header.png' %}" alt="TICKETS" />
+           <img src="{% static 'img/tickets-header.png' %}" alt="TICKETS" height="120" />
         </h2>
 
         <div class="countdown" data-target="{{ ticket_sale_start.isoformat }}">
             <div class="countdown-past{% if now >= ticket_sale_start %} hidden{% endif %}">
-                <p>The first batch of <span data-emoji-alt="🎫">tickets</span> has been sold out. Second batch is not on sale yet, but if you would like to get a ticket, you can register your interest below. You will have an opportunity to buy one for just 150€.  </p>
+                <p>Conference <span data-emoji-alt="🎫">tickets</span> will be available later this year. </p>
+                {% comment %}
                 <p>
                     <span data-emoji-alt="🎫">Tickets</span> will go on sale in:
                     <strong>
@@ -17,6 +18,7 @@
                         </span>
                     </strong>
                 </p>
+                {% endcomment %}
 
                 <p>If you want to have <span data-emoji-alt="🎫">tickets</span> for your team reserved, please scroll down to learn about the <span data-emoji-alt="💞">sponsorship</span> opportunities.</p>
 
@@ -28,7 +30,7 @@
                             <input type="email" value="" name="EMAIL" class="required email form-control" placeholder="Your e-mail" id="mce-EMAIL">
 
                             <div style="position: absolute; left: -5000px;"><input type="text" name="b_7e08f3e7ba2446210dc2f72fb_ec773db38a" tabindex="-1" value=""></div>
-                            <input type="submit" value="Let me know!" class="form-control" />
+                            <input type="submit" value="Let me know" class="form-control" />
                         </form>
                     </div>
                 </div>

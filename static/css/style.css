@@ -193,12 +193,14 @@ h4 {
 #tickets form input[type="submit"] {
   background: #3498db;
   color: white;
-  font-family: 'Lora';
+  font-family: 'Museo Sans';
+  letter-spacing: 2px;
   text-transform: uppercase;
+  font-weight: bold;
   border: 0px;
-  font-size: 18px;
+  font-size: 16px;
   height: auto;
-  padding: 9px 20px 8px;
+  padding: 10px 20px 9px;
 }
 #tickets .centered {
   text-align: center;

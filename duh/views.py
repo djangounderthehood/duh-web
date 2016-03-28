@@ -8,7 +8,7 @@ from attendees.models import Attendee
 
 
 def home(request):
-    ticket_sale_start = datetime(2015, 9, 17, 11, tzinfo=timezone.utc)
+    ticket_sale_start = datetime(2016, 7, 1, 11, tzinfo=timezone.utc)
     if request.user.is_staff:
         sponsors = Sponsor.objects.all()
     else:
