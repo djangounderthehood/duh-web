@@ -13,27 +13,31 @@
         <meta property="og:image" content="http://www.djangounderthehood.com/static/img/avatar.png" />
 
         <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
-        <script type="text/javascript" src="//use.typekit.net/fwr5dcz.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="{% static 'js/moment.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/jquery.countdown.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">
-        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic|Amaranth:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Lora:400,700,400i,700i">
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen">
     </head>
     <body>
+        <div id="left-fixed-cloud"></div>
         <div class="container">
+            <aside>
+              <a href="{% url 'home' %}">
+                  <img src="{% static 'img/logo-watercolor.png' %}" alt="Django: Under the Hood" class="logo" />
+              </a>
+              <p>
+                3 - 6th Nov 2016<br />
+                <span data-emoji-alt="🌷">Amsterdam</span>
+              </p>
+              <nav>
+                  {% include '_nav.html' %}
+              </nav>
+            </aside>
             <main>
-                <nav>
-                    {% include '_nav.html' %}
-                </nav>
-                <header>
-                    <a href="{% url 'home' %}">
-                        <img src="{% static 'img/header.png' %}" alt="Django: Under the Hood"/>
-                    </a>
-                </header>
+                <header></header>
 
                 {% if messages %}
                 <ul class="messages">
@@ -45,10 +49,10 @@
                 </ul>
                 {% endif %}
                 {% block content %}{% endblock %}
+                <footer>
+                    {% include '_footer.html' %}
+                </footer>
             </main>
-            <footer>
-                {% include '_footer.html' %}
-            </footer>
         </div>
     </body>
 </html>

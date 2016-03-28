@@ -1,95 +1,132 @@
+@font-face {
+  font-family: 'Museo Sans';
+  src: url('../fonts/museosans500-webfont.eot');
+  src: url('../fonts/museosans500-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/museosans500-webfont.woff2') format('woff2'), url('../fonts/museosans500-webfont.woff') format('woff'), url('../fonts/museosans500-webfont.ttf') format('truetype'), url('../fonts/museosans500-webfont.svg#museo_sans500') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Museo Sans';
+  src: url('../fonts/museosans300-webfont.eot');
+  src: url('../fonts/museosans300-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/museosans300-webfont.woff2') format('woff2'), url('../fonts/museosans300-webfont.woff') format('woff'), url('../fonts/museosans300-webfont.ttf') format('truetype'), url('../fonts/museosans300-webfont.svg#museo_sans300') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Museo Sans';
+  src: url('../fonts/museosans-100-webfont.eot');
+  src: url('../fonts/museosans-100-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/museosans-100-webfont.woff2') format('woff2'), url('../fonts/museosans-100-webfont.woff') format('woff'), url('../fonts/museosans-100-webfont.ttf') format('truetype'), url('../fonts/museosans-100-webfont.svg#museo_sans100') format('svg');
+  font-weight: lighter;
+  font-style: normal;
+}
 body {
   background: white;
   color: #393939;
-  line-height: 1.6em;
-  font-family: 'Lato';
-  font-size: 20px;
+  line-height: 2em;
+  font-family: 'Lora';
+  font-size: 18px;
   margin-bottom: 60px;
 }
 a,
 a:hover {
-  color: #f9bf3b;
-  text-decoration: underline;
+  color: #3498db;
 }
 a:hover {
+  color: #f9bf3b;
   text-decoration: none !important;
 }
 section {
   margin-top: 30px;
   margin-bottom: 40px;
 }
-.container {
-  margin-top: 10px;
+#left-fixed-cloud {
+  background: url(../img/cloud-left.png) no-repeat;
+  width: 384px;
+  height: 250px;
+  position: fixed;
+  bottom: 10px;
+}
+aside {
+  position: fixed;
+  width: 15%;
+  text-align: center;
+  font-family: 'Museo Sans';
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 35px;
+  font-weight: bold;
+}
+aside p {
+  color: #1ba39c;
+}
+aside .logo {
+  max-width: 90%;
+  margin: 30px 0 30px 0;
 }
 main {
   position: relative;
+  margin-left: 25%;
 }
 header {
-  text-align: center;
-  float: left;
-}
-header img {
-  max-width: 100%;
+  text-align: left;
+  background: url(../img/header-watercolor-2.png) no-repeat;
+  background-position: center -20px;
+  width: 100%;
+  margin-bottom: 60px;
+  height: 300px;
 }
 nav {
-  position: absolute;
-  right: 0;
-}
-@media screen and (max-width: 1000px) {
-  nav {
-    position: relative;
-    float: right;
-  }
+  margin-top: 15px;
 }
 nav ul {
   list-style-type: none;
-  float: right;
-  margin-top: 20px;
   padding-left: 0;
 }
-nav ul li {
-  float: left;
-  margin-left: 40px;
-}
-nav ul li:first-child {
-  margin-left: 0;
-}
 nav ul li a {
-  text-decoration: none !important;
+  color: #3498db;
+  font-weight: bold;
+  text-decoration: none;
 }
-nav ul li.highlighted a {
-  background: rgba(255, 255, 255, 0.9);
-  color: #3a5b9e;
-  padding: 7px 10px 5px 10px;
+h6 {
+  color: #1ba39c;
+  font-family: 'Museo Sans';
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 25px;
+  letter-spacing: 2px;
 }
 #about {
   float: left;
   margin-top: -30px;
 }
 #about h1 {
-  font-family: 'Amaranth', cursive;
-  font-size: 50px;
+  font-family: 'Lora', cursive;
+  font-size: 40px;
   margin-bottom: 0.5em;
-  margin-top: 0.5em;
-  font-weight: 100;
+  margin-top: 34px;
+  margin-bottom: 26px;
 }
 #about p {
   font-size: 20px;
-  font-family: 'Lato';
+  font-family: 'Lora';
 }
 #about .dates {
   padding-left: 30px;
+  font-size: 16px;
 }
 #about .dates h2 {
-  margin-top: 34px;
-  margin-bottom: 26px;
+  margin-top: 40px;
+  font-size: 34px;
+  margin-bottom: 35px;
 }
 h1,
 h2,
 h3,
 h4 {
   vertical-align: bottom;
-  font-family: 'Amaranth';
+  font-family: 'Lora';
   font-size: 40px;
   margin-bottom: 20px;
 }
@@ -149,14 +186,14 @@ h4 {
 #tickets form input[type="email"] {
   width: 65%;
   font-size: 20px;
-  font-family: 'Lato';
+  font-family: 'Lora';
   padding: 6px 15px;
   height: auto;
 }
 #tickets form input[type="submit"] {
-  background: #3a5b9e;
+  background: #3498db;
   color: white;
-  font-family: 'Lato';
+  font-family: 'Lora';
   text-transform: uppercase;
   border: 0px;
   font-size: 18px;
@@ -269,7 +306,7 @@ footer .credits {
   margin-top: -30px;
 }
 #coc h3 {
-  font-family: 'Amaranth';
+  font-family: 'Lora';
   font-size: 32px;
   margin-top: 30px;
 }
@@ -282,9 +319,9 @@ footer .credits {
 }
 .btn,
 .btn:hover {
-  background: #3a5b9e;
+  background: #3498db;
   color: white;
-  font-family: 'Lato';
+  font-family: 'Lora';
   border: 0px;
   font-size: 24px;
   height: auto;
@@ -308,11 +345,11 @@ footer .credits {
 }
 #schedule .day {
   margin-top: 30px;
-  border-top: 5px solid #3a5b9e;
+  border-top: 5px solid #3498db;
   padding: 0;
 }
 #schedule .day .header {
-  border-bottom: 10px solid #3a5b9e;
+  border-bottom: 10px solid #3498db;
   padding: 20px 0 5px;
 }
 #schedule .day .header h3 {
