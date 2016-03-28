@@ -25,7 +25,6 @@ body {
   line-height: 2em;
   font-family: 'Lora';
   font-size: 18px;
-  margin-bottom: 60px;
 }
 a,
 a:hover {
@@ -39,7 +38,8 @@ section {
   margin-top: 30px;
   margin-bottom: 40px;
 }
-#left-fixed-cloud {
+#left-fixed-cloud,
+#right-absolute-cloud {
   background: url(../img/cloud-left.png) no-repeat;
   width: 384px;
   height: 250px;
@@ -47,7 +47,22 @@ section {
   bottom: 10px;
 }
 @media screen and (max-width: 768px) {
-  #left-fixed-cloud {
+  #left-fixed-cloud,
+  #right-absolute-cloud {
+    width: 0;
+    height: 0;
+  }
+}
+#right-absolute-cloud {
+  background: url(../img/cloud-right.png) no-repeat;
+  width: 642px;
+  height: 400px;
+  position: absolute;
+  top: 1650px;
+  right: -200px;
+}
+@media screen and (max-width: 1000px) {
+  #right-absolute-cloud {
     width: 0;
     height: 0;
   }
@@ -320,6 +335,11 @@ h4 {
 #talks .row .col-md-7 {
   min-height: 500px;
 }
+footer {
+  background: url(../img/cloud-footer.png) no-repeat;
+  background-position: right 100px;
+  height: 100%;
+}
 footer h2 {
   margin-bottom: 50px;
 }
@@ -338,6 +358,11 @@ footer .credits {
   line-height: 25px;
   text-align: center;
   margin-top: 30px;
+}
+@media screen and (max-width: 1080px) {
+  footer {
+    background: none;
+  }
 }
 #coc {
   float: left;

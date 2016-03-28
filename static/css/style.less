@@ -14,7 +14,6 @@ body {
     line-height: 2em;
     font-family: @body_font;
     font-size: 18px;
-    margin-bottom: 60px;
 }
 
 a, a:hover {
@@ -30,7 +29,7 @@ section {
     margin-bottom: 40px;
 }
 
-#left-fixed-cloud {
+#left-fixed-cloud, #right-absolute-cloud {
     background: url(../img/cloud-left.png) no-repeat;
     width: 384px;
     height: 250px;
@@ -38,6 +37,20 @@ section {
     bottom: 10px;
 
     @media screen and (max-width: 768px) {
+        width: 0;
+        height: 0;
+    }
+}
+
+#right-absolute-cloud {
+    background: url(../img/cloud-right.png) no-repeat;
+    width: 642px;
+    height: 400px;
+    position: absolute;
+    top: 1650px;
+    right: -200px;
+
+    @media screen and (max-width: 1000px) {
         width: 0;
         height: 0;
     }
@@ -342,6 +355,10 @@ h4 {
 }
 
 footer {
+    background: url(../img/cloud-footer.png) no-repeat;
+    background-position: right 100px;
+    height: 100%;
+
     h2 {
         margin-bottom: 50px;
     }
@@ -357,12 +374,15 @@ footer {
         list-style-type: none;
         padding: 0 0 0 15px;
     }
-
     .credits {
         font-size: 15px;
         line-height: 25px;
         text-align: center;
         margin-top: 30px;
+    }
+
+    @media screen and (max-width: 1080px) {
+        background: none;
     }
 }
 
