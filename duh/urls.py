@@ -1,10 +1,11 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 from duh import views
 
-urlpatterns = patterns('',
-    # Examples:
+urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^coc/$', views.coc, name='coc'),
     url(r'^accessibility/$', views.accessibility, name='accessibility'),
@@ -16,4 +17,7 @@ urlpatterns = patterns('',
     #url(r'^schedule/$', views.schedule, name='schedule'),
     #url(r'^sprints/$', views.sprints, name='sprints'),
     url(r'^admin/', include(admin.site.urls)),
-)
+]
+
+# Serve uploaded files in DEBUG mode
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
