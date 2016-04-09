@@ -1,76 +1,62 @@
-from glob import glob
 import os
-
+import threading
 import markdown as md
+from collections import OrderedDict
+from glob import glob
 
 from django.conf import settings
-from django.core.exceptions import ObjectDoesNotExist
 from django.utils.functional import cached_property
 
+_local = threading.local()
 
-def _get_markdown_content(slug):
+
+def read_all_posts():
     """
-    Try and locate a post file given its slug. Raise PostDoesNotExist if file
-    not found
+    Reads all posts from disk into OrderedDict in reverse alphabetical order.
     """
-    filename = '%s.md' % slug
-    fullpath = os.path.join(settings.TINYBLOG_ROOT_DIR, filename)
-    try:
-        with open(fullpath) as f:
-            return f.read()
-    except OSError as error:
-        raise PostDoesNotExist from error
+    posts = OrderedDict()
+    filenames = glob('%s/*.md' % settings.TINYBLOG_ROOT_DIR)
+    for filename in sorted(filenames, reverse=True):
+        # [:-3] chops off the '.md' suffix
+        slug = os.path.relpath(filename, settings.TINYBLOG_ROOT_DIR)[:-3]
+        with open(filename) as f:
+            markdown_content = f.read()
+        posts[slug] = Post(slug, markdown_content)
 
-
-class PostDoesNotExist(ObjectDoesNotExist):
-    pass
+    return posts
 
 
 class PostManager(object):
-    def __init__(self, model=None):
-        self.model = model
+    """
+    Simple proxy object working on thread-local OrderedDict of posts.
+    """
 
     def get(self, slug):
         """
         Return a Post instance from the given slug.
         """
-        markdown = _get_markdown_content(slug)
-        return self.model(slug=slug, markdown=markdown)
+        return self._posts.get(slug)
 
     def all(self):
         """
         Return a list of all existing Post instances, in reverse alphabetical order.
         """
-        pattern = '%s/*.md' % settings.TINYBLOG_ROOT_DIR
-        filenames = glob(pattern)
-        slugs = [os.path.relpath(f, settings.TINYBLOG_ROOT_DIR)[:-3] for f in filenames]  # [:-3] chops off the .md at the end
-        return [self.model(slug=slug) for slug in sorted(slugs, reverse=True)]
+        return list(self._posts.values())
 
-    def count(self):
-        return len(self.all())
+    @property
+    def _posts(self):
+        if not hasattr(_local, 'posts'):
+            _local.posts = read_all_posts()
 
-    def __get__(self, instance, owner):
-        return type(self)(model=owner)
+        return _local.posts
 
 
 class Post(object):
-    slug = None
-    markdown = None
     objects = PostManager()
-
-    # quack like a duck
-    _default_manager = objects
 
     def __init__(self, slug, markdown=None):
         self.slug = slug
-        self._markdown = markdown
-
-    @property
-    def markdown(self):
-        if self._markdown is not None:
-            return self._markdown
-        self._markdown = _get_markdown_content(self.slug)
-        return self._markdown
+        self.markdown = markdown
 
     @cached_property
     def html(self):

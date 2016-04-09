@@ -26,12 +26,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'debug_toolbar',
     'django_gravatar',
     'opbeat.contrib.django',
 
     'organizers',
     'sponsors',
     'attendees',
+    'tinyblog',
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -1,9 +1,8 @@
 from django.conf.urls import url
-from django.contrib import admin
 
-from .views import IndexView, ArticleView
+from .views import post_detail, post_list
 
 urlpatterns = [
-    url(r'^$', IndexView.as_view(), name='index'),
-    url(r'^article/(?P<slug>[-\w]+)/$', ArticleView.as_view(), name='article'),
+    url(r'^$', post_list, name='index'),
+    url(r'^article/(?P<slug>[-\w]+)/$', post_detail, name='article'),
 ]
