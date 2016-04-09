@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>{% block title %}Django: Under the Hood{% endblock %}</title>
+
         <meta name="description" content="Django: Under the Hood is an exciting conference for experienced Django developers. Come and learn about the internals of Django, and help to shape its future.">
         <meta name="keywords" content="programming, python, django, conference, under the hood">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,10 @@
         <meta property="og:title" content="Django: Under the Hood" />
         <meta property="og:type" content="website" />
         <meta property="og:description" content="Django: Under the Hood is an exciting conference for experienced Django developers. Come and learn about the internals of Django, and help to shape its future." />
-        <meta property="og:url" content="http://www.djangounderthehood.com/" />
-        <meta property="og:image" content="http://www.djangounderthehood.com/static/img/avatar.png" />
+        <meta property="og:url" content="https://www.djangounderthehood.com/" />
+        <meta property="og:image" content="https://www.djangounderthehood.com/static/img/avatar.png" />
 
         <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}" />
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="{% static 'js/moment.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/jquery.countdown.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen">
         <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Lora:400,700,400i,700i">
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen">
@@ -57,5 +54,10 @@
                 </footer>
             </main>
         </div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/moment.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.countdown.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
     </body>
 </html>
