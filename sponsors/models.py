@@ -39,7 +39,8 @@ class Sponsor(models.Model):
 
     level = models.CharField(max_length=20, choices=LEVELS.choices)
     name = models.CharField(max_length=200)
-    description = models.TextField(blank=True, help_text="Use `[[link text]]` to create a link to the sponsor's URL.")
+    description = models.TextField(
+        blank=True, help_text="Use `[[link text]]` to create a link to the sponsor's URL.")
     logo = models.ImageField(blank=True, upload_to='sponsors/%Y/')
     url = models.URLField(blank=True)
     created_on = models.DateTimeField(default=timezone.now, editable=False)

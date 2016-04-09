@@ -19,26 +19,36 @@ def home(request):
         'now': timezone.now(),
     })
 
+
 def coc(request):
-    return render(request, 'coc.html', {})
+    return render(request, 'coc.html')
+
 
 def accessibility(request):
-    return render(request, 'accessibility.html', {})
+    return render(request, 'accessibility.html')
+
 
 def travel(request):
-    return render(request, 'travel.html', {})
+    return render(request, 'travel.html')
+
 
 def attendees(request):
-    return render(request, 'attendees.html', {'attendees': Attendee.objects.visible().order_by('?') })
+    return render(request, 'attendees.html', {
+        'attendees': Attendee.objects.visible().order_by('?')
+    })
+
 
 def talks(request):
-    return render(request, 'talks.html', {})
+    return render(request, 'talks.html')
+
 
 def scholarship(request):
-    return render(request, 'scholarship.html', {})
+    return render(request, 'scholarship.html')
+
 
 def schedule(request):
     return render(request, 'schedule.html', {})
+
 
 def sprints(request):
     return render(request, 'sprints.html', {})
