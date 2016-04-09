@@ -141,7 +141,7 @@ if not DEBUG:
 # Misc
 OPBEAT = {
     'ORGANIZATION_ID': '8ce60e8b722d49ef8b1a67df13377f13',
-    'APP_ID': 'f9af431c29',
+    'APP_ID': '54a01a916c',
     'SECRET_TOKEN': os.environ.get('OPBEAT_SECRET_TOKEN'),
 }
 
