@@ -8,33 +8,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import dj_database_url
+
+# Path to the root of the repository
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-DEBUG = os.getenv('DJANGO_DEBUG') != 'FALSE'
-TEMPLATE_DEBUG = DEBUG
 
-if DEBUG:
-    SECRET_KEY = 'hello!'
-else:
-    SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+# Basics
+DEBUG = os.environ.get('DJANGO_DEBUG', '').lower() != 'false'
 
-ALLOWED_HOSTS = ['*']
-
-DEBUG_DB_PATH = os.path.join(BASE_DIR, 'db.sqlite3')
-DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///%s' % DEBUG_DB_PATH),
-}
-DATABASES['default']['CONN_MAX_AGE'] = None
-
-
-# Application definition
-
-INSTALLED_APPS = (
-    'flat',
-
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,14 +26,19 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'debug_toolbar',
     'django_gravatar',
+    'opbeat.contrib.django',
 
     'organizers',
     'sponsors',
     'attendees',
-)
+    'tinyblog',
+]
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE_CLASSES = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -57,84 +46,105 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
+]
 
 ROOT_URLCONF = 'duh.urls'
-
 WSGI_APPLICATION = 'duh.wsgi.application'
+
+ADMINS = [
+    ('DUtH Team', 'technical@djangounderthehood.com'),
+]
+EMAIL_SUBJECT_PREFIX = '[DUtH] '
+
+
+# Basic security
+ALLOWED_HOSTS = ['*']
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'hello!')
+# if not DEBUG:
+#     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
+# Database
+DEBUG_DB_PATH = os.path.join(BASE_DIR, 'db.sqlite3')
+DATABASES = {
+    'default': dj_database_url.config(default='sqlite:///%s' % DEBUG_DB_PATH),
+}
+DATABASES['default']['CONN_MAX_AGE'] = None
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/dev/howto/static-files/
+# Templates
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
+        'OPTIONS': {
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
+
+# Static files
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
 )
-if not DEBUG:
-    TEMPLATE_LOADERS = (
-        ('django.template.loaders.cached.Loader', TEMPLATE_LOADERS),
-    )
-
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
-TEMPLATE_CONTEXT_PROCESSORS = TCP + (
-    'django.core.context_processors.request',
-)
-
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'public')
 STATIC_URL = '/static/'
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-if DEBUG:
-    # Use `python -m http.server 8888` from the uploads/ directory to serve
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
-    MEDIA_URL = 'http://localhost:8888/'
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-else:
+# Uploaded files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_URL = '/media/'  # Only used in development
+
+if not DEBUG:
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
+
+# Email
+SERVER_EMAIL = 'hello@djangounderthehood.com'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+if not DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST = 'smtp.mandrillapp.com'
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
-    EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
-    INSTALLED_APPS += (
-    'opbeat.contrib.django',
-    )
-    OPBEAT = {
-        'ORGANIZATION_ID': '8ce60e8b722d49ef8b1a67df13377f13',
-        'APP_ID': 'f9af431c29',
-        'SECRET_TOKEN': os.getenv('OPBEAT_SECRET_TOKEN'),
-    }
-    MIDDLEWARE_CLASSES = (
-        'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
-    ) + MIDDLEWARE_CLASSES
 
-TITO_AUTH_TOKEN = os.getenv('TITO_AUTH_TOKEN', None)
-ADMINS = (('DUtH Team', 'technical@djangounderthehood.com'),)
-SERVER_EMAIL = 'hello@djangounderthehood.com'
-EMAIL_SUBJECT_PREFIX = '[duth.com] '
+# Misc
+OPBEAT = {
+    'ORGANIZATION_ID': '8ce60e8b722d49ef8b1a67df13377f13',
+    'APP_ID': 'f9af431c29',
+    'SECRET_TOKEN': os.environ.get('OPBEAT_SECRET_TOKEN'),
+}
 
-# Tinyblog stuff
+TITO_AUTH_TOKEN = os.environ.get('TITO_AUTH_TOKEN')
+
 TINYBLOG_ROOT_DIR = os.path.join(BASE_DIR, 'tinyblog', 'articles')

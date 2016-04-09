@@ -1,16 +1,17 @@
-from django.views import generic
+from django.http import Http404
+from django.shortcuts import render
 
 from .models import Post
 
 
-class IndexView(generic.ListView):
-    template_name = 'tinyblog/index.html'
-    model = Post
+def post_list(request):
+    posts = Post.objects.all()
+    return render(request, 'tinyblog/index.html', {'posts': posts})
 
 
-class ArticleView(generic.DetailView):
-    template_name = 'tinyblog/article.html'
-    model = Post
+def post_detail(request, slug):
+    post = Post.objects.get(slug)
+    if not post:
+        raise Http404('No post with slug: %s' % slug)
 
-    def get_object(self):
-        return Post.objects.get(slug=self.kwargs['slug'])
+    return render(request, 'tinyblog/article.html', {'post': post})
