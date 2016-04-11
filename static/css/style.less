@@ -29,7 +29,7 @@ section {
     margin-bottom: 40px;
 }
 
-#left-fixed-cloud, #right-absolute-cloud {
+#left-fixed-cloud {
     background: url(../img/cloud-left.png) no-repeat;
     width: 384px;
     height: 250px;
@@ -37,8 +37,7 @@ section {
     bottom: 10px;
 
     @media screen and (max-width: 768px) {
-        width: 0;
-        height: 0;
+        display: none;
     }
 }
 
@@ -51,8 +50,7 @@ section {
     right: -200px;
 
     @media screen and (max-width: 1000px) {
-        width: 0;
-        height: 0;
+        display: none;
     }
 }
 

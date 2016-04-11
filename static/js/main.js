@@ -1,7 +1,7 @@
 function easter() {
     var speakers = document.getElementsByClassName('speaker');
     var borg = speakers[1];
-    for (i=0; i<speakers.length; i++) {
+    for (var i=0; i<speakers.length; i++) {
         speakers[i].src = borg.src;
     }
 
