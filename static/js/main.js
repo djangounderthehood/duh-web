@@ -93,6 +93,36 @@ $(function() {
 });
 
 $(function() {
+    var stroopwafelMode = false;
+    function makeItRain() {
+        stroopwafelMode = true;
+        $(document).snowfall({
+            flakeCount : 100,
+            maxSpeed : 10,
+            maxSize: 50,
+            minSize: 10,
+            image: window.stroopwafel
+        });
+    }
+    function makeItStop() {
+        stroopwafelMode = false;
+        $(document).snowfall('clear');
+    }
+    $('.stroopwafelify').click(
+        function() {
+            if(stroopwafelMode){
+                makeItStop();
+                $(this).attr('title', 'Turn on stroopwafel mode').text('🍯🍪🌧');
+            }
+            else {
+                makeItRain();
+                $(this).attr('title', 'Turn off stroopwafel mode').text('🍯🍪☂');
+            }
+        }
+    );
+});
+
+$(function() {
     var currentDate = new Date();
     if((currentDate.getMinutes() == 42) && (currentDate.getSeconds() % 10 == 0)) {
         $('.emojimode-toggler').click();
