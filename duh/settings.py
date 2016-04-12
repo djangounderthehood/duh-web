@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'pipeline',
     'debug_toolbar',
     'django_gravatar',
     'opbeat.contrib.django',
@@ -109,10 +110,47 @@ TEMPLATES = [
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'duh.storages.GzipManifestPipelineStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'public')
 STATIC_URL = '/static/'
-
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
+)
+PIPELINE = {
+    'STYLESHEETS': {
+        'app': {
+            'source_filenames': (
+                'css/reset.less',
+                'css/style.less',
+            ),
+            'output_filename': 'css/app.css',
+            'extra_context': {
+                'media': 'screen,projection',
+            },
+        },
+    },
+    'JAVASCRIPT': {
+        'app': {
+            'source_filenames': (
+                'js/main.js',
+            ),
+            'output_filename': 'js/app.js',
+        },
+        'vendor': {
+            'source_filenames': (
+                'js/jquery.countdown.min.js',
+                'js/moment.min.js',
+                'js/snowfall.jquery.js',
+            ),
+            'output_filename': 'js/vendor.js',
+        },
+    },
+    'COMPILERS': (
+        'pipeline.compilers.less.LessCompiler',
+    ),
+}
 
 # Uploaded files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')

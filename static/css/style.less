@@ -29,28 +29,28 @@ section {
     margin-bottom: 40px;
 }
 
-#left-fixed-cloud {
-    background: url(../img/cloud-left.png) no-repeat;
-    width: 384px;
-    height: 250px;
-    position: fixed;
-    bottom: 10px;
+@media screen and (min-width: 768px) {
 
-    @media screen and (max-width: 768px) {
-        display: none;
-    }
+  #left-fixed-cloud {
+      background: url(../img/cloud-left.png) no-repeat;
+      width: 384px;
+      height: 250px;
+      position: fixed;
+      bottom: 10px;
+
+      }
 }
 
-#right-absolute-cloud {
-    background: url(../img/cloud-right.png) no-repeat;
-    width: 642px;
-    height: 400px;
-    position: absolute;
-    top: 100%;
-    right: -200px;
+@media screen and (min-width: 1000px) {
 
-    @media screen and (max-width: 1000px) {
-        display: none;
+  #right-absolute-cloud {
+      background: url(../img/cloud-right.png) no-repeat;
+      width: 642px;
+      height: 400px;
+      position: absolute;
+      top: 100%;
+      right: -200px;
+
     }
 }
 
@@ -97,24 +97,21 @@ main {
     }
 }
 
-header {
-    text-align: left;
-    background: url(../img/header-watercolor-2.png) no-repeat;
-    background-position: center -20px;
-    width: 100%;
-    margin-bottom: 60px;
-    height: 300px;
+@media screen and (min-width: 768px) {
 
-    @media screen and (max-width: 768px) {
-        height: 0px;
-    }
-}
+  header {
+      text-align: left;
+      background: url(../img/header-watercolor-2.png) no-repeat center -20px;
+      width: 100%;
+      margin-bottom: 60px;
+      height: 300px;
 
-@media screen and (max-width: 768px) {
-    .header-image {
-        max-width: 100%;
-        height: auto;
-    }
+  }
+
+      .header-image {
+          max-width: 100%;
+          height: auto;
+      }
 }
 
 nav {

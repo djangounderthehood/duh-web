@@ -1,5 +1,6 @@
 *.sqlite3
 *.pyc
+node_modules
 __pycache__
 /public
 /uploads

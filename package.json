@@ -1,0 +1,14 @@
+{
+  "name": "duh-web",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/djangounderthehood/duh-web"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "less": "^2.6.1",
+    "yuglify": "^0.1.4"
+  }
+}
