@@ -96,12 +96,13 @@ $(function() {
     var stroopwafelMode = false;
     function makeItRain() {
         stroopwafelMode = true;
+        var img = (Math.random()>0.95)?window.wrmqrm:window.stroopwafel;
         $(document).snowfall({
             flakeCount : 100,
             maxSpeed : 10,
             maxSize: 50,
             minSize: 10,
-            image: window.stroopwafel
+            image: img
         });
     }
     function makeItStop() {
