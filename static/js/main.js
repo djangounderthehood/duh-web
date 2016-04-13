@@ -128,4 +128,43 @@ $(function() {
     if((currentDate.getMinutes() == 42) && (currentDate.getSeconds() % 10 == 0)) {
         $('.emojimode-toggler').click();
     }
-})
+});
+
+$(function() {
+    var sparkles = [
+        // Don't ask me how I got these numbers...
+        {color: 'blue', x: 28, y: 248, size: 62},
+        {color: 'green', x: 187, y: 210, size: 80},
+        {color: 'yellow', x: 268, y: 300, size: 70},
+        {color: 'blue', x: 410, y: 275, size: 80},
+        {color: 'yellow', x: 575, y: 208, size: 45},
+        {color: 'yellow', x: 636, y: 290, size: 60},
+        {color: 'green', x: 761, y: 228, size: 34},
+        {color: 'blue', x: 789, y: 124, size: 40},
+    ]
+    var header = $('header:visible');
+    var images = {
+        'blue': header.data('sparkle-blue'),
+        'yellow': header.data('sparkle-yellow'),
+        'green': header.data('sparkle-green')
+    }
+    for(var i=0; i<sparkles.length; i++) {
+        var sparkle = sparkles[i];
+
+        if (sparkle.x < header.width()) {
+            var img = $('<div>').addClass('sparkle').addClass(sparkle.color);
+            img.css('left', sparkle.x + 'px');
+            img.height(sparkle.y)
+            img.width(sparkle.size + 'px');
+            img.appendTo(header);
+            img.click(function(){$(this).remove(); checkSparkles();});
+        }
+    }
+    header.addClass('jsified');
+});
+
+function checkSparkles() {
+    if ($('header .sparkle').length == 0) {
+        $('header').animate({height: 0}, {complete: function(){$('.stroopwafelify').click();}});
+    }
+}

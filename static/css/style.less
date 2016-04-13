@@ -81,6 +81,7 @@ aside {
     @media screen and (max-width: 768px) {
         position: relative;
         width: 100%;
+        margin-bottom: 50px;
 
         .logo {
             max-width: 200px;
@@ -105,13 +106,31 @@ main {
       width: 100%;
       margin-bottom: 60px;
       height: 300px;
+      position: relative;
+      overflow: hidden;
 
-  }
-
-      .header-image {
-          max-width: 100%;
-          height: auto;
+      &.jsified {
+        background: none;
       }
+
+      .sparkle {
+        position: absolute;
+        background-size: contain, contain;
+        background-position: bottom, center;
+        background-repeat: no-repeat, repeat-y;
+        height: 100%;
+
+        &.blue {
+          background-image: url(../img/sparkle-blue.png), url(../img/sparkle-bg-vert.png);
+        }
+        &.yellow {
+          background-image: url(../img/sparkle-yellow.png), url(../img/sparkle-bg-vert.png);
+        }
+        &.green {
+          background-image: url(../img/sparkle-green.png), url(../img/sparkle-bg-vert.png);
+        }
+      }
+  }
 }
 
 nav {
