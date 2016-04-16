@@ -96,7 +96,7 @@ $(function() {
     var stroopwafelMode = false;
     function makeItRain() {
         stroopwafelMode = true;
-        var img = (Math.random()>0.95)?window.wrmqrm:window.stroopwafel;
+        var img = (Math.random()>0.95)?window.glutenfree:window.stroopwafel;
         $(document).snowfall({
             flakeCount : 100,
             maxSpeed : 10,
