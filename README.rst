@@ -22,6 +22,12 @@ There's a shortcut available that installs Python and Node dependencies::
     make build
 
 
+Deploying
+---------
+
+Code is automatically deployed from ``master`` branch of this repository.
+
+
 Deploying the old website
 -------------------------
 
