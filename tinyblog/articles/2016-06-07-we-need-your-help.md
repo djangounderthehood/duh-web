@@ -1,19 +1,19 @@
-# We need your help✋
+# We need your help ✋
 
 > Published on 7th Jun 2016 by Agata Grdal
 
-We are seeking companies who wish to support Django Under the Hood financially.
+We are seeking companies who wish to support Django: Under the Hood financially.
 
 ---
 
-As organizers, we are focused on making this event the best place to share knowledge and build a community around Django.
+As organizers, we are focused on making this event the best place to share knowledge and build a community around Django. 
 
-We want to gather Django core team members and Django developers to teach us all about Django. We want to welcome the most diverse group of people possible. And we want to make the event as affordable and accessible as possible for everyone.
+Django: Under The Hood aims to gather Django core team members and Django developers to explore in-depths of Django and help shape the future of Django together. Every year thus far, we were able bring more than 20 members of the Django core team to the event. We also aim to welcome the most diverse group of people possible, that's why we're funding tickets and travel in [our Scholarship program](/scholarship/). On top of that, we strive to make the event as affordable and accessible as possible for everyone.
 
-We know those are ambitious goals. In order to achieve them, we need your support.
+These are all ambitious goals. This year again we're hoping to meet with 300 passionate Djangonauts and share knowledge together. In order to make that happen, **we need your support**.
 
-You can find our sponsorship brochure here: <a href="http://tinyurl.com/duth2016-sponsorship">http://tinyurl.com/duth2016-sponsorship</a>, but we’re also open to new ideas.
+[See the sponsorship brochure we prepared](http://tinyurl.com/duth2016-sponsorship), or chat to us! We’re open to any and all of your ideas.
 
-If you are interested in collaborating with us, please <a href="mailto:hello@djangounderthehood.com">get in touch</a>!
+If you are interested in collaborating with us, please [get in touch](mailto:hello@djangounderthehood.com)!
 
 ✨
