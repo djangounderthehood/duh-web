@@ -1,9 +1,9 @@
 @import 'fonts';
 
 @pink: white;
-@blue: #3498DB;
-@green: #1BA39C;
-@yellow: #f9bf3b;
+@blue: #3498DB; // rgb(52, 152, 219)
+@green: #1BA39C; // rgb(27, 163, 156)
+@yellow: #f9bf3b; // rgb(249, 191, 59)
 @gray: #393939;
 @body_font: 'Lora';
 @sans_font: 'Museo Sans';
@@ -209,18 +209,23 @@ h4 {
 }
 
 #speakers {
-    img.speaker {
-        max-width: 220px;
-        border-radius: 50%;
-        float: left;
-        margin-right: 30px;
-    }
     h3 {
         font-weight: bold;
         font-size: 40px;
     }
     .speaker {
-        margin-bottom: 30px;
+        margin-top: 30px;
+        text-align: center;
+        
+        &__photo {
+          width: 300px;
+          height: 300px;
+          background-blend-mode: overlay;
+          background-size: cover;
+          -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+          clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+          margin: 0 auto;
+        }
     }
 }
 
