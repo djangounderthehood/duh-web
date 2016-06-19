@@ -17,6 +17,7 @@ def organizers():
         'Kasia Kamińska',
         'Agata Grdal',
         'Rob Kirberich',
+        'Ania Warzecha',
     ]
     shuffle(authors)
     return '%s, and %s' % (
