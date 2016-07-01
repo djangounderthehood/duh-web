@@ -9,16 +9,8 @@
         <div class="countdown" data-target="{{ ticket_sale_start.isoformat }}">
             <div class="countdown-past{% if now >= ticket_sale_start %} hidden{% endif %}">
                 <p>Conference <span data-emoji-alt="🎫">tickets</span> will be available later this year. </p>
-                {% comment %}
-                <p>
-                    <span data-emoji-alt="🎫">Tickets</span> will go on sale in:
-                    <strong>
-                        <span class="countdown-container"  title="{{ ticket_sale_start.isoformat }}">
-                            {{ ticket_sale_start|timeuntil }}
-                        </span>
-                    </strong>
-                </p>
-                {% endcomment %}
+                
+                <p>🎫 <a href="/blog/article/2016-07-01-registration/">Read on our blog how are we planning to sell conference tickets this year</a></p>
 
                 <p>If you want to have <span data-emoji-alt="🎫">tickets</span> for your team reserved, please scroll down to learn about the <span data-emoji-alt="💞">sponsorship</span> opportunities.</p>
 
