@@ -14,9 +14,9 @@ Read on to learn about the important changes we're making this year!
 
 1. __On Tuesday, July 12, we will open registration.__
 You'll have two weeks to submit your e-mail address for the lottery, until 
-[July 19th at noon CET](http://time.is/1200_19_July_2016_in_Amsterdam).
+[July 26th at noon CET](http://time.is/1200_26_July_2016_in_Amsterdam).
 
-2. __[On Thursday July 21st at noon CET](http://time.is/1200_21_July_2016_in_Amsterdam), 
+2. __[On Thursday July 28th at noon CET](http://time.is/1200_28_July_2016_in_Amsterdam), 
 we're going to randomly select attendees 
 who will receive a link to purchase their conference tickets.__ This link will be
 valid for 72 hours, and then we will randomly assign it to another attendee until
