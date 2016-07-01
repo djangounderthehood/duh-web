@@ -2,7 +2,7 @@
 
 > Published on 1st Jul 2016 by Ola Sitarska
 
-Every year tickets to Django: Under The Hood are selling out in a matter of minutes.
+Every year tickets to Django: Under The Hood sell out in a matter of minutes.
 This year we're trying something different to make the distribution of tickets
 a little bit more fair and less frustrating for everyone.
 
@@ -12,10 +12,12 @@ Read on to learn about the important changes we're making this year!
 
 #### The Short Version
 
-1. __On Tuesday, July 12, we're going to open registration.__
-You'll have two weeks to submit your e-mail address for the lottery, until July 19th at noon CET.
+1. __On Tuesday, July 12, we will open registration.__
+You'll have two weeks to submit your e-mail address for the lottery, until 
+[July 19th at noon CET](http://time.is/1200_19_July_2016_in_Amsterdam).
 
-2. __On Thursday July 21st at noon CET, we're going to randomly select attendees 
+2. __[On Thursday July 21st at noon CET](http://time.is/1200_21_July_2016_in_Amsterdam), 
+we're going to randomly select attendees 
 who will receive a link to purchase their conference tickets.__ This link will be
 valid for 72 hours, and then we will randomly assign it to another attendee until
 all of the tickets have been purchased.
@@ -45,15 +47,16 @@ Django: Under The Hood started as this little thing for around 100 people who jo
 us in Amsterdam for the first time about 2.5 years ago. We had no idea if this 
 would work, but your excitement and care never ceased to surprise us.
 
-The 100 tickets for our very first edition were gone in just few minutes. On our second year,
+The 100 tickets for our very first edition were gone in just few minutes. In our second year,
 we welcomed 3 times as many people, yet the "sold out" banner showed up on our
 tickets page just 10 minutes after registration was open.
 
-The 300 is a number that we're capping the conference at. A sweet spot for serendipity, 
-while still making it possible to organize with our small volunteer team. 
+We are capping the conference at 300 attendees. It's a good balance between having the
+conference available for as many attendees as possible and making it possible to 
+organise with our small volunteer team.
 
-But one thing we didn’t like about the registration process in the last two years: the 
-feeling of panic and chaos that came from that confusion, and the subsequent mad rush
+However one thing we didn’t like about the registration process in the last two years
+was the feeling of panic and chaos that came from the mad rush
 to be first in line to buy a ticket. The process also didn't allow many people 
 who were traveling, working, or sleeping at the time when our registration was open 
 to attend the conference. 
