@@ -33,6 +33,12 @@ Sprints will have the following pricing:
 We're following DjangoCon's pricing structure to keep event as affordable 
 for everyone as possible.
 
+#### Reserve tickets for your team
+
+If you want to make sure that tickets for your team are reserved and set aside,
+we'd be happy to discuss a sponsorship opportunity with you. Please get in touch
+with us on [hello@djangounderthehood.com](mailto:hello@djangounderthehood.com).
+
 #### The Slightly Longer Version
 
 Django: Under The Hood started as this little thing for around 100 people who joined
