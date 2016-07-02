@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Thanks!</h1>
+
+    <p>You're now in the system with email: <strong>{{ participant.email }}</strong>.</p>
+    <p>
+        If this email is incorrect, please <a href="mailto:hello@djangounderthehood.com">
+        let us know</a>!
+    </p>
+{% endblock %}

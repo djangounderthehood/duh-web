@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Hello!</h1>
+
+    <p>Enter your data below to sign up for our ticket lottery. You can read more about it on
+    <a href="{% url 'blog:article' slug='2016-07-01-registration' %}">our blog</a>.</p>
+    <p>We ask for only one submission per person.</p>
+
+    <form method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>
+            <button type="submit">Sign up!</button>
+        </p>
+    </form>
+{% endblock %}

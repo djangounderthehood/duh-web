@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'^scholarship/$', views.scholarship, name='scholarship'),
     #url(r'^schedule/$', views.schedule, name='schedule'),
     #url(r'^sprints/$', views.sprints, name='sprints'),
+    url(r'^tickets/', include('lottery.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]
 

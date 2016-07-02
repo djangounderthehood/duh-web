@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'sponsors',
     'attendees',
     'tinyblog',
+    'lottery',
 ]
 
 MIDDLEWARE_CLASSES = [
