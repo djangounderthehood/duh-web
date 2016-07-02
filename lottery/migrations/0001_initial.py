@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('created_at', models.DateTimeField(default=django.utils.timezone.now)),
                 ('assigned_at', models.DateTimeField(null=True)),
                 ('name', models.CharField(max_length=200)),
-                ('participants_limit', models.PositiveIntegerField()),
+                ('tickets', models.PositiveIntegerField()),
             ],
             options={
                 'verbose_name_plural': 'batches',

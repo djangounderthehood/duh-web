@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib import messages
 
 from .models import Batch, Participant
 
@@ -14,6 +15,24 @@ class ParticipantAdmin(admin.ModelAdmin):
 
 @admin.register(Batch)
 class BatchAdmin(admin.ModelAdmin):
-    list_display = ['pk', 'name', 'participants_limit', 'assigned_at', 'created_at', ]
+    list_display = ['pk', 'name', 'tickets', 'assigned_at', 'created_at']
     list_display_links = ['pk', 'name']
-    readonly_fields = ['created_at']
+    readonly_fields = ['created_at', 'assigned_at']
+    actions = ['assign_participants']
+
+    def assign_participants(self, request, queryset):
+        if len(queryset) != 1:
+            msg = 'Use this action on one Batch at a time'
+            self.message_user(request, msg, level=messages.ERROR)
+            return
+
+        batch = queryset[0]
+        if batch.assigned:
+            msg = 'Batch %d has already been assigned' % batch.id
+            self.message_user(request, msg, level=messages.ERROR)
+            return
+
+        assigned_participants = batch.assign_participants()
+        msg = '%d participants assigned to %s' % (assigned_participants, batch)
+        level = messages.SUCCESS if assigned_participants == batch.tickets else messages.WARNING
+        self.message_user(request, msg, level=level)

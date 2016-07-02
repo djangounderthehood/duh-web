@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.transaction import atomic
 from django.utils import timezone
 
 INDIVIDUAL_TICKET = 'individual'
@@ -13,13 +14,28 @@ class Batch(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     assigned_at = models.DateTimeField(null=True, blank=True)
     name = models.CharField(max_length=200)
-    participants_limit = models.PositiveIntegerField()
+    tickets = models.PositiveIntegerField()
 
     class Meta:
         verbose_name_plural = 'batches'
 
     def __str__(self):
         return self.name
+
+    @property
+    def assigned(self):
+        return bool(self.assigned_at)
+
+    @atomic
+    def assign_participants(self):
+        if self.assigned:
+            raise ValueError('Batch %s has already been assigned' % self.id)
+
+        self.assigned_at = timezone.now()
+        self.save()
+
+        ids_query = Participant.objects.filter(batch=None).order_by('?')[:self.tickets]
+        return Participant.objects.filter(id__in=ids_query).update(batch=self)
 
 
 class Participant(models.Model):
@@ -28,7 +44,7 @@ class Participant(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     ticket_type = models.CharField(max_length=200, choices=TICKET_TYPE_CHOICES)
-    batch = models.ForeignKey(Batch, null=True)
+    batch = models.ForeignKey(Batch, null=True, blank=True, related_name='participants')
 
     def __str__(self):
         return self.email
