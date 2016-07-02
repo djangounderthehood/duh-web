@@ -14,4 +14,5 @@ Pillow==3.2.0
 psycopg2==2.6.1
 sqlparse==0.1.19
 static3==0.6.1
+tablib==0.11.2
 whitenoise==3.0

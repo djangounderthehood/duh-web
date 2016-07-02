@@ -1,6 +1,9 @@
+from datetime import timedelta
 from django.db import models
 from django.db.transaction import atomic
 from django.utils import timezone
+
+RSVP_VALIDITY_HOURS = 72
 
 INDIVIDUAL_TICKET = 'individual'
 CORPORATE_TICKET = 'corporate'
@@ -26,6 +29,13 @@ class Batch(models.Model):
     def assigned(self):
         return bool(self.assigned_at)
 
+    @property
+    def expires_at(self):
+        if not self.assigned:
+            return None
+
+        return self.assigned_at + timedelta(hours=RSVP_VALIDITY_HOURS)
+
     @atomic
     def assign_participants(self):
         if self.assigned:
@@ -48,3 +58,11 @@ class Participant(models.Model):
 
     def __str__(self):
         return self.email
+
+    @property
+    def individual(self):
+        return self.ticket_type == INDIVIDUAL_TICKET
+
+    @property
+    def corporate(self):
+        return self.ticket_type == CORPORATE_TICKET

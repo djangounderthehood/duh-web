@@ -1,3 +1,4 @@
+from datetime import datetime
 from unittest.mock import patch
 
 from django.contrib.auth.models import User
@@ -6,13 +7,27 @@ from django.shortcuts import resolve_url
 from django.test import TestCase
 from django.utils import timezone
 
+from .tito import export_participants_to_csv
 from .forms import ParticipantSignupForm
 from .models import TICKET_TYPE_CHOICES, INDIVIDUAL_TICKET, CORPORATE_TICKET, Participant, Batch
 
+participants_created = 0
+
+
+def create_participant(**kwargs):
+    global participants_created
+    participants_created += 1
+
+    defaults = {
+        'first_name': 'Alice',
+        'last_name': 'Doe',
+        'email': 'alice-%s@example.com' % participants_created,
+        'ticket_type': INDIVIDUAL_TICKET
+    }
+    return Participant.objects.create(**defaults, **kwargs)
+
 
 class BatchTest(TestCase):
-    participants_created = 0
-
     def test_assigned_is_false_when_not_assigned(self):
         batch = Batch()
 
@@ -29,23 +44,24 @@ class BatchTest(TestCase):
         with self.assertRaises(ValueError):
             batch.assign_participants()
 
+    def test_expires_at_returns_none_if_not_assigned(self):
+        batch = Batch()
+
+        self.assertIsNone(batch.expires_at)
+
+    def test_expires_at_is_correct_when_assigned(self):
+        batch = Batch(assigned_at=datetime(2016, 1, 1, 13, 30, tzinfo=timezone.utc))
+
+        self.assertEquals(batch.expires_at, datetime(2016, 1, 4, 13, 30, tzinfo=timezone.utc))
+
     def test_assign_participants_does_assign_participants(self):
-        participants = [self.create_participant() for n in range(5)]
+        participants = [create_participant() for n in range(5)]
         batch = Batch.objects.create(name='Test Batch', tickets=3)
         batch.assign_participants()
 
         self.assertTrue(batch.assigned)
         self.assertEqual(3, batch.participants.count())
         self.assertEqual(2, Participant.objects.filter(batch=None).count())
-
-    def create_participant(self):
-        self.participants_created += 1
-        return Participant.objects.create(
-            first_name='Alice',
-            last_name='Doe',
-            email='alice-%s@example.com' % self.participants_created,
-            ticket_type=INDIVIDUAL_TICKET,
-        )
 
 
 class ParticipantTest(TestCase):
@@ -54,6 +70,16 @@ class ParticipantTest(TestCase):
 
         with self.assertRaises(IntegrityError):
             Participant.objects.create(email='tomek@hauru.eu')
+
+    def test_individual_and_corporate_ticket_types(self):
+        participant = Participant(ticket_type=INDIVIDUAL_TICKET)
+        other = Participant(ticket_type=CORPORATE_TICKET)
+
+        self.assertTrue(participant.individual)
+        self.assertFalse(participant.corporate)
+
+        self.assertFalse(other.individual)
+        self.assertTrue(other.corporate)
 
 
 class ParticipantSignupFormTest(TestCase):
@@ -123,7 +149,34 @@ class BatchAdminTest(TestCase):
             resp = self.client.post(change_url, follow=True, data={
                 'action': 'assign_participants',
                 '_selected_action': '%d' % batch.pk
-            }, )
+            })
 
             assign_participants_mock.assert_called_once_with()
             self.assertEqual(1, len(resp.context['messages']))
+
+    def test_export_to_csv_action_returns_csv(self):
+        batch = Batch.objects.create(name='Test Batch', tickets=50, assigned_at=timezone.now())
+        participants = [create_participant(batch=batch) for n in range(3)]
+        change_url = resolve_url('admin:lottery_batch_changelist')
+
+        with patch('lottery.admin.export_participants_to_csv') as export_to_csv_mock:
+            export_to_csv_mock.return_value = "I'm a CSV thingy"
+            resp = self.client.post(change_url, data={
+                'action': 'export_to_csv',
+                '_selected_action': '%d' % batch.pk
+            })
+
+            self.assertEqual(1, export_to_csv_mock.call_count)
+            self.assertEqual('text/csv', resp['Content-Type'])
+            self.assertEqual('attachment; filename="test-batch.csv"', resp['Content-Disposition'])
+            self.assertRegex(resp.content, b"I'm a CSV thingy")
+
+
+class TitoTest(TestCase):
+    def test_export_participants_to_csv_returns_valid_csv(self):
+        batch = Batch.objects.create(name='Test Batch', tickets=50, assigned_at=timezone.now())
+        participants = [create_participant(batch=batch) for n in range(5)]
+        csv = export_participants_to_csv(participants)
+
+        self.assertRegex(csv, '^First Name,Last Name,Email')
+        self.assertEqual(1 + len(participants), len(csv.strip().split('\n')))
