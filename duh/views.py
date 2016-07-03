@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from django.conf import settings
 from django.shortcuts import render
 from django.utils import timezone
 
@@ -8,14 +9,13 @@ from attendees.models import Attendee
 
 
 def home(request):
-    ticket_sale_start = datetime(2016, 7, 1, 11, tzinfo=timezone.utc)
     if request.user.is_staff:
         sponsors = Sponsor.objects.all()
     else:
         sponsors = Sponsor.objects.live()
     return render(request, 'home.html', {
         'sponsors': sponsors,
-        'ticket_sale_start': ticket_sale_start,
+        'ticket_sale_start': settings.REGISTRATION_START,
         'now': timezone.now(),
     })
 

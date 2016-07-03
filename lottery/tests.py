@@ -1,6 +1,7 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from unittest.mock import patch
 
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.shortcuts import resolve_url
@@ -96,20 +97,24 @@ class ParticipantSignupFormTest(TestCase):
 
 
 class SignupViewTest(TestCase):
+    before_registration = settings.REGISTRATION_START - timedelta(seconds=1)
+    during_registration = settings.REGISTRATION_START
+    after_registration = settings.REGISTRATION_END + timedelta(seconds=1)
+
     def test_get_renders_form(self):
-        resp = self.client.get(resolve_url('signup'))
+        resp = self.client.get(resolve_url('signup'), timestamp=self.during_registration)
 
         self.assertContains(resp, '<form')
         self.assertTemplateUsed(resp, 'lottery/signup.html')
 
     def test_post_with_incorrect_data_rerenders_form(self):
-        resp = self.client.post(resolve_url('signup'), data={})
+        resp = self.client.post(resolve_url('signup'), timestamp=self.during_registration, data={})
 
         self.assertContains(resp, '<form')
         self.assertTemplateUsed(resp, 'lottery/signup.html')
 
     def test_post_with_correct_data_redirects_to_confirmation(self):
-        resp = self.client.post(resolve_url('signup'), data={
+        resp = self.client.post(resolve_url('signup'), timestamp=self.during_registration, data={
             'first_name': 'Tomek',
             'last_name': 'Paczkowski',
             'email': 'tomek@hauru.eu',
@@ -117,6 +122,28 @@ class SignupViewTest(TestCase):
         })
 
         self.assertRedirects(resp, resolve_url('signup_confirmation', email='tomek@hauru.eu'))
+
+    def test_request_before_registration_opens_renders_warning(self):
+        resp = self.client.post(resolve_url('signup'), timestamp=self.before_registration, data={
+            'first_name': 'Tomek',
+            'last_name': 'Paczkowski',
+            'email': 'tomek@hauru.eu',
+            'ticket_type': INDIVIDUAL_TICKET
+        })
+
+        self.assertRedirects(resp, resolve_url('registration_closed'))
+        self.assertFalse(Participant.objects.filter(email='tomek@hauru.eu').exists())
+
+    def test_request_after_registration_closes_renders_warning(self):
+        resp = self.client.post(resolve_url('signup'), timestamp=self.after_registration, data={
+            'first_name': 'Tomek',
+            'last_name': 'Paczkowski',
+            'email': 'tomek@hauru.eu',
+            'ticket_type': INDIVIDUAL_TICKET
+        })
+
+        self.assertRedirects(resp, resolve_url('registration_closed'))
+        self.assertFalse(Participant.objects.filter(email='tomek@hauru.eu').exists())
 
 
 class SignupConfirmationViewTest(TestCase):

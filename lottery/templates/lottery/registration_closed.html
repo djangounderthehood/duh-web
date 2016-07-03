@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if start > now %}
+        <h1>Sorry, not opened yet!</h1>
+        <p>
+            Registration has not opened yet! We'll start taking emails on {{ start|date:"c" }}
+            and will continue until {{ end|date:"c" }}.
+        </p>
+    {% endif %}
+
+    {% if now > end %}
+        <h1>Sorry, registration closed!</h1>
+        <p>
+            Registration has closed at {{ end|date:"c" }}.
+        </p>
+    {% endif %}
+
+    <p>
+        You can read more about it on
+        <a href="{% url 'blog:article' slug='2016-07-01-registration' %}">our blog</a>.
+    </p>
+{% endblock %}
