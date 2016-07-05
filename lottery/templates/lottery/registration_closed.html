@@ -4,13 +4,13 @@
 {% block content %}
     <h1><img src="{% static 'img/tickets-header.png' %}" class="header-image" alt="TICKETS" /></h1>
     {% if start > now %}
-        <h2>Sorry, registration is not opened yet!</h2>
+        <h2>Sorry, registration is not opened yet! 🔜</h2>
         <p>
             Registration for Django: Under The Hood starts on {{ start }}
-            and will continue until {{ end }}.
+            and will continue until {{ end }}. ✨
         </p>
         
-        <h3>Timeline</h3>
+        <h3>Timeline 📅</h3>
         <ol>
             <li><strong>On Tuesday, July 12, we will open registration.</strong>
             You'll have two weeks to submit your e-mail address for the lottery here, until 
@@ -22,7 +22,7 @@
             all of the tickets have been purchased.</li>
         </ol>
         
-        <h3>Pricing</h3>
+        <h3>Pricing 💶</h3>
         <p>
             For 2016, the full conference passes including 1.5 day of Talks and 1.5 of 
             contributing to Open Source alongside core team will have the following pricing:
@@ -33,7 +33,7 @@
             <li>300€ for corporate tickets (companies buying tickets for their employees)</li>
         </ul>
         
-        <h3>Reserve tickets for your team</h3>
+        <h3>Reserve tickets for your team 👧👦👧</h3>
         <p>
             If you want to make sure that tickets for your team are reserved and set aside,
             we'd be happy to discuss a sponsorship opportunity with you. Please get in touch
@@ -43,7 +43,7 @@
     {% endif %}
 
     {% if now > end %}
-        <h1>Sorry, registration closed!</h1>
+        <h1>Sorry, registration closed! 😞</h1>
         <p>
             Registration for Django: Under The Hood 2016 closed at {{ end|date }}.
         </p>
@@ -54,7 +54,7 @@
         </p>
     {% endif %}
 
-    <h3>Details</h3>
+    <h3>Details 📰</h3>
     <p>
         You can read more about the registration process on
         <a href="{% url 'blog:article' slug='2016-07-01-registration' %}">our blog</a>.
