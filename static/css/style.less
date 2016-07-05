@@ -24,6 +24,10 @@ a:hover {
     text-decoration: none !important;
 }
 
+p {
+  margin-bottom: 0.5em;
+}
+
 section {
     margin-top: 30px;
     margin-bottom: 40px;
@@ -252,29 +256,59 @@ h4 {
     }
 }
 
-#tickets {
-    form {
-        margin: 30px auto;
-        input[type="email"] {
-            width: 65%;
-            font-size: 20px;
-            font-family: @body_font;
-            padding: 6px 15px;
-            height: auto;
-        }
-        input[type="submit"] {
-            background: @blue;
-            color: white;
-            font-family: @sans_font;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: bold;
-            border: 0px;
-            font-size: 16px;
-            height: auto;
-            padding: 10px 20px 9px;
-        }
+form {
+    margin: 30px auto;
+    input[type="email"], input[type="text"] {
+        width: 65%;
+        font-size: 20px;
+        font-family: @body_font;
+        padding: 6px 15px;
+        height: auto;
     }
+    input[type="submit"] {
+        background: @blue;
+        color: white;
+        font-family: @sans_font;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: 0px;
+        font-size: 16px;
+        height: auto;
+        padding: 10px 20px 9px;
+    }
+    label {
+        display: block;
+    }
+}
+
+.form--signup {
+    p {
+        width: 50%;
+        float: left;
+        margin-bottom: 30px;
+    }
+    
+    input[type="email"], input[type="text"] {
+        width: 80%;
+        background: none;
+        border: 0;
+        border-bottom: 1px solid rgba(0,0,0,0.4);
+        padding-left: 0;
+    }
+    
+    input[type="email"]:focus, input[type="text"]:focus {
+        outline: none;
+        border-bottom-color: @blue;
+    }
+    
+    input[type="email"]:invalid, input[type="text"]:invalid {
+        box-shadow: none;
+        border-bottom-color: red;
+    }
+}
+
+#tickets {
     .centered {
         text-align: center;
     }
@@ -285,6 +319,7 @@ h4 {
         font-size: 26px;
         padding: 10px 30px;
         margin: 10px 0 20px;
+        color: white;
     }
     .small {
         font-size: 14px;

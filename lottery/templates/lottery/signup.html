@@ -1,18 +1,48 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
-    <img src="{% static 'img/tickets-header.png' %}" class="header-image" alt="TICKETS" />
-    <h1>Hello!</h1>
+    <h1><img src="{% static 'img/tickets-header.png' %}" class="header-image" alt="TICKETS" /></h1>
+    <h2>2016 Registration</h2>
 
-    <p>Enter your data below to sign up for our ticket lottery. You can read more about it on
+    <p>Enter your data below to sign up for our <a href="#how-it-works">ticket lottery</a>. You can read more about it on
     <a href="{% url 'blog:article' slug='2016-07-01-registration' %}">our blog</a>.</p>
-    <p>We ask for only one submission per person.</p>
+    
+    <p>We ask for only one submission per person. If multiple employees of your company want to come, they must each individually submit.</p>
 
-    <form method="post" action="{% url 'signup' %}">
+    <form method="post" action="{% url 'signup' %}" class="form--signup">
         {% csrf_token %}
         {{ form.as_p }}
-        <p>
-            <button type="submit">Sign up!</button>
-        </p>
+        <div class="cls"></div>
+        <input type="submit" value="Sign up!" />
     </form>
+    
+    <h3 id="how-it-works">How it works?</h3>
+    <p>
+        <strong>Registration for ticket lottery is open until Tuesday, July 26th at noon CET.</strong>
+    </p>
+    <p>
+        On Thursday July 28th at noon CET we're going to randomly select attendees 
+        who will receive a link to purchase their conference tickets.</strong> This link will be
+        valid for 72 hours, and then we will randomly assign it to another attendee until
+        all of the tickets have been purchased.</li>
+    </ol>
+    
+    <h3>Pricing</h3>
+    <p>
+        For 2016, the full conference passes including 1.5 day of Talks and 1.5 of 
+        contributing to Open Source alongside core team will have the following pricing:
+    </p>
+
+    <ul>
+        <li>200€ for individual attendees (paying out of their own pocket) </li>
+        <li>300€ for corporate tickets (companies buying tickets for their employees)</li>
+    </ul>
+    
+    <h3>Reserve tickets for your team</h3>
+    <p>
+        If you want to make sure that tickets for your team are reserved and set aside,
+        we'd be happy to discuss a sponsorship opportunity with you. Please get in touch
+        with us on <a href="mailto:hello@djangounderthehood.com">hello@djangounderthehood.com</a>
+    </p>
 {% endblock %}
