@@ -169,11 +169,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 if not DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = 'smtp.mandrillapp.com'
+    EMAIL_HOST = 'smtp.postmarkapp.com'
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
-    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+    EMAIL_HOST_USER = os.environ.get('POSTMARK_API_TOKEN')
+    EMAIL_HOST_PASSWORD = os.environ.get('POSTMARK_API_TOKEN')
 
 # Misc
 OPBEAT = {

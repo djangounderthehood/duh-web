@@ -25,7 +25,8 @@ def create_participant(**kwargs):
         'email': 'alice-%s@example.com' % participants_created,
         'ticket_type': INDIVIDUAL_TICKET
     }
-    return Participant.objects.create(**defaults, **kwargs)
+    defaults.update(kwargs)
+    return Participant.objects.create(**defaults)
 
 
 class BatchTest(TestCase):
