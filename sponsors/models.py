@@ -6,23 +6,28 @@ from django.utils import timezone
 
 
 class SPONSOR_LEVELS:
-    GOLD = 'gold'
-    SILVER = 'silver'
+    H1 = 'h1'
+    H2 = 'h2'
+    H3 = 'h3'
     PARTNER = 'partner'
 
     choices = [
-        (GOLD, 'Gold'),
-        (SILVER, 'Silver'),
+        (H1, '<h1>'),
+        (H2, '<h2>'),
+        (H3, '<h3>'),
         (PARTNER, 'Partner')
     ]
 
 
 class SponsorQueryset(models.QuerySet):
-    def gold(self):
-        return self._by_level(SPONSOR_LEVELS.GOLD)
+    def h1(self):
+        return self._by_level(SPONSOR_LEVELS.H1)
 
-    def silver(self):
-        return self._by_level(SPONSOR_LEVELS.SILVER)
+    def h2(self):
+        return self._by_level(SPONSOR_LEVELS.H2)
+        
+    def h3(self):
+        return self._by_level(SPONSOR_LEVELS.H3)
 
     def partner(self):
         return self._by_level(SPONSOR_LEVELS.PARTNER)
