@@ -8,10 +8,13 @@ django-pipeline==1.6.8
 django-storages==1.4.1
 django-toolbelt==0.0.1
 gunicorn==19.4.5
+html2text==2016.5.29
 Markdown==2.6.6
 opbeat==3.3
 Pillow==3.2.0
 psycopg2==2.6.1
+pytz==2016.4
 sqlparse==0.1.19
 static3==0.6.1
+tablib==0.11.2
 whitenoise==3.0

@@ -2,15 +2,13 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h2>
-           <img src="{% static 'img/tickets-header.png' %}" class="header-image" alt="TICKETS" height="120" />
-        </h2>
+        <img src="{% static 'img/tickets-header.png' %}" class="header-image" alt="TICKETS" />
 
         <div class="countdown" data-target="{{ ticket_sale_start.isoformat }}">
             <div class="countdown-past{% if now >= ticket_sale_start %} hidden{% endif %}">
-                <p>Conference <span data-emoji-alt="🎫">tickets</span> will be available later this year. </p>
+                <p>Conference <span data-emoji-alt="🎫">registration</span> will open on 12th July 2016 at noon CET.</p>
                 
-                <p>🎫 <a href="/blog/article/2016-07-01-registration/">Read on our blog how we plan to sell conference tickets this year</a></p>
+                <p>🎫 <a href="/blog/article/2016-07-01-registration/">Read on our blog how we plan to sell conference tickets this year</a>.</p>
 
                 <p>If you want to have <span data-emoji-alt="🎫">tickets</span> for your team reserved, please scroll down to learn about the <span data-emoji-alt="💞">sponsorship</span> opportunities.</p>
 
@@ -30,10 +28,7 @@
             <div class="countdown-future{% if now < ticket_sale_start %} hidden{% endif %}">
                 <p><span data-emoji-alt="🎫">Tickets</span> are now available.</p>
 
-                <p class="centered"><a href="http://tickets.djangounderthehood.com/" class="btn btn-large btn-primary">Get your ticket now!</a></p>
-
-                <p class="small"><b>Refund policy:</b> We can accept <span data-emoji-alt="🎫">ticket</span> cancellations up to two weeks before the event. If you want to cancel after that, we will refund only if we find a new buyer for your <span data-emoji-alt="🎫">ticket</span>. </p>
-
+                <p class="centered"><a href="{% url 'signup' %}" class="btn btn-large btn-primary">Sign up for tickets now!</a></p>
             </div>
         </div>
     </div>

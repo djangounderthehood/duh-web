@@ -9,11 +9,13 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 import os
+from datetime import datetime
+
 import dj_database_url
+from django.utils import timezone
 
 # Path to the root of the repository
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
 
 # Basics
 DEBUG = os.environ.get('DJANGO_DEBUG', '').lower() != 'false'
@@ -35,6 +37,7 @@ INSTALLED_APPS = [
     'sponsors',
     'attendees',
     'tinyblog',
+    'lottery',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -58,7 +61,6 @@ ADMINS = [
 ]
 EMAIL_SUBJECT_PREFIX = '[DUtH] '
 
-
 # Basic security
 ALLOWED_HOSTS = ['*']
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'hello!')
@@ -73,15 +75,13 @@ DATABASES = {
 }
 DATABASES['default']['CONN_MAX_AGE'] = None
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Amsterdam'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-
 
 # Templates
 TEMPLATES = [
@@ -104,7 +104,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 # Static files
 STATICFILES_DIRS = (
@@ -164,19 +163,17 @@ if not DEBUG:
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 
-
 # Email
 SERVER_EMAIL = 'hello@djangounderthehood.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 if not DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = 'smtp.mandrillapp.com'
+    EMAIL_HOST = 'smtp.postmarkapp.com'
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
-    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-
+    EMAIL_HOST_USER = os.environ.get('POSTMARK_API_TOKEN')
+    EMAIL_HOST_PASSWORD = os.environ.get('POSTMARK_API_TOKEN')
 
 # Misc
 OPBEAT = {
@@ -188,3 +185,6 @@ OPBEAT = {
 TITO_AUTH_TOKEN = os.environ.get('TITO_AUTH_TOKEN')
 
 TINYBLOG_ROOT_DIR = os.path.join(BASE_DIR, 'tinyblog', 'articles')
+
+REGISTRATION_START = datetime(2016, 7, 12, 10, 0, tzinfo=timezone.utc)
+REGISTRATION_END = datetime(2016, 7, 26, 10, 0, tzinfo=timezone.utc)
