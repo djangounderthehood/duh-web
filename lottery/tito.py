@@ -1,6 +1,6 @@
 import tablib
 
-PERSONAL_COLUMNS = ['First Name', 'Last Name', 'Email', 'Expiry time', 'Redirect?', 'Discount code']
+PERSONAL_COLUMNS = ['First Name', 'Last Name', 'Email', 'Expiry time', 'Redirect?']
 
 # TODO: Check we've got *all* tickets named here
 # Tito importer will protest if we don't list all current tickets categories
@@ -20,7 +20,7 @@ def export_participants_to_csv(participants):
     data = tablib.Dataset(headers=headers)
     for p in participants:
         # Personal columns
-        row = [p.first_name, p.last_name, p.email, p.batch.expires_at, 'Y', '']
+        row = [p.first_name, p.last_name, p.email, p.batch.expires_at, 'N']
 
         # Individual, corporate and donation tickets
         row += ['Y' if p.individual else '', 'Y' if p.corporate else '', 'Y']
