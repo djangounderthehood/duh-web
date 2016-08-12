@@ -8,7 +8,7 @@
 </div>
 {% endif %}
 
-{% if sponsors.h1.count > 0 %}<h3>&lt;h1&gt; sponsors</h3>{% endif %}
+{% if sponsors.h1.count > 0 %}<h3>Gold sponsors</h3>{% endif %}
 {% for chunk in sponsors.h1|chunkify:2 %}
     <div class="row vertical-center">
     {% for sponsor in chunk %}
@@ -26,7 +26,7 @@
     </div>
 {% endfor %}
 
-{% if sponsors.h2.count > 0 %}<h3>&lt;h2&gt; sponsors</h3>{% endif %}
+{% if sponsors.h2.count > 0 %}<h3>Silver sponsors</h3>{% endif %}
 {% for chunk in sponsors.h2|chunkify:3 %}
     <div class="row vertical-center">
     {% for sponsor in chunk %}
@@ -44,7 +44,7 @@
     </div>
 {% endfor %}
 
-{% if sponsors.h3.count > 0 %}<h3>&lt;h3&gt; sponsors</h3>{% endif %}
+{% if sponsors.h3.count > 0 %}<h3>Bronze sponsors</h3>{% endif %}
 {% for chunk in sponsors.h3|chunkify:4 %}
     <div class="row vertical-center">
     {% for sponsor in chunk %}

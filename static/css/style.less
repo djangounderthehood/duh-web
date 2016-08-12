@@ -368,6 +368,9 @@ form {
     }
     .sponsor {
         position: relative;
+        margin-bottom: 15px;
+        line-height: 100px;
+        text-align: center;
 
         .toolbox {
             display: none;
@@ -382,10 +385,21 @@ form {
             }
         }
         .logo {
-            max-width: 100%;
+          max-width: 75%;
+          max-height: 100px;
+          vertical-align: middle;
+          filter: grayscale(100%);
+          -webkit-filter: grayscale(100%);
+          &:hover {
+            filter: none;
+            -webkit-filter: none;
+          }
         }
         &.silver {
             text-align: center;
+        }
+        p {
+            line-height: 3em;
         }
     }
 
