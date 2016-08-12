@@ -16,6 +16,10 @@ __We're expecting to sell them out very quickly, so make sure to be there on tim
 
 On [Tuesday, August 16 at 3pm Amsterdam time](http://time.is/1500_16_August_2016_in_Amsterdam).
 
+#### Where?
+
+[Our registration page on Tito](https://ti.to/duth/2016).
+
 #### How much?
 
 The full conference passes including 1.5 day of Talks and 1.5 of 
