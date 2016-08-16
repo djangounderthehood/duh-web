@@ -4,7 +4,7 @@
 {% block content %}
 <section id="schedule" class="row">
     <img src="{% static 'img/schedule-header.png' %}" class="header-image" alt="Schedule" />
-    <div class="col-md-4 day">
+    <div class="col-md-6 day">
         <div class="header">
           <h3>Day 1, Thursday</h3>
           <p>Venue: <a href="https://goo.gl/maps/mPzHznrZ6nk" target="_blank">Pakhuis De Zwijger</a></p>
@@ -28,31 +28,31 @@
           <div class="session">
             <div class="datetime">13:45</div>
             <div class="session-details">
-              <p><b>HTTP in Django</b></p>
-              <p class="speaker">Jacob Kaplan-Moss</p>
-            </div>
-            <div class="cls"></div>
-          </div>
-          <div class="session">
-            <div class="datetime">14:45</div>
-            <div class="session-details">
-              <p><b>Django Admin</b></p>
-              <p class="speaker">Ola Sitarska</p>
+              <p><b>Channels</b></p>
+              <p class="speaker">Andrew Godwin</p>
             </div>
             <div class="cls"></div>
           </div>
           <div class="session break">
-            <div class="datetime">15:45</div>
+            <div class="datetime">14:45</div>
             <div class="session-details">
               <p><b>Break</b></p>
             </div>
             <div class="cls"></div>
           </div>
           <div class="session">
+            <div class="datetime">15:15</div>
+            <div class="session-details">
+              <p><b>Testing</b></p>
+              <p class="speaker">Ana Balica</p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session">
             <div class="datetime">16:15</div>
             <div class="session-details">
-              <p><b>Django CMS & ORM</b></p>
-              <p class="speaker">Iacopo Spalletti</p>
+              <p><b>Debugging</b></p>
+              <p class="speaker">Aymeric Augustin</p>
             </div>
             <div class="cls"></div>
           </div>
@@ -65,7 +65,7 @@
           </div>
         </div>
     </div>
-    <div class="col-md-4 day">
+    <div class="col-md-6 day">
         <div class="header">
           <h3>Day 2, Friday</h3>
           <p>Venue: <a href="https://goo.gl/maps/mPzHznrZ6nk" target="_blank">Pakhuis De Zwijger</a></p>
@@ -89,15 +89,15 @@
             <div class="datetime">10:30</div>
             <div class="session-details">
               <p><b>Keynote</b></p>
-              <p class="speaker">Russell Keith-Magee</p>
+              <p class="speaker">Jennifer Akullian</p>
             </div>
             <div class="cls"></div>
           </div>
           <div class="session">
             <div class="datetime">11:00</div>
             <div class="session-details">
-              <p><b>Expressions</b></p>
-              <p class="speaker">Josh Smeaton</p>
+              <p><b>Validation</b></p>
+              <p class="speaker">Loïc Bistuer</p>
             </div>
             <div class="cls"></div>
           </div>
@@ -111,16 +111,16 @@
           <div class="session">
             <div class="datetime">13:00</div>
             <div class="session-details">
-              <p><b>Twisted & Django</b></p>
-              <p class="speaker">Amber Brown</p>
+              <p><b>JavaScript</b></p>
+              <p class="speaker">Idan Gazit</p>
             </div>
             <div class="cls"></div>
           </div>
           <div class="session">
             <div class="datetime">14:00</div>
             <div class="session-details">
-              <p><b>Static files in Django</b></p>
-              <p class="speaker">James Aylett</p>
+              <p><b>Database backends</b></p>
+              <p class="speaker">Michael Manfre</p>
             </div>
             <div class="cls"></div>
           </div>
@@ -134,16 +134,16 @@
           <div class="session">
             <div class="datetime">15:30</div>
             <div class="session-details">
-              <p><b>Django security</b></p>
-              <p class="speaker">Florian Apolloner</p>
+              <p><b>OSS Funding</b></p>
+              <p class="speaker">Nadia Eghbal</p>
             </div>
             <div class="cls"></div>
           </div>
           <div class="session">
             <div class="datetime">16:30</div>
             <div class="session-details">
-              <p><b>Documentation systems</b></p>
-              <p class="speaker">Eric Holscher</p>
+              <p><b>Django @ Instagram</b></p>
+              <p class="speaker">Carl Meyer</p>
             </div>
             <div class="cls"></div>
           </div>
@@ -161,6 +161,7 @@
             </div>
             <div class="cls"></div>
           </div>
+          {% comment %} 
           <div class="session">
             <div class="datetime">20:45</div>
             <div class="session-details">
@@ -175,12 +176,14 @@
             </div>
             <div class="cls"></div>
           </div>
+          {% endcomment %}
         </div>
     </div>
-    <div class="col-md-4 day">
+    
+    <div class="col-md-6 day">
         <div class="header">
           <h3>Day 3, Saturday</h3>
-          <p>Venue: <a href="https://goo.gl/maps/AvtxM88cg4U2">Travel Bird office</a></p>
+          <p>Venue: To be announced</p>
         </div>
         <div class="sessions">
           <div class="session break session-45min">
@@ -194,8 +197,6 @@
             <div class="datetime">10:00</div>
             <div class="session-details">
               <p><b>Sprinting!</b></p>
-              and
-              <p><b>Docs Under The Hood workshop by Mikey Ariel (10:00 - 13:00)</b></p>
             </div>
             <div class="cls"></div>
           </div>
@@ -206,17 +207,45 @@
             </div>
             <div class="cls"></div>
           </div>
-          <div class="session sprint-2">
+          <div class="session sprint-2 right-border">
             <div class="datetime">14:00</div>
             <div class="session-details">
               <p><b>Sprinting!</b></p>
-              and
-              <p><b><a href="http://blog.djangounderthehood.com/post/131964877965/announcing-our-gold-sponsor-heroku" target="_blank">Heroku Under The Hood workshop</a> by Jacob Kaplan-Moss (14:00 - 17:00)</b></p>
             </div>
             <div class="cls"></div>
           </div>
           <div class="session break session-15min">
             <div class="datetime">18:00</div>
+            <div class="session-details">
+              <p><b>End of third day</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 day">
+        <div class="header">
+          <h3>Day 4, Sunday</h3>
+          <p>Venue: To be announced</p>
+        </div>
+        <div class="sessions">
+          <div class="session break session-45min">
+            <div class="datetime">9:30</div>
+            <div class="session-details">
+              <p><b>Doors open</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session sprint-1">
+            <div class="datetime">10:00</div>
+            <div class="session-details">
+              <p><b>Sprinting!</b></p>
+            </div>
+            <div class="cls"></div>
+          </div>
+          <div class="session break session-15min">
+            <div class="datetime">14:00</div>
             <div class="session-details">
               <p><b>End of last day</b></p>
             </div>

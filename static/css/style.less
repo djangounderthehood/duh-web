@@ -532,8 +532,8 @@ footer {
         .sessions {
             .session {
                 padding: 10px 0;
-                border-bottom: 1px solid @yellow;
-                border-left: 1px solid @yellow;
+                border-bottom: 1px solid @green;
+                border-left: 1px solid @green;
                 height: 85px;
 
                 .datetime {
@@ -557,9 +557,8 @@ footer {
                 }
             }
             .break {
-                background: @yellow;
+                background: @green;
                 color: white;
-                border-left: 1px solid white;
             }
             .spacer-150min {
                 height: 276px;
@@ -583,15 +582,19 @@ footer {
         }
     }
 
-    .day:last-child {
+    .day:last-child, .day:nth-child(3) {
         .session {
-            border-right: 1px solid @yellow;
+            border-right: 1px solid @green;
         }
     }
     .day:first-child {
         .break {
             border-left: 0px;
         }
+    }
+    
+    .right-border {
+        border-right: 1px solid @green;
     }
 }
 
