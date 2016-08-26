@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+{% load chunkify %}
+{% load randomify %}
+{% load toolbox %}
+
+{% block content %}
+<section id="organizers" class="row">
+    <h1>Team</h1>
+
+    {% for chunk in object_list|randomify_by_date|chunkify:3 %}
+        <div class="row">
+            {% for organizer in chunk %}
+                <div class="organizer col-md-4 {% if not organizer.published %} preview{% endif %} clearfix" id="{{ organizer.slug }}">
+
+                        {% if organizer.url %}<a href="{{ organizer.url }}">{% endif %}
+                            {{ organizer.get_picture_html }}
+                        {% if organizer.url %}</a>{% endif %}
+
+                    <h3 class="name" {{ organizer.data_emoji_alt }}>{{ organizer.name }}</h3>
+                    <p class="title">{{ organizer.title }}</p>
+                    {% toolbox organizer user=user %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}

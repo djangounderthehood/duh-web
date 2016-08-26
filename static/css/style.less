@@ -225,7 +225,7 @@ h4 {
     .speaker {
         margin-top: 30px;
         text-align: center;
-        
+
         &__photo {
           width: 240px;
           height: 240px;
@@ -236,6 +236,27 @@ h4 {
           margin: 0 auto;
         }
     }
+}
+
+#organizers {
+    h3 {
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .organizer {
+        margin-top: 30px;
+        text-align: center;
+
+        &__photo {
+            width: 240px;
+            height: 240px;
+            background-blend-mode: overlay;
+            background-size: cover;
+            -webkit-clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+            clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+            margin: 0 auto;
+          }
+      }
 }
 
 #attendees {
@@ -292,7 +313,7 @@ form {
         float: left;
         margin-bottom: 30px;
     }
-    
+
     input[type="email"], input[type="text"] {
         width: 80%;
         background: none;
@@ -300,12 +321,12 @@ form {
         border-bottom: 1px solid rgba(0,0,0,0.4);
         padding-left: 0;
     }
-    
+
     input[type="email"]:focus, input[type="text"]:focus {
         outline: none;
         border-bottom-color: @blue;
     }
-    
+
     input[type="email"]:invalid, input[type="text"]:invalid {
         box-shadow: none;
         border-bottom-color: red;
@@ -592,7 +613,7 @@ footer {
             border-left: 0px;
         }
     }
-    
+
     .right-border {
         border-right: 1px solid @green;
     }
@@ -619,7 +640,7 @@ footer {
         border: 0;
         padding: 0;
     }
-    
+
     p {
       margin-top: 15px;
     }
