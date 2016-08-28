@@ -1,0 +1,22 @@
+Hi {{ invitation.first_name }},
+
+
+Just like last year, we have a slack channel for the conference this year where
+you can chat with other attendees.
+
+If you'd like to join, please finalize your
+invitation at http{% if https %}s{% endif %}://{{ domain }}{% url 'slakslakslak:claim' token=invitation.token %} .
+
+(This link is private and should not be shared with anyone otherwise they'll be able to join instead of you.)
+
+
+If you don't want to join our slack channel, you can ignore this email.
+
+
+As always, if you have any questions please get in touch.
+Stroopwafely yours,
+
+The DUtH team,
+
+Email: hello@djangounderthehood.com
+Twitter: @DjangoUnderHood

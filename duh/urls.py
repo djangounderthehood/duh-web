@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^team/', include('organizers.urls', namespace='organizers')),
     url(r'^tickets/', include('lottery.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^slack/', include('slakslakslak.urls', namespace='slakslakslak')),
 ]
 
 # Serve uploaded files in DEBUG mode

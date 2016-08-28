@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load bootstrap %}
+
+
+{% block content %}
+<form action="{% url 'slakslakslak:claim' token=form.invitation.token %}" method="post">
+    {{ form|bootstrap }}
+
+    <div class="submit">
+        <input type="submit" class="btn btn-primary" value="Claim">
+        {% csrf_token %}
+    </div>
+</form>
+
+{% endblock %}

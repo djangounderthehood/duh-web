@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Rules for our Slack channel</h1>
+
+<p>As with any of our conference spaces (online or physical), participants are
+expected to follow our <a href="{% url 'coc' %}">code of conduct</a>.</p>
+
+<p>In order to make the experience pleasant for everyone, we also ask that you follow some slack-specific rules:</p>
+
+<ol>
+    <li>Do not message people privately without their consent, and do not invite them
+to join any room without their consent.</li>
+    <li>Do not mention people who don't belong to particular room in that room.</li>
+    <li>Do not post advertizing or job postings outside of the dedicated #jobs channel.</li>
+</ol>
+
+<p>
+If at any time you're feeling uncomfortable due to anyone's behaviour on the Slack
+channel, please contact the organizers by emailing <a href="mailto:coc@djangounderthehood.com">coc@djangounderthehood.com</a>,
+approaching them at the conference, or using the emergency phone numbers listed in the <a href="{% url 'coc' %}">Code of Conduct</a>.
+</p>
+
+<p>
+When possible, include screenshots or chat logs of any unwanted messages.
+</p>
+
+{% endblock %}

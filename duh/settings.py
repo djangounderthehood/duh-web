@@ -32,12 +32,14 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_gravatar',
     'opbeat.contrib.django',
+    'bootstrapform',
 
     'organizers',
     'sponsors',
     'attendees',
     'tinyblog',
     'lottery',
+    'slakslakslak.apps.MonkeyPatchingConfig',
 ]
 
 MIDDLEWARE_CLASSES = [

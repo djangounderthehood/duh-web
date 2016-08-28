@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Oops, something went wrong 😿</h1>
+
+<p>It seems that your invitation has already been claimed which means you should already have an account on slack.</p>
+
+<p>Try using the <a href="https://duth-2016.slack.com/forgot?email={{ object.email|urlencode }}">"Forgotten password"</a> feature on slack directly.</p>
+
+<p>In case that helps, our information tells us that you claimed your invitation on the following date: {{ object.claimed.claimed_on }}.</p>
+
+<p>If that doesn't work, please contact us by email: <a href="mailto:hello@djangounderthehood.com">hello@djangounderthehood.com</a>.</p>
+{% endblock %}
