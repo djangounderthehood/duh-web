@@ -186,6 +186,14 @@ OPBEAT = {
 
 TITO_AUTH_TOKEN = os.environ.get('TITO_AUTH_TOKEN')
 
+# Tito webhooks
+TITO_SHARED_SECRET = os.getenvb(b'TITO_SHARED_SECRET', b'')
+
+# Slack integration
+SLACK_API_TOKENS = {
+    'duth-2016': os.getenv('SLACK_TOKEN_DUTH2016'),
+}
+
 TINYBLOG_ROOT_DIR = os.path.join(BASE_DIR, 'tinyblog', 'articles')
 
 REGISTRATION_START = datetime(2016, 7, 12, 10, 0, tzinfo=timezone.utc)
