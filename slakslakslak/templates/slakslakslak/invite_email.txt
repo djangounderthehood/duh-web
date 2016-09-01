@@ -1,11 +1,9 @@
-Hi {{ invitation.first_name }},
+Hi {{ invitation.first_name }} 👋🏻,
 
 
-Just like last year, we have a slack channel for the conference this year where
-you can chat with other attendees.
+Just like last year, we have a slack channel for the conference this year where you can chat with other attendees.
 
-If you'd like to join, please finalize your
-invitation at http{% if https %}s{% endif %}://{{ domain }}{% url 'slakslakslak:claim' token=invitation.token %} .
+If you'd like to join, please finalize your invitation at http{% if https %}s{% endif %}://{{ domain }}{% url 'slakslakslak:claim' token=invitation.token %} .
 
 (This link is private and should not be shared with anyone otherwise they'll be able to join instead of you.)
 
