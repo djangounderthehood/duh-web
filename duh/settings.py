@@ -198,3 +198,35 @@ TINYBLOG_ROOT_DIR = os.path.join(BASE_DIR, 'tinyblog', 'articles')
 
 REGISTRATION_START = datetime(2016, 7, 12, 10, 0, tzinfo=timezone.utc)
 REGISTRATION_END = datetime(2016, 7, 26, 10, 0, tzinfo=timezone.utc)
+
+if not DEBUG:
+    # Heroku-compatible logging (copy/pasted from 2016.djangocon.eu of course...)
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+
+        'formatters': {
+            'heroku': {
+                'format': ('%(asctime)s [%(process)d] [%(levelname)s] '
+                           'pathname=%(pathname)s lineno=%(lineno)s '
+                           'funcname=%(funcName)s %(message)s'),
+                'datefmt': '%Y-%m-%d %H:%M:%S'
+            },
+        },
+
+        'handlers': {
+            'heroku': {
+                'level': 'INFO',
+                'filters': [],
+                'class': 'logging.StreamHandler',
+                'formatter': 'heroku',
+            },
+        },
+
+        'loggers': {
+            'webhooks': {
+                'handlers': ['heroku'],
+                'level': 'INFO',
+            }
+        }
+    }
