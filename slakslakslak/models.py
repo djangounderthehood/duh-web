@@ -78,7 +78,7 @@ class Invitation(models.Model):
         ticket = self.ticket_name.lower()
         assert 'donation' not in ticket
 
-        channels = ['#general', '#random']
+        channels = ['#general', '#random', '#jobs']
         if 'scholarship' in ticket:
             channels.append('#scholarships')
         if 'core team' in ticket:
