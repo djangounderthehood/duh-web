@@ -48,7 +48,6 @@ class ClaimInvitationForm(forms.ModelForm):
         allowed = set(self.invitation.get_channels_from_ticket())
         choices = self.fields['channels'].choices
         self.fields['channels'].choices = [t for t in choices if t[0] in allowed]
-        print(self.fields['channels'].choices)
 
     @tomek
     def save(self, commit=True):
