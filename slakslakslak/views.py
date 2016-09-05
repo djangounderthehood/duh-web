@@ -66,7 +66,7 @@ class ClaimInvitationView(generic.CreateView):
             return super(ClaimInvitationView, self).form_valid(form)
         except ValidationError:
             return super(ClaimInvitationView, self).form_invalid(form)
-        except SlackError:
+        except SlackError as e:
             if e.args[0] != 'invite_limit_reached':
                 raise
             messages.error(
