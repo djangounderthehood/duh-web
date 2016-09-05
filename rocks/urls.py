@@ -1,7 +1,6 @@
 from django.conf.urls import url
 from django.shortcuts import get_object_or_404
 
-from .admin import rocks_admin
 from .models import Redirection
 
 
