@@ -5,6 +5,8 @@ from django.forms import ValidationError
 from django.shortcuts import get_object_or_404, redirect
 from django.views import generic
 
+from slacker import Error as SlackError
+
 from .forms import ClaimInvitationForm, UploadCSVForm
 from .models import ClaimedInvitation, Invitation
 from .tito import TicketWebhookView
@@ -63,6 +65,15 @@ class ClaimInvitationView(generic.CreateView):
         try:
             return super(ClaimInvitationView, self).form_valid(form)
         except ValidationError:
+            return super(ClaimInvitationView, self).form_invalid(form)
+        except SlackError:
+            if e.args[0] != 'invite_limit_reached':
+                raise
+            messages.error(
+                self.request,
+                "Sorry, it seems we've reached our limit of pending invites. "
+                "Try again in a few hours.",
+            )
             return super(ClaimInvitationView, self).form_invalid(form)
 
 
