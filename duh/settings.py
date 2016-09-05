@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'tinyblog',
     'lottery',
     'slakslakslak.apps.MonkeyPatchingConfig',
+    'rocks.apps.EmojiEnabledAppConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
