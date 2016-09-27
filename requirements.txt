@@ -1,7 +1,7 @@
 boto==2.39.0
 dj-database-url==0.4.1
 dj-static==0.0.6
-Django==1.9.5
+Django==1.9.10
 django-bootstrap-form==3.2
 django-debug-toolbar==1.4
 django-gravatar2==1.4.0
