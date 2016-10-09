@@ -9,7 +9,7 @@ from .toolbox import Action
 
 class OrganizerQuerySet(models.QuerySet):
     def published(self):
-        return self.filter(published=True)
+        return self.filter(published=True).order_by('?')
 
 
 class Organizer(models.Model):
