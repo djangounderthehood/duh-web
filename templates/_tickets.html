@@ -3,7 +3,10 @@
 <div class="row">
     <div class="col-md-12">
         <img src="{% static 'img/tickets-header.png' %}" class="header-image" alt="TICKETS" />
-
+        <p>
+            The conference tickets are now sold out. <a href="https://ti.to/duth/2016">Join the Waiting List</a> for last minute cancellations.
+        </p>
+        {% comment %}
         <div class="countdown" data-target="{{ ticket_sale_start.isoformat }}">
             <div class="countdown-past{% if now >= ticket_sale_start %} hidden{% endif %}">
                 <p>Conference <span data-emoji-alt="🎫">registration</span> will open on 12th July 2016 at noon CET.</p>
@@ -31,5 +34,6 @@
                 <p class="centered"><a href="{% url 'signup' %}" class="btn btn-large btn-primary">Sign up for tickets now!</a></p>
             </div>
         </div>
+        {% endcomment %}
     </div>
 </div>
