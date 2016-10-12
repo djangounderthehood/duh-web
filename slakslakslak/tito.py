@@ -7,6 +7,7 @@ from django.conf import settings
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.views import generic
+from django.views.decorators.csrf import csrf_exempt
 
 logger = logging.getLogger(__name__)
 
@@ -53,6 +54,7 @@ class ValidWebhookMixin(object):
         raise PermissionDenied(error.args[0]) from error
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class WebhookView(ValidWebhookMixin, generic.View):
     http_method_names = ['post']  # POST only
     hook_event_names = []
