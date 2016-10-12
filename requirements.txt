@@ -22,3 +22,5 @@ static3==0.6.1
 tablib==0.11.2
 tomek==0.2
 whitenoise==3.0
+icalendar==3.10
+django-smuggler==0.7.0

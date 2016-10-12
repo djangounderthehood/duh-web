@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<section id="schedule" class="row">
+    <img src="{% static 'img/schedule-header.png' %}" class="header-image" alt="Schedule" />
+
+    {% regroup object_list by day_grouping as by_day %}
+
+    {% for gp in by_day %}
+        <div class="col-md-6 day">
+            <div class="header">
+                <h3>{{ gp.grouper|date:'jS M, l' }}</h3>
+                <p>Venue: <a href="{{ gp.list.0.venue_url }}" target="_blank">{{ gp.list.0.venue }}</a></p>
+            </div>
+            <div class="sessions">
+                {% for event in gp.list %}
+                    {% if event.is_blank %}
+                        <div class="spacer-{{ event.duration }}min"></div>
+                    {% else %}
+                        <div class="{{ event.get_css_class }}">
+                            <div class="datetime">{{ event.start|date:'G:i'}}</div>
+                            <div class="session-details">
+                                <p><b>{{ event.title }}</b></p>
+                                <p class="speaker">{{ event.speaker }}</p>
+                            </div>
+                            <div class="cls"></div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+
+</section>
+{% endblock %}

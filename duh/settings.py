@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django_gravatar',
     'opbeat.contrib.django',
     'bootstrapform',
+    'smuggler',
 
     'organizers',
     'sponsors',
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'lottery',
     'slakslakslak.apps.MonkeyPatchingConfig',
     'rocks.apps.EmojiEnabledAppConfig',
+    'schedule.apps.EmojiEnabledAppConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
