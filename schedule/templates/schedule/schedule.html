@@ -21,7 +21,7 @@
                         <div class="{{ event.get_css_class }}">
                             <div class="datetime">{{ event.start|date:'G:i'}}</div>
                             <div class="session-details">
-                                <p><b>{{ event.title }}</b></p>
+                                <p><b>{{ event.title|safe }}</b></p>
                                 <p class="speaker">{{ event.speaker }}</p>
                             </div>
                             <div class="cls"></div>
