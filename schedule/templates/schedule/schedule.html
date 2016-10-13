@@ -31,7 +31,11 @@
             </div>
         </div>
     {% endfor %}
-
-
 </section>
+<div class="row pull-right" id="ical">
+    <a class="btn btn-default btn-sm" href="{% url 'schedule:talks-ical' %}">
+      <span class="glyphicon glyphicon-calendar"></span>
+      iCal (talks only)
+    </a>
+</div>
 {% endblock %}
