@@ -1,7 +1,7 @@
 Django: Onder de Motorkap
 =========================
 
-This is the project for the http://djangoonderdemotorkap.nl/ website.
+This is the project for the https://www.djangounderthehood.com website.
 
 
 Development setup
