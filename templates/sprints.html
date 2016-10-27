@@ -5,89 +5,103 @@
 
     <section id="sprints" class="row">
         <img src="{% static 'img/sprints-header.png' %}" class="header-image" alt="Sprints" />
-        <h2>For the first time Sprinters</h2>
+
+        <h2>When and where?</h2>
+        <p>Sprints will be held over two days at
+            <a href="http://amsterdam.impacthub.net/contact/">Impact Hub Amsterdam</a>.<br>
+            Haarlemmerweg 10C<br>
+            1014 BE Amsterdam<br>
+            (<a href="https://goo.gl/maps/wuPbw4zPUVp">google map</a>)</p>
+        <ul>
+            <li>10am - 6pm on Saturday, 5th of Nov. <br> Lunch will be
+                provided at 1pm, but not breakfast.</li>
+            <li>10am - 2pm on Sunday, 6th of Nov. <br> Food is not provided
+                on this day, but there are plenty of restaurants around.</li>
+        </ul>
+        <p>Doors open at 9:30am both days.</p>
+
+        <img alt="" src="http://amsterdam.impacthub.net/wp-content/uploads/sites/44/2013/10/1_Space_2.jpg">
+
+        <h2>For the first time sprinters</h2>
 
         <p>
-            Sprints are concentrated effort to make <em>Django</em> project itself and it's
-            ecosystem`
-            better. In other words, it means that we're going to work on Django codebase to make it
-            better. Can you do it? <strong>Yes!</strong> It's not hard and we're here to
-            help you if you get lost. <em>Django</em> has
-            <a href="https://docs.djangoproject.com/en/1.8/internals/contributing/">good writeup on
-                how to contribute</a>, but we've prepared some tips to you get going.
+            Sprints are a time of concentrated effort to make the Django project and its
+            ecosystem better. We're going to improve Django and related projects.
+            Can you do it? <strong>Yes!</strong> It's not hard, and we're here to help you if you get
+            lost. The Django documentation has a
+            <a href="https://docs.djangoproject.com/en/dev/internals/contributing/">good writeup on
+                how to contribute</a> and we've prepared some tips to you get going.
         </p>
 
         <h4>Preparations</h4>
 
         <p>
-            Start by making sure that you have <em>Django</em> code and that you can run test suite
-            with all tests passing. In short, you need to:
+            Start by <a href="https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/unit-tests/#running-the-unit-tests">
+            downloading the Django source code and running the test suite</a>. If
+            you do this before the day of the sprints, that'll help you get a quick start, but
+            if you run into trouble, you can get help during the sprints.
+        </p>
+        <p>
+            It's also useful to <a href="#sprints-what-to-do">look for a ticket</a> to work on before
+            the first day of the sprints, so you'll have some time to think about the solution and, if
+            it's a large feature, discuss the design on the
+            <a href="https://docs.djangoproject.com/en/dev/internals/mailing-lists/#django-developers">
+            django-developers mailing list</a>. Of course, you might get an idea of something to work on
+            during the talks and that's fine too. It's advantageous but not required to find a ticket in advance.
+        </p>
+        <p>
+            If you want to chat about ideas of things to work on, feel free to ping Tim Graham, the
+            <a href="https://www.djangoproject.com/fundraising/#fellowship-program">Django fellow</a>.
+            He's contracted full-time by the Django Software Foundation to shepherd
+            Django development and assist contributors. You can find him in the <a
+                href="http://webchat.freenode.net/?channels=django-dev">#django-dev IRC channel</a>
+            as timograham. You can also email him at his address in the Django commit logs,
+            especially if IRC is difficult because your time zone doesn't overlap much with his, EDT (UTC-4).
+            That being said, there are Django contributors from all over the world who hang out in #django-dev,
+            so don't limit yourself to asking Tim for advice.
         </p>
 
-        <ol>
-            <li>
-                Fork <a href="https://github.com/django/django#fork-destination-box"> Django on
-                GitHub</a>,
-            </li>
-            <li>
-                Clone your fork locally with
-                <code>git clone git@github.com:YourGitHubName/django.git</code>,
-            </li>
-            <li>
-                Go into tests directory: <code>cd django/tests</code>,
-            </li>
-            <li>
-                If you have <em>Python 3</em>, you can run tests right away with
-                <code>PYTHONPATH=..:$PYTHONPATH python3 ./runtests.py</code>,
-            </li>
-            <li>
-                On <em>Python 2</em> you will need to install some dependencies with
-                <code>pip install -r requirements/py2.txt</code>. You might do that in a separate
-                <a href="https://virtualenv.readthedocs.org/en/latest/">virtualenv</a>. Then
-                run the tests with <code>PYTHONPATH=..:$PYTHONPATH python ./runtests.py</code>
-            </li>
-
-            <li>
-                While you're at it, join our <a
-                    href="http://webchat.freenode.net/?channels=django-sprint">#django-sprint IRC
-                channel</a>.
-            </li>
-        </ol>
-
         <p>
-            You should be good to go! Remember, if you have problems with this you can ask sprint
-            organizers or other people for help.
+            If you get the Django test suite running on your machine and find a ticket to work on,
+            you should be ready to start coding! Remember, if you have problems along the way you can
+            ask sprint organizers or other sprinters for help.
 
-            If you want to know more, <em>Django</em> documentation goes into more details about
-            <a href="https://docs.djangoproject.com/en/1.8/internals/contributing/writing-code/unit-tests/">
-                running unit test</a> and <a
-                href="https://docs.djangoproject.com/en/1.8/internals/contributing/writing-code/working-with-git/">
+            If you want to know more, the Django documentation goes into more detail about
+            <a href="https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/unit-tests/">
+                running the tests</a> and <a
+                href="https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/working-with-git/">
             working with GitHub</a>.
         </p>
 
-        <h4>Doing stuff</h4>
+        <h4 id="sprints-what-to-do">What to do?</h4>
+
+        <p>
+            On the day of the sprints, join our <a
+                href="http://webchat.freenode.net/?channels=django-sprint">#django-sprint IRC
+            channel</a>.
+        </p>
 
         <p>
             <em>Django</em> is a big project and there's lot's of things you can do. Check out
-            <a href="https://docs.djangoproject.com/en/1.8/internals/contributing/new-contributors/"
+            <a href="https://docs.djangoproject.com/en/dev/internals/contributing/new-contributors/"
                     >Advice for new contributors</a> in <em>Django</em> documentation, it lists
             things do, but in short those are:
         </p>
         <ul>
             <li>
-                <a href="https://docs.djangoproject.com/en/1.8/internals/contributing/triaging-tickets/#how-can-i-help-with-triaging">
+                <a href="https://docs.djangoproject.com/en/dev/internals/contributing/triaging-tickets/#how-can-i-help-with-triaging">
                     reproducing bug reports</a>,
             </li>
             <li>
-                <a href="https://docs.djangoproject.com/en/1.8/internals/contributing/writing-code/submitting-patches/#patch-review-checklist">reviewing
+                <a href="https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/#patch-review-checklist">reviewing
                     patches</a>,
             </li>
             <li>
-                <a href="https://docs.djangoproject.com/en/1.8/internals/contributing/writing-code/submitting-patches/">writing
+                <a href="https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/">writing
                     new patches and updating old ones</a>,
             </li>
             <li>
-                <a href="https://docs.djangoproject.com/en/1.8/internals/contributing/writing-documentation/">
+                <a href="https://docs.djangoproject.com/en/dev/internals/contributing/writing-documentation/">
                     writing and improving documentation</a>.
             </li>
         </ul>
@@ -100,12 +114,26 @@
         </p>
 
         <p>
-            During the sprints you have opportunity to talk to fellow Django programmers, including
-            members of the core team, so take advantage of it. Talk to people about what's your
-            pain in Django. Pair with someone on a ticket, two pairs of eyes are better than one.
-            Don't be afraid to ask questions and don't give up.
+            The sprints are a great opportunity to talk to fellow Django programmers, including members
+            of the core team, so take advantage of it. Talk to people about what's your pain with Django.
+            Pair with someone on a ticket: two pairs of eyes are better than one. Don't be afraid to ask
+            questions, and don't give up!
         </p>
 
+        <p>
+            When you're ready to create a pull request, check your patch with the
+            <a href="https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/submitting-patches/#patch-review-checklist">
+            patch review checklist</a>, then ask a friend to review your patch. If all looks good,
+            the friend can mark the ticket's "Triage State" as "Ready for checkin". Someone from the Django team
+            will take a final look at the patch and merge it if all looks good. Don't worry if your patch isn't
+            merged during the sprints. In fact, we don't usually merge a lot of patches during sprints because
+            there are many more people writing patches than reviewing them, and members of the Django team
+            are more effective during a sprint providing high level advice to many people rather than doing
+            a few detailed code reviews. Get your patch to "Ready for checkin" status, then bang the gong to
+            celebrate your success!
+        </p>
+
+        <p>Have fun!</p>
     </section>
 
 {% endblock %}
