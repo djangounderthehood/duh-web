@@ -16,6 +16,8 @@ urlpatterns = [
     url(r'^scholarship/$', views.scholarship, name='scholarship'),
     url(r'^schedule/', include('schedule.urls', namespace='schedule')),
     url(r'^sprints/$', views.sprints, name='sprints'),
+    url(r'^live/$', views.livestream, name='livestream'),
+    url(r'^dinners/$', views.dinners, name='dinners'),
     url(r'^team/', include('organizers.urls', namespace='organizers')),
     url(r'^tickets/', include('lottery.urls')),
     url(r'^admin/', include('smuggler.urls')),

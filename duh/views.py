@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from django.conf import settings
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.utils import timezone
 
 from sponsors.models import Sponsor
@@ -48,3 +48,11 @@ def scholarship(request):
 
 def sprints(request):
     return render(request, 'sprints.html', {})
+
+
+def livestream(request):
+    return redirect('https://www.youtube.com/channel/UC9T1dhIlL_8Va9DxvKRowBw/live')
+
+
+def dinners(request):
+    return redirect('https://docs.google.com/spreadsheets/d/18O80dlYqra39I7Tq46p7Qa4yCbgVHCFpVawgICwUFEc/edit#gid=0')
