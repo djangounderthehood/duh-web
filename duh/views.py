@@ -51,7 +51,9 @@ def sprints(request):
 
 
 def livestream(request):
-    return redirect('https://www.youtube.com/channel/UC9T1dhIlL_8Va9DxvKRowBw/live')
+    if timezone.now().day < 4 and timezone.now().month == 11 and timezone.now().year == 2016:
+        return redirect('https://www.youtube.com/watch?v=rsEkQbMLCH4')
+    return redirect('https://www.youtube.com/watch?v=kWH3Waigi5Y')
 
 
 def dinners(request):
