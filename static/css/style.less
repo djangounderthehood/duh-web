@@ -223,21 +223,31 @@ h4 {
         font-weight: bold;
         font-size: 30px;
     }
-    .speaker {
-        margin-top: 30px;
-        text-align: center;
+}
+.speaker {
+    margin-top: 30px;
+    text-align: center;
 
-        &__photo {
-          width: 240px;
-          height: 240px;
-          background-blend-mode: overlay;
-          background-size: cover;
-          -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-          clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-          margin: 0 auto;
-        }
+}
+.speaker__photo {
+    width: 240px;
+    height: 240px;
+    background-blend-mode: overlay;
+    background-size: cover;
+    -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+    margin: 0 auto;
+}
+
+#talks {
+    .speaker__photo {
+        margin: 0 30px 20px 0;
+        float: left;
+        width: 100px;
+        height: 100px;
     }
 }
+
 
 #organizers {
     h3 {
