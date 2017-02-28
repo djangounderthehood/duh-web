@@ -1,4 +1,4 @@
-# It's not you, it's us
+# It's not you, it's us: we're taking a break in 2017
 
 > Published on 28th Feb 2017 by the DUTH team
 
