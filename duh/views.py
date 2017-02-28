@@ -58,3 +58,7 @@ def livestream(request):
 
 def dinners(request):
     return redirect('https://docs.google.com/spreadsheets/d/18O80dlYqra39I7Tq46p7Qa4yCbgVHCFpVawgICwUFEc/edit#gid=0')
+
+
+def all_editions(request):
+    return render(request, 'all_editions.html', {})

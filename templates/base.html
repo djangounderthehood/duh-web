@@ -21,6 +21,7 @@
         {% stylesheet 'app' %}
     </head>
     <body>
+    {% block body %}
         <div id="left-fixed-cloud"></div>
         {% block right_cloud %}<div id="right-absolute-cloud"></div>{% endblock %}
         <div class="container">
@@ -63,5 +64,6 @@
             window.stroopwafel = "{% static 'img/stroopwafel.png' %}";
             window.glutenfree = "{% static 'img/logo-watercolor.png' %}";
         </script>
+    {% endblock body %}
     </body>
 </html>
